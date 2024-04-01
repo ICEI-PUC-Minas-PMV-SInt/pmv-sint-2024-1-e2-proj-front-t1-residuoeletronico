@@ -1,33 +1,30 @@
 # Arquitetura da Solução
 
-<span style="color:red">Pré-requisitos: <a href="3-Projeto de Interface.md"> Projeto de Interface</a></span>
+O software será estruturado visando a utilização do mesmo através do Navegador Web. As tecnologias utilizadas para a construção do software são as seguintes: 
+- HTML
+- CSS
+- JavaScript
+- ReactJS
 
-Definição de como o software é estruturado em termos dos componentes que fazem parte da solução e do ambiente de hospedagem da aplicação.
+O ambiente de hospedagem utilizado será o Vercel.
+
 
 ## Diagrama de componentes
 
-Diagrama que permite a modelagem física de um sistema, através da visão dos seus componentes e relacionamentos entre os mesmos.
+Os componentes que fazem parte da solução são apresentados na imagem a seguir:
 
-Exemplo: 
+![DiagramaComponentes](https://github.com/ICEI-PUC-Minas-PMV-SInt/pmv-sint-2024-1-e2-proj-front-t1-residuoeletronico/assets/131212075/3831bcc4-8493-49ca-a1db-c0d9ef2b73ba)
 
-Os componentes que fazem parte da solução são apresentados na Figura XX.
-
-![Diagrama de Componentes](img/componentes.png)
-<center>Figura XX - Arquitetura da Solução</center>
 
 A solução implementada conta com os seguintes módulos:
-- **Navegador** - Interface básica do sistema  
-  - **Páginas Web** - Conjunto de arquivos HTML, CSS, JavaScript e imagens que implementam as funcionalidades do sistema.
+- **Navegador** - Interface básica do sistema.  
+  - **Páginas Web** - o software contará com 16 páginas, que serão construídas através das tecnologias HTML, CSS, JavaScript e ReactJS.
    - **Local Storage** - armazenamento mantido no Navegador, onde são implementados bancos de dados baseados em JSON. São eles: 
-     - **Canais** - seções de notícias apresentadas 
-     - **Comentários** - registro de opiniões dos usuários sobre as notícias
-     - **Preferidas** - lista de notícias mantidas para leitura e acesso posterior
- - **News API** - plataforma que permite o acesso às notícias exibidas no site.
- - **Hospedagem** - local na Internet onde as páginas são mantidas e acessadas pelo navegador. 
+     - **Cadastro** - dados informados na hora do cadastro; 
+     - **Login** - dados cadastrados utilizados na hora do Login.
+ - **Hospedagem** - local na Internet onde as páginas são mantidas e acessadas pelo navegador, no caso, será utilizado o Vercel. 
 
-> **Links Úteis**:
->
-> - [Whimsical](https://whimsical.com/)
+O diagrama ilustra o relacionamento entre os componentes: as páginas web, estruturadas através das tecnologias anteriormente citadas, dependem da Internet e são acessadas no Navegador, que possui a funcionalidade de LocalStorage, utilizada no cadastro e no login. O software, por sua vez, será hospedado através do Vercel.
 
 Inclua um diagrama da solução e descreva os módulos e as tecnologias que fazem parte da solução. Discorra sobre o diagrama.
 
