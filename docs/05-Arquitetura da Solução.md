@@ -18,7 +18,7 @@ Os componentes que fazem parte da solução são apresentados na imagem a seguir
 
 A solução implementada conta com os seguintes módulos:
 - **Navegador** - Interface básica do sistema.  
-  - **Páginas Web** - o software contará com 16 páginas, que serão construídas através das tecnologias HTML, CSS, JavaScript e ReactJS.
+  - **Páginas Web** - o software contará com 15 páginas, que serão construídas através das tecnologias HTML, CSS, JavaScript e ReactJS.
    - **Local Storage** - armazenamento mantido no Navegador, onde são implementados bancos de dados baseados em JSON. São eles: 
      - **Cadastro** - dados informados na hora do cadastro; 
      - **Login** - dados cadastrados utilizados na hora do Login.
@@ -29,46 +29,40 @@ O diagrama ilustra o relacionamento entre os componentes: as páginas web, estru
 Inclua um diagrama da solução e descreva os módulos e as tecnologias que fazem parte da solução. Discorra sobre o diagrama.
 
 A imagem a seguir ilustra a o fluxo do usuário em nossa solução. Assim
-que o usuário entra na plataforma, ele é apresentado à tela inicial
-(Tela 1) onde ele é confrontado com as opões de editar seu perfil ou
-então visualizar sua galeria.
+que o usuário entra no website, ele pode navegar pelas notícias disponibilizadas no site e pode também visualizar os dados sobre coleta de descartes eletrônicos disponibilizados na página inicial. Também é possível, através de qualquer página do site, acessar o "Fale Conosco", um espaço destinado a tirar dúvidas frequentes e que possibilita o envio de um email para o contato com os responsáveis pelo projeto "ReciclaMais". Na página "Fale Conosco" também é apresentada uma breve descrição sobre o projeto ReciclaMais.
 
-Caso ele opte por seguir pelo primeiro caminho (Editar Perfil), ele é
-redirecionado para a tela de edição de perfil (Tela 2), onde pode
-atualizar seus dados cadastrais. Nessa tela, o usuário também pode
-escolher para editar sua foto de perfil. Ao selecionar essa opção, ele é
-redirecionado para a Tela 3, onde ele a imagem expandida do perfil do
-usuário é mostrado. Ao selecionar a opção para atualizar a imagem, uma
-nova janela abre pedindo para o usuário fazer o upload da nova foto.
-Assim que o processo termina um pop-up exibe o status para o usuário
-(Tela 4) e o usuário é redirecionado para a Tela 2.
+Para acessar as demais funcionalidades do site, como o agendamento de coleta e a visualização de perfil, é necessário possuir um conta e estar logado no site, portanto, ao tentar acessar a área de perfil ou de agendamento, o usuário é encaminhado para a área de login. Se o usuário não possuir uma conta, ele é encaminhado para a área de cadastro, mas se eles possuir uma conta e efetuar o login ele é direcionado para a área de perfil. Após logado, é possível fazer um agendamento para coleta de descartes eletrônicos e, também, é possível acessar o perfil do usuário, onde estão dispostos os dados do usuário, as informações dos agendamentos e a quantidade de pontos acumulados de agendamentos passados. Através do perfil, é possível alterar os dados do usuário, cancelar um agendamento e acessar a área de troca de pontos, onde pode-se trocar os pontos acumulados por créditos em lojas parceiras.
 
-Caso o usuário opte seguir pelo segundo caminho (Visualizar Galeria) ele
-é redirecionado para a Tela 5 com todas as fotos que o usuário possui. O
-usuário pode clicar em um post qualquer para visualizar os detalhes do
-post (Tela 6). Nessa tela, ele pode então escolher editar o post, sendo
-redirecionado para a Tela 7. Ao editar as informações, o usuário pode
-escolher salvar ou deletar o post. Em ambos os casos o status é
-notificado para o usuário (Tela 8) e em seguida ele é redirecionado
-para a Tela 2.
+<img width="2512" alt="Userflow" src="https://github.com/ICEI-PUC-Minas-PMV-SInt/pmv-sint-2024-1-e2-proj-front-t1-residuoeletronico/assets/131212075/604b6d10-5c49-433e-a159-5a0b06ba1905">
 
-![Exemplo de UserFlow](img/userflow.jpg)
 
 
 ## Tecnologias Utilizadas
 
-Descreva aqui qual(is) tecnologias você vai usar para resolver o seu problema, ou seja, implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas.
+As tecnologias utilizadas como parte da solução serão as seguintes: 
+- HTML
+- CSS
+- JavaScript
+- ReactJS
+- LocalStorage
 
-Apresente também uma figura explicando como as tecnologias estão relacionadas ou como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário.
+<img width="2112" alt="Interacaotecnologias" src="https://github.com/ICEI-PUC-Minas-PMV-SInt/pmv-sint-2024-1-e2-proj-front-t1-residuoeletronico/assets/131212075/58123f78-7deb-400d-b454-e4212cd94351">
+
+
+
+O site é aberto no navegador, o navegador interpreta e renderiza o HTML, criando a estrutura da página. O CSS é aplicado ao HTML, definindo o estilo e a aparência da página. O JavaScript é executado no navegador, fornecendo interatividade e dinamismo à página. Já o ReactJS é uma biblioteca JavaScript utilizada para construir interfaces de usuário componentizadas, gerenciamento de estado e outras funcionalidades avançadas. Essas tecnologias trabalham juntas para criar uma experiência de usuário interativa e responsiva no frontend do site. O LocalStorage, por sua vez, é uma API do navegador que permite armazenar dados localmente no dispositivo do usuário, sem a necessidade de um servidor backend. É útil para armazenar informações temporárias ou preferências do usuário, como configurações ou tokens de autenticação.
+
+A interação do usuário com o sistema funciona da seguinte maneira: 
+
+1. O usuário interage com a interface do usuário no navegador.
+2. Os eventos são capturados pelo HTML e JavaScript.
+3. O JavaScript manipula o DOM, executa lógica e pode realizar ações de armazenamento e recuperação de dados usando o LocalStorage.
+4. O ReactJS gerencia componentes e estado da aplicação.
+5. Dados são armazenados e manipulados localmente no navegador usando o LocalStorage.
+6. A interface do usuário é atualizada conforme necessário para refletir os dados armazenados no LocalStorage.
+7. O usuário visualiza e interage com a interface atualizada.
 
 
 ## Hospedagem
 
-Explique como a hospedagem e o lançamento da plataforma foi feita.
-
-> **Links Úteis**:
->
-> - [Website com GitHub Pages](https://pages.github.com/)
-> - [Programação colaborativa com Repl.it](https://repl.it/)
-> - [Getting Started with Heroku](https://devcenter.heroku.com/start)
-> - [Publicando Seu Site No Heroku](http://pythonclub.com.br/publicando-seu-hello-world-no-heroku.html)
+O site será hospedado no Vercel, uma plataforma de hospedagem e implantação de aplicativos que se integra diretamente com plataformas de versão baseadas em Git, que permite a implantação de  sites estáticos, aplicativos da web estáticos e dinâmicos, API e funções sem servidor de forma rápida e fácil.
