@@ -26,8 +26,6 @@ A solução implementada conta com os seguintes módulos:
 
 O diagrama ilustra o relacionamento entre os componentes: as páginas web, estruturadas através das tecnologias anteriormente citadas, dependem da Internet e são acessadas no Navegador, que possui a funcionalidade de LocalStorage, utilizada no cadastro e no login. O software, por sua vez, será hospedado através do Vercel.
 
-Inclua um diagrama da solução e descreva os módulos e as tecnologias que fazem parte da solução. Discorra sobre o diagrama.
-
 A imagem a seguir ilustra a o fluxo do usuário em nossa solução. Assim
 que o usuário entra no website, ele pode navegar pelas notícias disponibilizadas no site e pode também visualizar os dados sobre coleta de descartes eletrônicos disponibilizados na página inicial. Também é possível, através de qualquer página do site, acessar o "Fale Conosco", um espaço destinado a tirar dúvidas frequentes e que possibilita o envio de um email para o contato com os responsáveis pelo projeto "ReciclaMais". Na página "Fale Conosco" também é apresentada uma breve descrição sobre o projeto ReciclaMais.
 
