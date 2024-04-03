@@ -40,15 +40,7 @@ A descrição do fluxo de usuário pode ser observada com mais detalhes no item 
 
 ## Wireframes
 
-![Exemplo de Wireframe](img/wireframe-example.png)
+O wireframe de baixa fidelidade base utilizado para desenvolver as telas anteriormente exibidas nesse documento pode ser visualizado na imagem abaixo:
 
-São protótipos usados em design de interface para sugerir a estrutura de um site web e seu relacionamentos entre suas páginas. Um wireframe web é uma ilustração semelhante do layout de elementos fundamentais na interface.
- 
-> **Links Úteis**:
-> - [Protótipos vs Wireframes](https://www.nngroup.com/videos/prototypes-vs-wireframes-ux-projects/)
-> - [Ferramentas de Wireframes](https://rockcontent.com/blog/wireframes/)
-> - [MarvelApp](https://marvelapp.com/developers/documentation/tutorials/)
-> - [Figma](https://www.figma.com/)
-> - [Adobe XD](https://www.adobe.com/br/products/xd.html#scroll)
-> - [Axure](https://www.axure.com/edu) (Licença Educacional)
-> - [InvisionApp](https://www.invisionapp.com/) (Licença Educacional)
+![WIREFRAME](https://github.com/ICEI-PUC-Minas-PMV-SInt/pmv-sint-2024-1-e2-proj-front-t1-residuoeletronico/assets/131212075/c34b1f26-262a-4c6d-8cac-ded4b8ab5157)
+
