@@ -7,9 +7,30 @@ Visão geral da interação do usuário pelas telas do sistema e protótipo inte
 
  Apresente as principais interfaces da plataforma. Discuta como ela foi elaborada de forma a atender os requisitos funcionais, não funcionais e histórias de usuário abordados nas <a href="2-Especificação do Projeto.md"> Documentação de Especificação</a>.
 
+<img width="993" alt="telas123" src="https://github.com/ICEI-PUC-Minas-PMV-SInt/pmv-sint-2024-1-e2-proj-front-t1-residuoeletronico/assets/131212075/25b26434-c003-47bd-b558-302a777d6585">
+
+<img width="1048" alt="telas456" src="https://github.com/ICEI-PUC-Minas-PMV-SInt/pmv-sint-2024-1-e2-proj-front-t1-residuoeletronico/assets/131212075/e021053b-4095-4fe6-ba10-dce491da7fb1">
+
+<img width="1072" alt="telas789" src="https://github.com/ICEI-PUC-Minas-PMV-SInt/pmv-sint-2024-1-e2-proj-front-t1-residuoeletronico/assets/131212075/c95c4179-546d-474c-9376-8481e63b84d2">
+
+<img width="753" alt="telas1011" src="https://github.com/ICEI-PUC-Minas-PMV-SInt/pmv-sint-2024-1-e2-proj-front-t1-residuoeletronico/assets/131212075/bbd44e87-2824-439f-91e6-e56fcc3f9725">
+
+<img width="544" alt="telas1213" src="https://github.com/ICEI-PUC-Minas-PMV-SInt/pmv-sint-2024-1-e2-proj-front-t1-residuoeletronico/assets/131212075/b12c73c2-8a12-464d-9653-043dabf8754e">
+
+<img width="656" alt="telas1415" src="https://github.com/ICEI-PUC-Minas-PMV-SInt/pmv-sint-2024-1-e2-proj-front-t1-residuoeletronico/assets/131212075/7d0e88ab-ca2b-48d9-98d4-80289d5001d9">
+
+
+
+
+
+
+
+
+
 ## User Flow
 
-![Exemplo de UserFlow](img/userflow.jpg)
+<img width="2512" alt="Userflow" src="https://github.com/ICEI-PUC-Minas-PMV-SInt/pmv-sint-2024-1-e2-proj-front-t1-residuoeletronico/assets/131212075/d1b3fb07-0e93-4d65-9006-fce4c4354804">
+
 
 Fluxo de usuário (User Flow) é uma técnica que permite ao desenvolvedor mapear todo fluxo de telas do site ou app. Essa técnica funciona para alinhar os caminhos e as possíveis ações que o usuário pode fazer junto com os membros de sua equipe.
 
