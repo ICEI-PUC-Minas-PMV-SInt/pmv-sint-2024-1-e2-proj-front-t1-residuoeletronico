@@ -13,11 +13,11 @@ Visão geral da interação do usuário pelas telas do sistema e protótipo inte
 
 <img width="1072" alt="telas789" src="https://github.com/ICEI-PUC-Minas-PMV-SInt/pmv-sint-2024-1-e2-proj-front-t1-residuoeletronico/assets/131212075/c95c4179-546d-474c-9376-8481e63b84d2">
 
-<img width="753" alt="telas1011" src="https://github.com/ICEI-PUC-Minas-PMV-SInt/pmv-sint-2024-1-e2-proj-front-t1-residuoeletronico/assets/131212075/bbd44e87-2824-439f-91e6-e56fcc3f9725">
+Na tela 10 de "pontuação" é possível obter o extrato das doações efetivadas, com a respectiva pontuação do eletrônico doado e o saldo final obtido. Há possilidade de realizar a troca dos pontos pelo benefício oferecido em parceria com a empresa parceira da Prefeitura. Na tela 11 haverá a confirmação da troca efetivada. <img width="753" alt="telas1011" src="https://github.com/ICEI-PUC-Minas-PMV-SInt/pmv-sint-2024-1-e2-proj-front-t1-residuoeletronico/assets/131212075/bbd44e87-2824-439f-91e6-e56fcc3f9725">
 
-<img width="544" alt="telas1213" src="https://github.com/ICEI-PUC-Minas-PMV-SInt/pmv-sint-2024-1-e2-proj-front-t1-residuoeletronico/assets/131212075/b12c73c2-8a12-464d-9653-043dabf8754e">
+Na tela 12 de "agendamento", o sistema oferecerá dia e horários pré-definidos para a coleta do eletrônico, devendo o usuário informar o item que irá doar e a quantidade, confirmar seus dados pessoais, principalmente seu endereço e confirmar o agendamento. Na tela 13, haverá a confirmação do agendamento solicitado. <img width="544" alt="telas1213" src="https://github.com/ICEI-PUC-Minas-PMV-SInt/pmv-sint-2024-1-e2-proj-front-t1-residuoeletronico/assets/131212075/b12c73c2-8a12-464d-9653-043dabf8754e">
 
-<img width="656" alt="telas1415" src="https://github.com/ICEI-PUC-Minas-PMV-SInt/pmv-sint-2024-1-e2-proj-front-t1-residuoeletronico/assets/131212075/7d0e88ab-ca2b-48d9-98d4-80289d5001d9">
+Na tela 14 de "dúvidas frequentes" os usuários podem acessar as respostas para as dúvidas mais básicas e frequentes relacionadas ao programa ReciclaMais ou acessar o "fale conosco" da Prefeitura de Belo Horizonte para obter outras informações que não estão disponíveis nesta página de dúvidas. Há também informações do "Quem somos nós?". Na tela 15, haverá a confirmação do e-mail enviado com a dúvida do usuário. <img width="656" alt="telas1415" src="https://github.com/ICEI-PUC-Minas-PMV-SInt/pmv-sint-2024-1-e2-proj-front-t1-residuoeletronico/assets/131212075/7d0e88ab-ca2b-48d9-98d4-80289d5001d9">
 
 
 
