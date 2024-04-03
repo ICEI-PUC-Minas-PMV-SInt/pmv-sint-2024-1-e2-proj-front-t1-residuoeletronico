@@ -10,7 +10,8 @@ Apresente uma visão geral do que será abordado nesta parte do documento, enume
 
 Pedro Paulo tem 26 anos, é arquiteto recém-formado e autônomo. Pensa em se desenvolver profissionalmente através de um mestrado fora do país, pois adora viajar, é solteiro e sempre quis fazer um intercâmbio. Está buscando uma agência que o ajude a encontrar universidades na Europa que aceitem alunos estrangeiros.
 
-![Amanda Alves tem 41 anos, é gerente de farmácia na região metropolitana de Belo Horizonte.](image.png)
+Amanda Alves tem 41 anos, é gerente de farmácia na região metropolitana de Belo Horizonte.
+![Amanda Alves](image.png)
 
 Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
 
