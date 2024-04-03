@@ -1,23 +1,23 @@
 # ReciclaMais
 
-`CURSO`
+`CURSO` Sistemas de Internet
 
-`DISCIPLINA`
+`DISCIPLINA` Desenvolvimento Web Front-End - Eixo 02
 
-`SEMESTRE`
+`SEMESTRE` 2º Semestre - Eixo 2 - 2024/1
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+O projeto a ser desenvolvido é uma plataforma digital com a missão de intermediar o descarte de resíduos eletrônicos e informar a respeito dos impactos e consequências deles no meio ambiente. A plataforma também proporciona um incentivo para a coleta correta por meio de um programa de acumulação de pontos em troca de benefícios.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
+* Andressa Dias Marin
+* Geisson Lucas Silva de Oliveira
 * Nome completo do aluno 3
-* Nome completo do aluno 4
+* Lorena Terenzi Alves
 
 ## Orientador
 
-* Nome completo do professor 1
+* Harison Herman Silva
 
 ## Instruções de utilização
 
