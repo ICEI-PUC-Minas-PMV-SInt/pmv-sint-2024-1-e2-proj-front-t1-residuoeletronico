@@ -12,7 +12,7 @@ O projeto a ser desenvolvido é uma plataforma digital com a missão de intermed
 
 * Andressa Dias Marin
 * Geisson Lucas Silva de Oliveira
-* Nome completo do aluno 3
+* Isabele Maria da Silva
 * Lorena Terenzi Alves
 
 ## Orientador
