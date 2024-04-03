@@ -1,6 +1,6 @@
 # ReciclaMais
 
-`CURSO` Sistemas de Internet
+`CURSO` Sistemas de Internet - PUC Minas
 
 `DISCIPLINA` Desenvolvimento Web Front-End - Eixo 02
 
