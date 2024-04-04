@@ -17,21 +17,14 @@ Com isso, tornou-se uma necessidade atual a preservação do meio ambiente por m
 
 ## Problema
 
-No projeto que vamos elaborar, iremos desenvolver com base em duas vertentes: o descarte de produtos eletrônicos que não possuem mais utilidade e os materiais que ainda funcionam perfeitamente ou com algumas avarias e que podem ser aproveitados pelo órgão público. Por isso, o foco do nosso projeto consistirá no descarte de pilhas/baterias, celulares, tablets, notebooks e computadores. Para resolver esse problema, pensamos em um projeto, em que ele irá apresentar alguns pontos de coleta de reciclagem eletrônico para as pilhas/baterias nas redes de empresas  parceiras e também o agendamento para coleta dos celulares, tablets, notebooks e computadores,  tanto para pessoas jurídicas como físicas, que serão realizadas pela Prefeitura.
-
 Como funciona o processo de descarte de resíduos eletrônicos nos grandes centros urbanos e o que pode ser feito para aumentar e aprimorar a coleta seletiva para ser utilizada nos setores públicos carentes de materiais eletrônicos, prevenir a saúde da população local e também o meio ambiente?
 
+Para resolver esse problema, pensamos em um projeto que irá apresentar alguns pontos de coleta de reciclagem eletrônico para as pilhas/baterias nas redes de empresas parceiras e também o agendamento para coleta dos celulares, tablets, notebooks e computadores, que será realizada pela Prefeitura. O projeto será elaborado com base em duas vertentes: o descarte de produtos eletrônicos, pilhas e baterias que não possuem mais utilidade e os materiais que ainda funcionam perfeitamente ou com algumas avarias e que podem ser aproveitados pelo órgão público.
 
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
 
 ## Objetivos
 
-Desenvolver uma aplicação para educar e informar a comunidade e o comércio de grandes centros urbanos a respeito dos pontos de descarte e coleta de resíduos eletrônicos, e também que seja uma plataforma de conexão entre quem possui resíduos estragados ou obsoletos e promover uma destinação útil para os produtos que ainda possuem funcionalidade. Além disso, por meio destas conexões, fomentar a coleta seletiva para reverter em benefício para o Município, prevenir a saúde da população local e o meio ambiente.
-
-Desenvolver uma aplicação de gerenciamento online para resíduos eletrônicos que facilite a coleta, reciclagem e descarte responsável desses materiais, promovendo a conscientização ambiental e a sustentabilidade. Este objetivo envolve a criação de uma plataforma web que permite aos usuários:
+O projeto tem como objetivos principais desenvolver uma aplicação para educar e informar a comunidade e o comércio de grandes centros urbanos a respeito dos pontos de descarte e coleta de resíduos eletrônicos. Além disso, por meio da conexão facilitada entre aqueles que desejam descartar celulares/tablets/notebooks/computadores e a Prefeitura de Belo Horizonte, responsável pela coleta desses descartes, fomentar a coleta seletiva para reverter em benefício para o Município, prevenir a saúde da população local e o meio ambiente. Com base nos objetivos citados, será desenvolvida uma aplicação de gerenciamento online para resíduos eletrônicos que facilite a coleta, reciclagem e descarte responsável desses materiais, promovendo a conscientização ambiental e a sustentabilidade. Este objetivo envolve a criação de uma plataforma web que permite aos usuários:
 
 * Educar a população quanto à preservação do meio ambiente quanto ao descarte de lixo eletrônico.
 
@@ -39,15 +32,10 @@ Desenvolver uma aplicação de gerenciamento online para resíduos eletrônicos 
 
 * Doação de eletrônicos.
 
-* Redirecionar produtos doados que possuem funcionalidade para setores do órgão público.
-
-* Incentivar a população a fazer o descarte consciente com o sistema de Recompensas. Isso será feito através da fidelização no programa de pontos para as pessoas físicas dando descontos no IPTU, Ifood, Dotz, e incentivo fiscal para as empresas que recolhem ISS quanto à doação de celulares, tablets, notebooks e computadores.
+* Incentivar a população a fazer o descarte consciente com o sistema de Recompensas. Isso será feito através da fidelização no programa de pontos para as pessoas físicas dando descontos no IPTU, Ifood e Dotz.
 
 * Divulgação dos benefícios com as doações efetivadas como forma de incentivo, haja vista que os eletrônicos em bom estado de conservação serão reaproveitados pela Prefeitura em seus setores internos, evitando, assim, gastos com a compra de produtos.
 
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
 
 ## Justificativa
 
@@ -60,17 +48,8 @@ O problema do descarte incorreto de lixo eletrônico também envolve diretamente
 Ainda, é necessário conscientizar as pessoas a respeito da Logística Reversa, regulamentada pelo Decreto nº 10.936/2022, que se destina a viabilizar a coleta e a restituição de resíduos sólidos ao setor empresarial, permitindo o reaproveitamento desses resíduos. 
 
 
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
-
 ## Público-Alvo
 
 O público-alvo deste projeto são pessoas preocupadas com o descarte responsável de resíduos eletroeletrônicos, bem como os setores do órgão público que podem se beneficiar com a reutilização desses materiais.
 
-Desta forma, estabeleceu-se como público-alvo desta solução pessoas físicas  e jurídicas que possuem produtos eletroeletrônicos, como pilhas/baterias, tablets, notebooks, computadores e celulares, que se tornaram obsoletos ou apresentam algum defeito e que tenham interesse em descartar esses produtos de forma consciente.
-
-> **Links Úteis**:
-> - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
-> - [Como definir o público alvo](https://exame.com/pme/5-dicas-essenciais-para-definir-o-publico-alvo-do-seu-negocio/)
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
+Desta forma, estabeleceu-se como público-alvo desta solução pessoas que possuem produtos eletroeletrônicos, como pilhas/baterias, tablets, notebooks, computadores e celulares, que se tornaram obsoletos ou apresentam algum defeito e que tenham interesse em descartar esses produtos de forma consciente.
