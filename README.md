@@ -4,7 +4,7 @@
 
 `DISCIPLINA` Desenvolvimento Web Front-End - Eixo 02
 
-`SEMESTRE` 2º Semestre - Eixo 2 - 2024/1
+`SEMESTRE` 2º Semestre - Eixo 02 - 2024/1
 
 O projeto a ser desenvolvido é uma plataforma digital com a missão de intermediar o descarte de resíduos eletrônicos e informar a respeito dos impactos e consequências deles no meio ambiente. A plataforma também proporciona um incentivo para a coleta correta por meio de um programa de acumulação de pontos em troca de benefícios.
 
