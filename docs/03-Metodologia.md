@@ -37,21 +37,21 @@ A divisão de papeis do time de desenvolvimento foi feito baseado no método ág
   - Geisson
   - Andressa
   - Lorena
-  - Isabela
+  - Isabele
 - Equipe de design:
   - Geisson
   - Andressa
   - Lorena
-  - Isabela
+  - Isabele
 
 ### Processo
 
 Para organização e distribuição das tarefas entre os integrantes a equipe utilizou o GitHub Projects com o sistema de organização e gestão do trabalho [Kamban](https://github.com/orgs/ICEI-PUC-Minas-PMV-SInt/projects/27/views/2). A seguir, estão listadas e descritas as categorias definidas para controlar o status das tarefas de trabalho e também a imagem do workflow.
 
-- **To Do**: Representa o Backlog e contem as atividades que estão definidas para serem iniciadas.
+- **To Do**: Representa o Backlog e contém as atividades que estão definidas para serem iniciadas.
 - **In progress**: Lista de atividades em processo de implementação e que não estão finalizadas.
 
-- **Blocked**: Lista de atividades que por algum problema estão impedidas de serem prosseguidas ou  concluídas.
+- **Blocked**: Lista de atividades que por algum problema estão impedidas de serem prosseguidas ou concluídas.
 - **Done**: Tarefas que passaram pelos testes de controle de qualidade e estão prontos para ser entregues ao usuário. 
 
 <img width="993" alt="telas123" src="https://github.com/ICEI-PUC-Minas-PMV-SInt/pmv-sint-2024-1-e2-proj-front-t1-residuoeletronico/blob/main/docs/img/kamban.png?raw=true">
@@ -71,12 +71,12 @@ As ferramentas empregadas no desenvolvimento do projeto e sua função de uso es
 | [Figma](https://www.figma.com/)                              | Design, prototipação de wireframes, userflow e desenvolvimento de diagramas |
 | [MarvelApp](https://marvelapp.com/)                          | Criação do fluxo interativo dos wireframes                   |
 
-O editor de código Visual Studio Code foi escolhido porque ele possui uma integração com o sistema de versão, integração com extensões que auxiliam na produtividade de código, além de ser uma aplicação leve e amplamente utilizada e já consolidada no mercado de desenvolvimento de software.
+O editor de código Visual Studio Code foi escolhido pois possui uma integração com o sistema de versão, integração com extensões que auxiliam na produtividade de código, além de ser uma aplicação leve e amplamente utilizada e já consolidada no mercado de desenvolvimento de software.
 
-Para o versionamento de código-fonte o Git foi adotado, pois é o maior sistema de controle de versões distribuído que existe e possui extensa documentação para treinamento de uso no time de envolvedores. 
+Para o versionamento de código-fonte o Git foi adotado, pois é o maior sistema de controle de versões distribuído que existe e possui extensa documentação para treinamento de uso no time de desenvolvedores. 
 
 O GitHub, por sua vez, é a maior plataforma de hospedagem de repositórios Git utilizado no mercado, possui uma interface intuitiva e muito eficiente para a visualização dos arquivos de código.  Além disso, ele oferece o GitHub Projects que é uma funcionalidade do GitHub capaz de dar muita flexibilidade e eficiência na organização e gestão das tarefas de desenvolvimento, fornecendo uma interface bem informativa sobre a distribuição e cronograma da sprint.
 
 A comunicação do time o Microsoft Teams foi a ferramenta utilizada devido possibilidade de agendar e criar reuniões de forma muito simples e com muita qualidade de transmissão de vídeo. Além disso, a ferramenta é multi-plataforma, o que permite que seja usado tanto em desktop quanto em mobile. 
 
-Para o desenvolvimento dos wireframes o Figma foi escolhido, pois possui todos os recurso necessários para o design dos layouts. E o Marvel, pois permite a criação do fluxo interativo de wireframes de forma muito prática.
+Para o desenvolvimento dos wireframes o Figma foi escolhido, pois possui todos os recursos necessários para o design dos layouts. Também foi utilizado o MarvelApp, que permite a criação do fluxo interativo de wireframes de forma muito prática.
