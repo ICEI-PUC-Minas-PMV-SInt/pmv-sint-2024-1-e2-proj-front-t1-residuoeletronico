@@ -4,7 +4,7 @@ A definição exata do problema e os pontos mais relevantes a serem tratados nes
 
 ## Personas
 
-As personas levantadas durante o processo de entendimento do problema são apresentadas na Figuras que se seguem.
+As personas levantadas durante o processo de entendimento do problema são apresentadas nas Figuras que se seguem:
 
 Amanda Alves tem 41 anos, é gerente de farmácia na região metropolitana de Belo Horizonte.
 ![Amanda Alves](image.png)
