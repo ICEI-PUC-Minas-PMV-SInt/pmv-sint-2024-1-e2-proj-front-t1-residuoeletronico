@@ -46,13 +46,15 @@ A divisão de papeis do time de desenvolvimento foi feito baseado no método ág
 
 ### Processo
 
-Para organização e distribuição das tarefas entre os integrantes a equipe utilizou o GitHub Projects com o sistema de organização e gestão do trabalho [Kamban](https://github.com/orgs/ICEI-PUC-Minas-PMV-SInt/projects/27/views/2). A seguir, estão listadas e descritas as categorias definidas para controlar o status das tarefas de trabalho.
+Para organização e distribuição das tarefas entre os integrantes a equipe utilizou o GitHub Projects com o sistema de organização e gestão do trabalho [Kamban](https://github.com/orgs/ICEI-PUC-Minas-PMV-SInt/projects/27/views/2). A seguir, estão listadas e descritas as categorias definidas para controlar o status das tarefas de trabalho e também a imagem do workflow.
 
 - **To Do**: Representa o Backlog e contém as atividades que estão definidas para serem iniciadas.
 - **In progress**: Lista de atividades em processo de implementação e que não estão finalizadas.
 
 - **Blocked**: Lista de atividades que por algum problema estão impedidas de serem prosseguidas ou concluídas.
 - **Done**: Tarefas que passaram pelos testes de controle de qualidade e estão prontos para ser entregues ao usuário. 
+
+<img width="993" alt="telas123" src="https://github.com/ICEI-PUC-Minas-PMV-SInt/pmv-sint-2024-1-e2-proj-front-t1-residuoeletronico/blob/main/docs/img/kamban.png?raw=true">
 
 Link para o Kamban do projeto [ReciclaMais](https://github.com/orgs/ICEI-PUC-Minas-PMV-SInt/projects/27/views/2).
 
