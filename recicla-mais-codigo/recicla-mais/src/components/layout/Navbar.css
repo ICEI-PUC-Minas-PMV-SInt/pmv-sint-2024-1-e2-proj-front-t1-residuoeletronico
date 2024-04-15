@@ -1,0 +1,19 @@
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.navbar_links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar_links h2 {
+    font-size: 24px;
+}
+
