@@ -1,0 +1,38 @@
+.container_footer {
+    display: flex;
+    background-color: #BFF090 ;
+    border-top: 2px solid #8FD14F;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px 10px 12px;
+    
+}
+
+#pbh {
+    height: 60px;
+}
+
+.container_icones {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.icones {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.icones img {
+    width: 30px;
+}
+
+#copyright {
+    font-size: 12px;
+}
+
+#fale_conosco {
+    height: 60px;
+}
