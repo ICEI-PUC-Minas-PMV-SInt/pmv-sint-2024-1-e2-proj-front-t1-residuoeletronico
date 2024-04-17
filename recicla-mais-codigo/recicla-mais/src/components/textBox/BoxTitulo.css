@@ -1,0 +1,13 @@
+.boxTitulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #90CFB9;
+    border-radius: 16px;
+    padding: 15px 40px;
+    width: 45%;
+}
+
+.boxTitulo h1 {
+    font-size: 28px;
+}

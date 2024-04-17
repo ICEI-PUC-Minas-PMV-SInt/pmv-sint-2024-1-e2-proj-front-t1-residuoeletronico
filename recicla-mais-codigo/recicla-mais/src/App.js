@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './App.css';
 import TemplateSPA from './pages/TemplateSPA';
-import Cadastro from "./pages/Cadastro";
 
 function App() {
   return (
@@ -9,7 +8,8 @@ function App() {
       <BrowserRouter>
       <Routes>
         <Route path="/" element={<TemplateSPA/>} />
-        <Route path="/Cadastro" element={<Cadastro/>} />
+        <Route path="/Cadastro" element={<Cadastro/>}
+        <Route path="/" element={<Agendamento/>} />
       </Routes>
       </BrowserRouter>
     </>
