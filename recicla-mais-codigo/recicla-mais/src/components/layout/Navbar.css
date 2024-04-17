@@ -1,19 +1,44 @@
 .navbar {
-    width: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: .2px solid #e7e2e2;
 }
 
+.navbar_logo {
+    display: flex;
+    height: 60px;
+    justify-content: left;
+}
 
+.navbar_logo a img {
+    height: 60px;
+}
 
 .navbar_links {
     display: flex;
-    justify-content: space-between;
+    height: 60px;
+    justify-content: space-around;
     align-items: center;
 }
 
-.navbar_links h2 {
-    font-size: 24px;
+.navbar_links a {
+    font-size: 20px;
+    text-decoration: none;
+    padding: 0 30px;
 }
 
+.navbar_links a:hover {
+    color: #64A822;
+}
+
+.navbar_usuario {
+    display: flex;
+    height: 60px;
+    justify-content: right;
+} 
+
+.navbar_usuario a img {
+    height: 60px;
+}
