@@ -1,0 +1,5 @@
+.boxCalendario {
+    display: flex;
+    flex-flow: column;
+    background-color: #686DA1;
+}

@@ -1,0 +1,19 @@
+.mainContainer {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.blocoDiaHorario {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+}
+
+.blocoDiaHorario_calendarioHora {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
