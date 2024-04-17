@@ -9,6 +9,7 @@
 .navbar_logo {
     display: flex;
     height: 60px;
+    width: 25%;
     justify-content: left;
 }
 
@@ -36,6 +37,7 @@
 .navbar_usuario {
     display: flex;
     height: 60px;
+    width: 25%;
     justify-content: right;
 } 
 
