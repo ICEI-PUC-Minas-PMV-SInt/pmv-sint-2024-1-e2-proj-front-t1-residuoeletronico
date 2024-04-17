@@ -5,23 +5,27 @@ import ImagemUsuario from "../../imgs/imagem-usuario.png";
 function Navbar() {
   return (
     <nav className="navbar">
-      <a href="">
-        <img src={Logo} alt="ReciclaMais" id="logo" />
-      </a>
-      <div className="navbar_links">
+      <div className="navbar_logo">
         <a href="">
-          <h2>Home</h2>
-        </a>
-        <a href="">
-          <h2>Notícias</h2>
-        </a>
-        <a href="">
-          <h2>Agendamento</h2>
+          <img src={Logo} className="logo" alt="ReciclaMais" id="logo" />
         </a>
       </div>
-      <a href="">
-        <img src={ImagemUsuario} alt="imagem-usuario" id="imagem_usuario"/>
-      </a>
+      <div className="navbar_links">
+        <a href="">
+          Home
+        </a>
+        <a href="">
+          Notícias
+        </a>
+        <a href="">
+          Agendamento
+        </a>
+      </div>
+      <div className="navbar_usuario">
+        <a href="">
+          <img src={ImagemUsuario} alt="imagem-usuario" id="imagem_usuario"/>
+        </a>
+      </div>
     </nav>
   );
 }
