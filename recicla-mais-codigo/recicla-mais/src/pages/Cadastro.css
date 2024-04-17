@@ -1,0 +1,43 @@
+.titulo {
+    display: flex;
+    justify-content: center;
+    height: 80px;
+    padding: 15px;
+}
+
+.titulo h2 {
+    padding: 12px 60px;
+    border-radius: 16px;
+    background-color: #90CFB9;
+}
+
+.container_form {
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid black;
+}
+
+section {
+    display:block;
+    /* width: 40%; */
+
+    border: 1px solid red;
+}
+
+section.col_1 {
+    float: left;
+}
+
+section.col_2 {
+    float: right;
+}
+
+section p {
+    display: flex;
+}
+
+.container_btn_submit {
+    display: flex;
+    border: 1px solid red;
+    justify-content: right;
+}
