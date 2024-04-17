@@ -17,12 +17,12 @@ function Navbar() {
         <a href="">
           Notícias
         </a>
-        <a href="">
+        <a href="/src/pages/Agendamento.js">
           Agendamento
         </a>
       </div>
       <div className="navbar_usuario">
-        <a href="">
+        <a href="/src/pages/Cadastro.js">
           <img src={ImagemUsuario} alt="imagem-usuario" id="imagem_usuario"/>
         </a>
       </div>
