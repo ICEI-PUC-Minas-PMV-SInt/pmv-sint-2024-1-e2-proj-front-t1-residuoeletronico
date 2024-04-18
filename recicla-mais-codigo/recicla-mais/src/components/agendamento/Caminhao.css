@@ -1,0 +1,9 @@
+.divImagens {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+#caminhao {
+    width: 70px;
+}

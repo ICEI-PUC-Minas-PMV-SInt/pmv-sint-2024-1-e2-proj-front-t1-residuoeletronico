@@ -2,4 +2,33 @@
     display: flex;
     flex-flow: column;
     background-color: #686DA1;
+    width: 300px;
+    height: 350px;
+    border-radius: 16px;
+}
+
+.boxCalendario h1 {
+    color: white;
+    font-weight: 500;
+}
+
+.boxCalendario_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px 10px 10px;
+}
+
+.boxCalendario_headerSetas {
+    display: flex;
+    gap: 5px;
+}
+
+.boxCalendario_headerSetas button{
+background: none;
+border: none;
+}
+
+.boxCalendario_headerSetas img {
+    width: 10px;
 }
