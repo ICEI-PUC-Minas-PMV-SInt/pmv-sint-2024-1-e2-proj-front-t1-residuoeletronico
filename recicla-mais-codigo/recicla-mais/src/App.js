@@ -3,6 +3,7 @@ import './App.css';
 import TemplateSPA from './pages/TemplateSPA';
 import Cadastro from "./pages/Cadastro";
 import Agendamento from "./pages/Agendamento";
+import Login from './pages/Login';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<TemplateSPA/>} />
         <Route path="/src/pages/Cadastro.js" element={<Cadastro/>} />
         <Route path="/src/pages/Agendamento.js" element={<Agendamento/>} />
+        <Route path="/login" element={<Login/>} />
       </Routes>
       </BrowserRouter>
     </>
