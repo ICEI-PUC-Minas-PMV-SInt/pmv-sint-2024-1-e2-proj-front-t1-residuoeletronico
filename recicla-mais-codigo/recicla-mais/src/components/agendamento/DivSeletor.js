@@ -2,11 +2,11 @@ import "./DivSeletor.css";
 import Seletor from "./Seletor";
 import BoxAzulTitulo from "../textBox/BoxAzulTitulo";
 
-function DivSeletor(props) {
+function DivSeletor({titulo, selecaoDe, onOptionChange}) {
   return (
     <div className="divSeletor">
-      <BoxAzulTitulo texto={props.titulo} />
-      <Seletor selecaoDe={props.selecaoDe} />
+      <BoxAzulTitulo texto={titulo} />
+      <Seletor selecaoDe={selecaoDe} onOptionChange={onOptionChange} />
     </div>
   );
 }

@@ -7,7 +7,7 @@ import FaleConosco from "../../imgs/fale-conosco.png"
 
 function Footer() {
   return (
-    <div className="container_footer">
+    <footer className="container_footer">
       <img src={PBH} alt="PrefeituraBH" id='pbh'/>
       <div className="container_icones">
         <div className="icones">
@@ -26,7 +26,7 @@ function Footer() {
         </span>
       </div>
       <a href=''><img src={FaleConosco} alt='fale-conosco' id='fale_conosco'/></a>
-    </div>
+    </footer>
   );
 }
 

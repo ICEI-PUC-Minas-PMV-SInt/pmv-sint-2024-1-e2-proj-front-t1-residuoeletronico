@@ -1,0 +1,9 @@
+.containerGeral {
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+}
+
+.alturaMinima {
+    min-height: 75%;
+}

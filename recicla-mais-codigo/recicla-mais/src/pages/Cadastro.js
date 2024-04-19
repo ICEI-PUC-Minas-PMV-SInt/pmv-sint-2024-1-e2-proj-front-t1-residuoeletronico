@@ -5,10 +5,7 @@ import './Cadastro.css'
 
 function Cadastro(){
     return (
-        <div className="container">
-            <header>
-                <Navbar />
-            </header>
+       
             <main>
                 <div className='titulo'>
                     <h2>
@@ -104,10 +101,7 @@ function Cadastro(){
                     </form>
                 </div>
             </main>
-            <footer>
-                <Footer />
-            </footer>
-        </div>
+            
     )
 }
 

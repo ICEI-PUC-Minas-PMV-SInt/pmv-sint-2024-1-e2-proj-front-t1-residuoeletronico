@@ -1,20 +1,25 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import './App.css';
-import TemplateSPA from './pages/TemplateSPA';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import "./App.css";
+import TemplateSPA from "./pages/TemplateSPA";
 import Cadastro from "./pages/Cadastro";
 import Agendamento from "./pages/Agendamento";
+import Container from "./components/layout/Container";
+import Navbar from "./components/layout/Navbar";
+import Footer from "./components/layout/Footer";
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<TemplateSPA/>} />
-        <Route path="/src/pages/Cadastro.js" element={<Cadastro/>} />
-        <Route path="/src/pages/Agendamento.js" element={<Agendamento/>} />
-      </Routes>
-      </BrowserRouter>
-    </>
+    <Router>
+      <Navbar />
+      <Container customClass="alturaMinima">
+        <Routes>
+          <Route exact path="/" element={<TemplateSPA />} />
+          <Route path="/Cadastro" element={<Cadastro />} />
+          <Route path="/Agendamento" element={<Agendamento />} />
+        </Routes>
+      </Container>
+      <Footer />
+    </Router>
   );
 }
 
