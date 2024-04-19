@@ -1,5 +1,6 @@
 import './TemplateSPA.css';
 import './Login.css';
+import { Link } from 'react-router-dom';
 
 
 function Login() {
@@ -13,12 +14,12 @@ function Login() {
                     <input className='botao1' type='text' placeholder='Email'/>
                     <br></br>
                     <input className='botao2' type='text' placeholder='Senha'/>
-                    <button className='botao3'><a href={'./src/pages/Agendamento.js'}>Entrar</a></button>
+                    <button className='botao3'><Link to='/Agendamento'>Entrar</Link></button>
                </div>
-               <div class="link">
-                    <h1><a href="./src/pages/Cadastro.js">Ainda nao possuo uma conta</a></h1>
+               <div className="link">
+                    <h1><Link to='/Cadastro'>Ainda nao possuo uma conta</Link></h1>
                     <br></br>
-                    <h1><a href="./src/pages/Cadastro.js">Esqueci minha senha</a></h1>
+                    <h1><Link to='/'>Esqueci minha senha</Link></h1>
                 </div>
             </main>
     )

@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import "./App.css";
 import TemplateSPA from "./pages/TemplateSPA";
 import Cadastro from "./pages/Cadastro";
 import Agendamento from "./pages/Agendamento";
