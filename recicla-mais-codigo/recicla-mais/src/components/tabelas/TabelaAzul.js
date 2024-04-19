@@ -2,7 +2,7 @@ import './TabelaAzul.css'
 
 function TabelaAzul({headersTabela, corpoTabela}) {
     return (
-        <table>
+        <table className='tabelaAzul'>
             <thead>
                 <tr>
                     {headersTabela.map((header, index) => (

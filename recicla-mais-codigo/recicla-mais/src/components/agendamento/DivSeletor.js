@@ -6,7 +6,7 @@ function DivSeletor({titulo, selecaoDe, onOptionChange}) {
   return (
     <div className="divSeletor">
       <BoxAzulTitulo texto={titulo} />
-      <Seletor selecaoDe={selecaoDe} onOptionChange={onOptionChange} />
+      <Seletor selecaoDe={selecaoDe} onOptionChange={onOptionChange}/>
     </div>
   );
 }

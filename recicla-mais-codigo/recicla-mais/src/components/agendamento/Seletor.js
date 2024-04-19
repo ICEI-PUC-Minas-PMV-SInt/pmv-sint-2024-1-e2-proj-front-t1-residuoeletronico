@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Seletor.css";
 
-function Seletor({ selecaoDe, onOptionChange }) {
+function Seletor({ selecaoDe, onOptionChange}) {
   //Estado para armazenar a opção selecionada
   const [opcaoSelecionada, setOpcaoSelecionada] = useState("");
 

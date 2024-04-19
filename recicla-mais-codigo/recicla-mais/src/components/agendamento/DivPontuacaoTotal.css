@@ -1,0 +1,25 @@
+.containerPontuacao {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.divTextoPontuacao {
+    background-color: #686DA1;
+    border-right: 3px solid white;
+    border-radius: 10px 0 0 10px;
+    padding: 10px 50px;
+}
+
+.divTextoPontuacao h1 {
+    color: white;
+    font-size: 16px;
+}
+
+.divPontuacao {
+    background-color: #D3D3D3;
+    padding: 10px 50px;
+    display: flex;
+    align-items: center;
+    border-radius: 0 10px 10px 0;
+}

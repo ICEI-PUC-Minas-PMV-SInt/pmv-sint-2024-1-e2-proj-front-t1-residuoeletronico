@@ -10,6 +10,7 @@ import BotaoAdd from "../components/buttons/BotaoAdd";
 import { useState } from "react";
 import TabelaAzul from "../components/tabelas/TabelaAzul";
 import CelulaAgendamento from "../components/tabelas/CelulaAgendamento";
+import DivPontuacaoTotal from "../components/agendamento/DivPontuaçãoTotal";
 
 function Agendamento() {
   // Estado para armazenar as seleções feitas pelo usuário
@@ -32,12 +33,6 @@ function Agendamento() {
   // Função chamada quando o botão de adicionar é clicado
   const handleAddButtonClick = () => {
     setSelectedOptions((prevOptions) => [...prevOptions, currentSelection]);
-    // Reinicia a seleção atual
-    setCurrentSelection({
-      item: "",
-      quantidade: "",
-      qualidade: "",
-    });
   };
 
   const handleRemoveButtonClick = (index) => {
@@ -46,7 +41,35 @@ function Agendamento() {
     );
   };
 
-  const headersAgendamento = ["Item:", "Qtde.:", "Qualidade:", "Pontos:"];
+  const headersAgendamento = ["Item:", "Qtde.:", "Qualidade:", "Pontos:", ""];
+
+  function calculaPontos(item, quantidade) {
+    let pontuacao = 0;
+    switch (item) {
+      case "Notebook":
+        pontuacao = 500;
+        break;
+      case "Computador":
+        pontuacao = 600;
+        break;
+      case "Celular":
+        pontuacao = 800;
+        break;
+      case "Tablet":
+        pontuacao = 900;
+        break;
+
+      default:
+        break;
+    }
+     return pontuacao*quantidade;
+  }
+
+  const calcularPontuacaoTotal = () => {
+    let total = 0;
+    selectedOptions.forEach((option) => {total += calculaPontos(option.item, parseInt(option.quantidade))});
+    return total
+  }
 
   return (
     <main className="mainContainer">
@@ -91,9 +114,11 @@ function Agendamento() {
             <CelulaAgendamento
               selectedOptions={selectedOptions}
               removeOption={handleRemoveButtonClick}
+              calculaPontos={calculaPontos}
             />
           }
         />
+        <DivPontuacaoTotal pontuacaoTotal={calcularPontuacaoTotal()}/>
       </div>
     </main>
   );
