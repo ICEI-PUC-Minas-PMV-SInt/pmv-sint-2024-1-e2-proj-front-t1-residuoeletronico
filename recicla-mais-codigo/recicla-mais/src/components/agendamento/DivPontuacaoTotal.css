@@ -7,7 +7,7 @@
 .divTextoPontuacao {
     background-color: #686DA1;
     border-right: 3px solid white;
-    border-radius: 10px 0 0 10px;
+    /* border-radius: 10px 0 0 10px; */
     padding: 10px 50px;
 }
 
@@ -21,5 +21,5 @@
     padding: 10px 50px;
     display: flex;
     align-items: center;
-    border-radius: 0 10px 10px 0;
+    /* border-radius: 0 10px 10px 0; */
 }
