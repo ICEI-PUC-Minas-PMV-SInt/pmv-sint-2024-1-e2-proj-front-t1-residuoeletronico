@@ -1,28 +1,35 @@
-import './TemplateSPA.css';
-import './Login.css';
-import { Link } from 'react-router-dom';
-
+import "./TemplateSPA.css";
+import "./Login.css";
+import { Link } from "react-router-dom";
+import BoxTitulo from "../components/textBox/BoxTitulo";
+import BotaoVerdeG from "../components/buttons/BotaoVerdeG";
 
 function Login() {
-    return (
-            <main>
-               <div className='box_flex'>
-                    <h1>LOGIN</h1>                
-               </div>
+  return (
+    <main className="mainLogin">
+      <div className="boxLogin">
+        <BoxTitulo text="LOGIN" />
 
-               <div className='email'>
-                    <input className='botao1' type='text' placeholder='Email'/>
-                    <br></br>
-                    <input className='botao2' type='text' placeholder='Senha'/>
-                    <button className='botao3'><Link to='/Agendamento'>Entrar</Link></button>
-               </div>
-               <div className="link">
-                    <h1><Link to='/Cadastro'>Ainda nao possuo uma conta</Link></h1>
-                    <br></br>
-                    <h1><Link to='/'>Esqueci minha senha</Link></h1>
-                </div>
-            </main>
-    )
+        <div className="divInputs">
+          <input className="inputEmail" type="text" placeholder="Email" />
+
+          <input className="inputSenha" type="text" placeholder="Senha" />
+        </div>
+
+        <BotaoVerdeG texto='ENTRAR'/>
+
+        <div className="link">
+          <Link to="/Cadastro">
+            <h1>Ainda não possuo uma conta</h1>
+          </Link>
+          <br></br>
+          <Link to="/">
+            <h1>Esqueci minha senha</h1>
+          </Link>
+        </div>
+      </div>
+    </main>
+  );
 }
 
-export default Login
+export default Login;
