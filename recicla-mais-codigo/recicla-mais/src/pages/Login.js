@@ -13,7 +13,7 @@ function Login() {
                 <Navbar />
             </header>
             <main>
-               <div className='box_flex'>
+               <div className='box_title'>
                     <h1>LOGIN</h1>                
                </div>
 
