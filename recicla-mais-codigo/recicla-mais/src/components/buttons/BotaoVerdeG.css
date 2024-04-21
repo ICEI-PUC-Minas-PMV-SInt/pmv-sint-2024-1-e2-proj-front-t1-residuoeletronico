@@ -1,0 +1,15 @@
+.botaoVerdeG {
+    background-color: #4A9076;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 10px;
+}
+
+.botaoVerdeG:hover {
+    cursor: pointer;
+}
+
+.botaoVerdeG h1 {
+    color: white;
+    font-size: 24px;
+}

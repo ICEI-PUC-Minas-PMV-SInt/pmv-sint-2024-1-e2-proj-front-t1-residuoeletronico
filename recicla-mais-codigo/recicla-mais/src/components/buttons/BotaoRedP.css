@@ -1,0 +1,15 @@
+.botaoRedP {
+    background-color: #CDABAB;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 6px 6px 18px 0px rgba(113, 113, 113, 0.57);
+    font-size: 14px;
+    color: white;
+    padding: 5px 15px;
+    margin: 8px 20px;
+}
+
+.botaoRedP:hover {
+    background-color: rgb(254, 110, 110);
+    cursor: pointer;
+}
