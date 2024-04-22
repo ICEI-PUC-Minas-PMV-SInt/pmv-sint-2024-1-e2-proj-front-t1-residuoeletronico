@@ -2,26 +2,20 @@
     display: flex;
     justify-content: center;
     height: 80px;
+    width: 50%;
+    margin: 0 auto;
     padding: 15px;
-}
-
-.titulo h2 {
-    padding: 12px 60px;
-    border-radius: 16px;
-    background-color: #90CFB9;
 }
 
 .container_form {
     display: flex;
     justify-content: space-around;
-    border: 1px solid black;
 }
 
 section {
     display:block;
-    /* width: 40%; */
-
-    border: 1px solid red;
+    margin: 0 40px;
+    padding: 10px 20px;
 }
 
 section.col_1 {
@@ -33,11 +27,32 @@ section.col_2 {
 }
 
 section p {
-    display: flex;
+    display: block;
+    margin-bottom: 10px;
 }
 
-.container_btn_submit {
+.campoFormulario label input{
+    width: 250px;
+    border-radius: 6px;
+    border: 0.5px solid #9d9d9d;
+}
+
+.container_btn_submit{
     display: flex;
-    border: 1px solid red;
     justify-content: right;
+    padding: 5px;
+    margin-top: 20px;
+}
+
+.container_btn_submit > button{
+    width: 50%;
+    padding: 10px;
+    background-color: #4A9076;
+    border-radius: 10px;
+    color: #FFF;
+}
+
+.container_btn_submit > button:hover{
+    background-color: #699082;
+    color: #FFF;
 }

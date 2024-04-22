@@ -13,7 +13,7 @@ function App() {
         <Route path="/" element={<TemplateSPA/>} />
         <Route path="/src/pages/Cadastro.js" element={<Cadastro/>} />
         <Route path="/src/pages/Agendamento.js" element={<Agendamento/>} />
-        <Route path="/login" element={<Login/>} />
+        <Route path="/src/pages/Login.js" element={<Login/>} />
       </Routes>
       </BrowserRouter>
     </>
