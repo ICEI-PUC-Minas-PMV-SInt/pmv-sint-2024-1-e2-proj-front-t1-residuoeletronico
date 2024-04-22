@@ -1,30 +1,30 @@
 import "./Navbar.css";
 import Logo from "../../imgs/logo-reciclamais.png";
 import ImagemUsuario from "../../imgs/imagem-usuario.png";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar_logo">
-        <a href="">
-          <img src={Logo} className="logo" alt="ReciclaMais" id="logo" />
-        </a>
+        <Link to='/'><img src={Logo} className="logo" alt="ReciclaMais" id="logo" />
+        </Link>
       </div>
       <div className="navbar_links">
-        <a href="">
+        <Link to="/">
           Home
-        </a>
-        <a href="">
+        </Link>
+        <Link to="">
           Notícias
-        </a>
-        <a href="/src/pages/Agendamento.js">
+        </Link>
+        <Link to='/Agendamento'>
           Agendamento
-        </a>
+        </Link>
       </div>
       <div className="navbar_usuario">
-        <a href="/src/pages/Cadastro.js">
+        <Link to='/Cadastro'>
           <img src={ImagemUsuario} alt="imagem-usuario" id="imagem_usuario"/>
-        </a>
+        </Link>
       </div>
     </nav>
   );

@@ -1,20 +1,5 @@
-.container {
-    height: 100%;
-    display: flex;
-    flex-flow: column;
-}
-
-header {
-    max-width: 100%;
-}
-
 main {
     min-height: 75%;
-    padding: 20px 0;
+    padding: 40px 0;
 }
-
-footer {
-    max-width: 100%;
-}
-
 

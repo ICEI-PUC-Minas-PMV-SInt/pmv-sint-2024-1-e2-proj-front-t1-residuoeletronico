@@ -42,6 +42,13 @@
     justify-content: space-between;
 }
 
+.itensAdicionados {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 40px;
+}
+
 .itensAdicionados h1 {
     font-size: 22px;
 }

@@ -1,6 +1,5 @@
 import Footer from '../components/layout/Footer'
 import Navbar from '../components/layout/Navbar'
-import BoxTitulo from '../components/textBox/BoxTitulo'
 import './TemplateSPA.css'
 import './Cadastro.css'
 import {IMaskInput} from 'react-imask'
@@ -8,10 +7,7 @@ import {IMaskInput} from 'react-imask'
 
 function Cadastro(){
     return (
-        <div className="container">
-            <header>
-                <Navbar />
-            </header>
+       
             <main>
                 <div className='titulo'>
                     <BoxTitulo text='CADASTRO'/>
@@ -120,10 +116,7 @@ function Cadastro(){
                     </form>
                 </div>
             </main>
-            <footer>
-                <Footer />
-            </footer>
-        </div>
+            
     )
 }
 
