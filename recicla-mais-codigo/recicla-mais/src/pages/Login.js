@@ -24,7 +24,7 @@ function Login() {
             <h1>Ainda não possuo uma conta</h1>
           </Link>
           <br></br>
-          <Link to="/">
+          <Link to="/TrocarSenha">
             <h1>Esqueci minha senha</h1>
           </Link>
         </div>
