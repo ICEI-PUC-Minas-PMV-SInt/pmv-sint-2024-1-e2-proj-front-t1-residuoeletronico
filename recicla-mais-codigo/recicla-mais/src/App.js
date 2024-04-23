@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import Container from "./components/layout/Container";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
+import TrocarSenha from "./pages/TrocarSenha";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/Cadastro" element={<Cadastro />} />
           <Route path="/Agendamento" element={<Agendamento />} />
           <Route path="/Login" element={<Login/>} />
+          <Route path="/TrocarSenha" element={<TrocarSenha/>} />
         </Routes>
       </Container>
       <Footer />
