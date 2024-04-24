@@ -1,7 +1,7 @@
 import "./TemplateSPA.css";
 import "./Agendamento.css";
 import { useState } from "react";
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import BoxEndereco from "../components/textBox/BoxEndereco";
 import BoxTitulo from "../components/textBox/BoxTitulo";
 import Caminhao from "../components/agendamento/Caminhao";
@@ -18,7 +18,7 @@ import BoxAzulTitulo from "../components/textBox/BoxAzulTitulo";
 import Seletor from "../components/seletores/Seletor";
 
 function Agendamento() {
-  const historyAgendamento = useHistory();
+  const navigate = useNavigate();
 
   // Estado para armazenar a seleção de data
   const [selectedDate, setSelectedDate] = useState("");
@@ -106,7 +106,7 @@ function Agendamento() {
     localStorage.setItem('selectedItemOptions', JSON.stringify(selectedItemOptions));
 
     // Navegar para a outra tela
-    historyAgendamento.push('/ConfirmaAgendamento');
+    navigate('/ConfirmaAgendamento');
   };
 
   return (

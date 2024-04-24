@@ -8,6 +8,7 @@ import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import  TrocarSenha from "./pages/TrocarSenha";
 import HomePage from "./pages/HomePage";
+import ConfirmaAgendamento from './pages/ConfirmaAgendamento';
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
           <Route path="/Agendamento" element={<Agendamento />} />
           <Route path="/Login" element={<Login/>} />
           <Route path="/TrocarSenha" element={<TrocarSenha/>} />
-          
+          <Route path="/ConfirmaAgendamento" element={<ConfirmaAgendamento />} />
         </Routes>
       </Container>
       <Footer />
