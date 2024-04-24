@@ -1,30 +1,46 @@
 import "./TemplateSPA.css";
 import "./Agendamento.css";
+import { useState } from "react";
 import BoxEndereco from "../components/textBox/BoxEndereco";
 import BoxTitulo from "../components/textBox/BoxTitulo";
-import Calendario from "../components/agendamento/Calendario";
-import Horario from "../components/agendamento/Horario";
 import Caminhao from "../components/agendamento/Caminhao";
 import DivSeletor from "../components/agendamento/DivSeletor";
 import BotaoAdd from "../components/buttons/BotaoAdd";
-import { useState } from "react";
 import TabelaAzul from "../components/tabelas/TabelaAzul";
 import CelulaAgendamento from "../components/tabelas/CelulaAgendamento";
 import DivPontuacaoTotal from "../components/agendamento/DivPontuaçãoTotal";
+import CelulaDados from "../components/tabelas/CelulaDados";
+import BotaoVerdeG from "../components/buttons/BotaoVerdeG";
+import BotaoRedG from "../components/buttons/BotaoRedG";
+import Input from "../components/inputs/Input";
+import BoxAzulTitulo from "../components/textBox/BoxAzulTitulo";
+import Seletor from "../components/seletores/Seletor";
 
 function Agendamento() {
-  // Estado para armazenar as seleções feitas pelo usuário
-  const [selectedOptions, setSelectedOptions] = useState([]);
-  //Estado para armazenar a seleção atual
-  const [currentSelection, setCurrentSelection] = useState({
+  // Estado para armazenar a seleção de data
+  const [selectedDate, setSelectedDate] = useState("");
+
+  // Estado para armazenar a seleção de horário
+  const [selectedHour, setSelectedHour] = useState("");
+
+  const opcoesHorario = ["", "09:00 - 11:00", "13:00 - 15:00", "15:30 - 17:30"];
+
+  const handleHourOptionChange = (e) => {
+    setSelectedHour(e.target.value);
+  };
+
+  // Estado para armazenar as seleções de itens feitas pelo usuário
+  const [selectedItemOptions, setSelectedItemOptions] = useState([]);
+  //Estado para armazenar a seleção atual de itens
+  const [currentItemSelection, setCurrentItemSelection] = useState({
     item: "",
     quantidade: "",
     qualidade: "",
   });
 
-  // Função chamada quando uma opção é alterada
-  const handleOptionChange = (option, selecaoDe) => {
-    setCurrentSelection((prevSelection) => ({
+  // Função chamada quando uma opção de item é alterada
+  const handleItemOptionChange = (option, selecaoDe) => {
+    setCurrentItemSelection((prevSelection) => ({
       ...prevSelection, // Aqui prevSelection representa o valor atual do estado currentSelection
       [selecaoDe]: option, // Atualiza a seleção atual de acordo com o tipo de seleção
     }));
@@ -32,17 +48,22 @@ function Agendamento() {
 
   // Função chamada quando o botão de adicionar é clicado
   const handleAddButtonClick = () => {
-    setSelectedOptions((prevOptions) => [...prevOptions, currentSelection]);
+    setSelectedItemOptions((prevOptions) => [
+      ...prevOptions,
+      currentItemSelection,
+    ]);
   };
 
+  // Função chamada quando o botão de remover item é clicado
   const handleRemoveButtonClick = (index) => {
-    setSelectedOptions((prevOptions) =>
+    setSelectedItemOptions((prevOptions) =>
       prevOptions.filter((option, i) => i !== index)
     );
   };
 
   const headersAgendamento = ["Item:", "Qtde.:", "Qualidade:", "Pontos:", ""];
 
+// Função para calcular os pontos de acordo com o tipo de item e a quantidade de itens selecionados
   function calculaPontos(item, quantidade) {
     let pontuacao = 0;
     switch (item) {
@@ -62,14 +83,18 @@ function Agendamento() {
       default:
         break;
     }
-     return pontuacao*quantidade;
+    return pontuacao * quantidade;
   }
 
   const calcularPontuacaoTotal = () => {
     let total = 0;
-    selectedOptions.forEach((option) => {total += calculaPontos(option.item, parseInt(option.quantidade))});
-    return total
-  }
+    selectedItemOptions.forEach((option) => {
+      total += calculaPontos(option.item, parseInt(option.quantidade));
+    });
+    return total;
+  };
+
+  const headersDados = ["Nome:", "Endereço:", "Telefone:"];
 
   return (
     <main className="mainContainer">
@@ -77,8 +102,26 @@ function Agendamento() {
         <BoxEndereco />
         <BoxTitulo text="Selecione o dia e horário disponíveis:" />
         <div className="blocoDiaHorario_calendarioHora">
-          <Calendario />
-          <Horario />
+          <div className="divData">
+            <BoxAzulTitulo texto="Data:" />
+            <Input
+              classeCSS="divData_Input"
+              labelFor="dataAgendamento"
+              type="date"
+              name="dataAgendamento"
+              id="dataAgendamento"
+              placeholder="Escolha uma data"
+              eventoOnChange={(e) => setSelectedDate(e.target.value)}
+            />
+          </div>
+          <div className="divHorario">
+            <BoxAzulTitulo texto="Horário:" />
+            <Seletor
+              classeCSS="seletorHorario"
+              opcoes={opcoesHorario}
+              eventoOnChange={handleHourOptionChange}
+            />
+          </div>
         </div>
       </div>
       <Caminhao classeCSS="caminhaoInicio" />
@@ -89,19 +132,21 @@ function Agendamento() {
           <DivSeletor
             titulo="Item"
             selecaoDe="item"
-            onOptionChange={(option) => handleOptionChange(option, "item")}
+            onOptionChange={(option) => handleItemOptionChange(option, "item")}
           />
           <DivSeletor
             titulo="Quantidade"
             selecaoDe="quantidade"
             onOptionChange={(option) =>
-              handleOptionChange(option, "quantidade")
+              handleItemOptionChange(option, "quantidade")
             }
           />
           <DivSeletor
             titulo="Qualidade"
             selecaoDe="qualidade"
-            onOptionChange={(option) => handleOptionChange(option, "qualidade")}
+            onOptionChange={(option) =>
+              handleItemOptionChange(option, "qualidade")
+            }
           />
         </div>
         <BotaoAdd evento={handleAddButtonClick} />
@@ -112,13 +157,30 @@ function Agendamento() {
           headersTabela={headersAgendamento}
           corpoTabela={
             <CelulaAgendamento
-              selectedOptions={selectedOptions}
+              selectedOptions={selectedItemOptions}
               removeOption={handleRemoveButtonClick}
               calculaPontos={calculaPontos}
             />
           }
         />
-        <DivPontuacaoTotal pontuacaoTotal={calcularPontuacaoTotal()}/>
+        <DivPontuacaoTotal pontuacaoTotal={calcularPontuacaoTotal()} />
+      </div>
+      <Caminhao classeCSS="caminhaoMeio" />
+
+      <div className="blocoConfirmeDados">
+        <BoxTitulo text="Confirme seus dados:" />
+        <div className="divTabelaDados">
+          <TabelaAzul
+            headersTabela={headersDados}
+            corpoTabela={<CelulaDados />}
+          />
+        </div>
+      </div>
+      <Caminhao classeCSS="caminhaoFim" />
+
+      <div className="divBotoesAgendamento">
+        <BotaoRedG texto="Cancelar" />
+        <BotaoVerdeG texto="Confirmar Agendamento" />
       </div>
     </main>
   );

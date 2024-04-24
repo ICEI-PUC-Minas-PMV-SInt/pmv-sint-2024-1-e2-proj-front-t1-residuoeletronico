@@ -1,7 +1,7 @@
 import { useState } from "react";
-import "./Seletor.css";
+import "./SeletorItens.css";
 
-function Seletor({ selecaoDe, onOptionChange}) {
+function SeletorItens({ selecaoDe, onOptionChange}) {
   //Estado para armazenar a opção selecionada
   const [opcaoSelecionada, setOpcaoSelecionada] = useState("");
 
@@ -53,4 +53,4 @@ function Seletor({ selecaoDe, onOptionChange}) {
   );
 }
 
-export default Seletor;
+export default SeletorItens;

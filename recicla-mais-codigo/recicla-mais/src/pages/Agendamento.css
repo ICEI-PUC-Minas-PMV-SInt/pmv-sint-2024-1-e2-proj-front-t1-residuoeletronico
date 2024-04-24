@@ -16,8 +16,29 @@
 .blocoDiaHorario_calendarioHora {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
+}
+
+.divData {
+    display: flex;
+    flex-flow: column;
+    gap: 40px;
+    width: 300px;
+}
+
+.divData_Input input{
+    width: 100%;
+    padding-left: 10px;
+    border-radius: 10px;
+    border: 1px solid gray;
+}
+
+.divHorario {
+    display: flex;
+    flex-flow: column;
+    gap: 40px;
+    width: 300px;
 }
 
 .caminhaoInicio {
@@ -51,4 +72,29 @@
 
 .itensAdicionados h1 {
     font-size: 22px;
+}
+
+.caminhaoMeio {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.blocoConfirmeDados {
+    width: 47%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.caminhaoFim {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.divBotoesAgendamento {
+    display: flex;
+    gap: 40px;
 }
