@@ -10,7 +10,7 @@ function TrocarSenha() {
         
     <main className="mainLogin">
         <div className="boxLogin">
-            <BoxTitulo text="Digite seu e-mail:"/>
+            <BoxTitulo text="Digite seu e-mail:" classeCSS="fontsize22" />
 
             <div className="divInputs">
                 <input className="inputEmail" type="text" placeholder="Email"/>
