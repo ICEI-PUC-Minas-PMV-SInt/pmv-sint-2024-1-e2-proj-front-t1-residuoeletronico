@@ -4,7 +4,9 @@ import './TemplateSPA.css'
 import './Cadastro.css'
 import BoxTitulo from '../components/textBox/BoxTitulo'
 import {IMaskInput} from 'react-imask'
+import BotaoVerdeG from '../components/buttons/BotaoVerdeG'
 
+localStorage.setItem("login1", "teste1")
 
 function Cadastro(){
     return (
@@ -79,7 +81,7 @@ function Cadastro(){
                     <section className='col_2'>
                         <p className="campoFormulario">
                             <label htmlFor='login_usuario'>
-                                <span>Login:</span>
+                                <span>Nome de usuário:</span>
                                 <strong>*</strong>
                                 <br/>
                                 <input type='text' id='login' name='login_usuario' maxLength={12}/>
@@ -109,14 +111,13 @@ function Cadastro(){
                                 <input type='password' id='check_password' name='confirmar_password_usuario' maxLength={20}/>
                             </label>
                         </p>
-                        <div className='container_btn_submit'>
-                            <button type='submit'>SALVAR</button>
-                        </div>
+                        <BotaoVerdeG texto='Salvar' />
                     </section>
                 </form>
             </div>
         </main>
     )
 }
+
 
 export default Cadastro
