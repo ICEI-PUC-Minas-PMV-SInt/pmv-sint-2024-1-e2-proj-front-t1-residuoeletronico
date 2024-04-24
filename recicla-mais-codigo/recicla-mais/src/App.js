@@ -1,12 +1,11 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import TemplateSPA from "./pages/TemplateSPA";
 import Cadastro from "./pages/Cadastro";
 import Agendamento from "./pages/Agendamento";
 import Login from './pages/Login';
 import Container from "./components/layout/Container";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
-import  TrocarSenha from "./pages/TrocarSenha";
+import TrocarSenha from "./pages/TrocarSenha";
 import HomePage from "./pages/HomePage";
 import ConfirmaAgendamento from './pages/ConfirmaAgendamento';
 

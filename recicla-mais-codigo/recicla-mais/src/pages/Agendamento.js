@@ -138,6 +138,10 @@ const handleDateChange = (e) => {
     }
   };
 
+  const handleCancelButtonClick = () => {
+    navigate("/HomePage")
+  };
+
   return (
     <main className="mainContainer">
       <div className="blocoDiaHorario">
@@ -221,7 +225,7 @@ const handleDateChange = (e) => {
       <Caminhao classeCSS="caminhaoFim" />
 
       <div className="divBotoesAgendamento">
-        <BotaoRedG texto="Cancelar" />
+        <BotaoRedG texto="Cancelar" eventoOnClick={handleCancelButtonClick} />
         <BotaoVerdeG
           texto="Confirmar Agendamento"
           eventoOnClick={handleConfirmButtonClick}
