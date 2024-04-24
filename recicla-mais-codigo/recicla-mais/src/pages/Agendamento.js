@@ -1,7 +1,7 @@
 import "./TemplateSPA.css";
 import "./Agendamento.css";
 import { useState } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import BoxEndereco from "../components/textBox/BoxEndereco";
 import BoxTitulo from "../components/textBox/BoxTitulo";
 import Caminhao from "../components/agendamento/Caminhao";
@@ -22,6 +22,14 @@ function Agendamento() {
 
   // Estado para armazenar a seleção de data
   const [selectedDate, setSelectedDate] = useState("");
+
+  // Função chamada quando a data é selecionada
+const handleDateChange = (e) => {
+  const selectedDate = e.target.value; // Obtém a data selecionada
+  const [year, month, day] = selectedDate.split("-"); // Divide a data nos componentes year, month e day
+  const formattedDate = `${day}/${month}/${year}`; // Formata a data no formato dd/mm/yyyy
+  setSelectedDate(formattedDate); // Atualiza o estado com a data formatada
+};
 
   // Estado para armazenar a seleção de horário
   const [selectedHour, setSelectedHour] = useState("");
@@ -51,10 +59,20 @@ function Agendamento() {
 
   // Função chamada quando o botão de adicionar é clicado
   const handleAddButtonClick = () => {
-    setSelectedItemOptions((prevOptions) => [
-      ...prevOptions,
-      currentItemSelection,
-    ]);
+    if (
+      !currentItemSelection.item ||
+      !currentItemSelection.quantidade ||
+      !currentItemSelection.qualidade
+    ) {
+      alert("Por favor preencha todos os campos antes de adicionar");
+      return;
+    } else {
+      //Adiciona a nova opção apenas se todos os campos estiverem preenchidos
+      setSelectedItemOptions((prevOptions) => [
+        ...prevOptions,
+        currentItemSelection,
+      ]);
+    }
   };
 
   // Função chamada quando o botão de remover item é clicado
@@ -66,7 +84,7 @@ function Agendamento() {
 
   const headersAgendamento = ["Item:", "Qtde.:", "Qualidade:", "Pontos:", ""];
 
-// Função para calcular os pontos de acordo com o tipo de item e a quantidade de itens selecionados
+  // Função para calcular os pontos de acordo com o tipo de item e a quantidade de itens selecionados
   function calculaPontos(item, quantidade) {
     let pontuacao = 0;
     switch (item) {
@@ -100,13 +118,24 @@ function Agendamento() {
   const headersDados = ["Nome:", "Endereço:", "Telefone:"];
 
   const handleConfirmButtonClick = () => {
-    // Salvar as informações no localStorage
-    localStorage.setItem('selectedDate', selectedDate);
-    localStorage.setItem('selectedHour', selectedHour);
-    localStorage.setItem('selectedItemOptions', JSON.stringify(selectedItemOptions));
+    //Verifica se algum campo está vazio
+    if (!selectedDate || !selectedHour || !selectedItemOptions) {
+      alert(
+        "Por favor preencha todas as informações necessárias para o agendamento"
+      );
+      return;
+    } else {
+      // Salvar as informações no localStorage
+      localStorage.setItem("selectedDate", selectedDate);
+      localStorage.setItem("selectedHour", selectedHour);
+      localStorage.setItem(
+        "selectedItemOptions",
+        JSON.stringify(selectedItemOptions)
+      );
 
-    // Navegar para a outra tela
-    navigate('/ConfirmaAgendamento');
+      // Navegar para a outra tela
+      navigate("/ConfirmaAgendamento");
+    }
   };
 
   return (
@@ -124,7 +153,7 @@ function Agendamento() {
               name="dataAgendamento"
               id="dataAgendamento"
               placeholder="Escolha uma data"
-              eventoOnChange={(e) => setSelectedDate(e.target.value)}
+              eventoOnChange={handleDateChange}
             />
           </div>
           <div className="divHorario">
@@ -193,7 +222,10 @@ function Agendamento() {
 
       <div className="divBotoesAgendamento">
         <BotaoRedG texto="Cancelar" />
-        <BotaoVerdeG texto="Confirmar Agendamento" eventoOnClick={handleConfirmButtonClick}/>
+        <BotaoVerdeG
+          texto="Confirmar Agendamento"
+          eventoOnClick={handleConfirmButtonClick}
+        />
       </div>
     </main>
   );

@@ -1,0 +1,21 @@
+.mainConfirmacao {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.containerConfirmacao {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    max-width: 35%;
+    border-radius: 16px;
+    background-color: #C0D4AC;
+    padding: 40px;
+}
+
+.containerConfirmacao h1 {
+    font-size: 28px;
+}
