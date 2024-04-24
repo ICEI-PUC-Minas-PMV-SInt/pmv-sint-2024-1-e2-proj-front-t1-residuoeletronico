@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import Container from "./components/layout/Container";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
+import HomePage from "./pages/HomePage";
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
       <Navbar />
       <Container customClass="alturaMinima">
         <Routes>
-          <Route exact path="/" element={<TemplateSPA />} />
+          <Route exact path="/" element={<HomePage />} />
           <Route path="/Cadastro" element={<Cadastro />} />
           <Route path="/Agendamento" element={<Agendamento />} />
           <Route path="/Login" element={<Login/>} />
