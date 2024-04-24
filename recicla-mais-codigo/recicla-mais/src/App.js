@@ -18,6 +18,7 @@ function App() {
           <Route path="/Agendamento" element={<Agendamento />} />
           <Route path="/Login" element={<Login/>} />
           <Route path="/TrocarSenha" element={<TrocarSenha/>} />
+          
         </Routes>
       </Container>
       <Footer />
