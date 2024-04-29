@@ -1,0 +1,37 @@
+main{
+    padding: 40px 0;
+}
+
+.titulo{
+    font-size: 26px;
+    display: flex;
+    margin: 0 auto;
+    width: 90%;
+    padding: 0;
+    justify-content: start;
+    align-items: center;
+}
+
+.containerCard{
+    display: flex;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.containerEndereco{
+    margin: 0 auto;
+    width: 90%;
+}
+
+.borda{
+    border: 1px solid rgb(226, 219, 219);
+}
+
+.containerNoticiaPrincipal{
+    width:60%;
+}
+
+.containerNoticiaSecundaria{
+    width: 40%;
+}
+

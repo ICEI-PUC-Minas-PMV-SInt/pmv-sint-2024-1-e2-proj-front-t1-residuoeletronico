@@ -1,0 +1,27 @@
+
+.container{
+    margin: 5px 5px;
+    width: 100%;
+    border: 1px solid rgb(226, 219, 219);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
+.imgIndicador{
+    width: 150px;
+    margin: 0 auto;
+}
+
+.numIndicador{
+    font-size: 34px;
+    margin: 10px;
+}
+
+.txtIndicador{
+    text-align: justify;
+    font-size: 22px;
+    color: #64A822;
+    margin: 10px;
+}

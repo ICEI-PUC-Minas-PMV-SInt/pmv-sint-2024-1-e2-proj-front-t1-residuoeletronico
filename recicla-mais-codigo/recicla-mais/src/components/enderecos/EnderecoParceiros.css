@@ -1,0 +1,9 @@
+.enderecos{
+    margin: 5px 5px;
+    border: 1px solid rgb(226, 219, 219);
+    width: 100%;
+}
+
+p.tituloEndereco{
+    font-weight: 700;
+}
