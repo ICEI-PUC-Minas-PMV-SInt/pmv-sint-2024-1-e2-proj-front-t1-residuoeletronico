@@ -14,7 +14,7 @@ function Navbar() {
         <Link to="/">
           Home
         </Link>
-        <Link to="">
+        <Link to="/Noticias">
           Notícias
         </Link>
         <Link to='/Agendamento'>

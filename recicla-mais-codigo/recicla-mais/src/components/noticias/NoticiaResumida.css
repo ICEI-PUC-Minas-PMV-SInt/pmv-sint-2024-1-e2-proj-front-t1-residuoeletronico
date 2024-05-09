@@ -1,0 +1,39 @@
+.borda{
+    border: 1px solid rgb(226, 219, 219);
+}
+
+.containerNoticia{
+    display: flex;
+    min-height: 200px;
+    min-width: 400px;
+}
+
+.containerImagem{
+    width: 30%;
+}
+
+.imagemNoticia{
+    width: 100%;
+    height: 100%;
+}
+
+.containerInformacoes{
+    width: 70%;
+}
+
+.containerInformacoes h2{
+    font-size: 1.4em;
+    margin: 10px 5px;
+    text-align: start;
+}
+
+.containerInformacoes p{
+    font-size: 1em;
+    margin: 10px 5px;
+}
+
+.containerInformacoes span{
+    font-size: 1em;
+    margin: 10px 5px;
+    font-size: 0.8em;
+}
