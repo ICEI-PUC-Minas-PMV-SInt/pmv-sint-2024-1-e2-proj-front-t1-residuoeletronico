@@ -22,7 +22,7 @@ function Navbar() {
         </Link>
       </div>
       <div className="navbar_usuario">
-        <Link to='/Cadastro'>
+        <Link to='/Login'>
           <img src={ImagemUsuario} alt="imagem-usuario" id="imagem_usuario"/>
         </Link>
       </div>
