@@ -1,0 +1,84 @@
+.mainNoticias{
+    padding: 40px 0;
+    display: flex;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.tituloNoticia{
+    font-size: 26px;
+    display: flex;
+    margin: 0 5px;
+    width: 100%;
+    padding: 0;
+    justify-content: start;
+    align-items: center;
+    height: 80px;
+}
+
+.borda{
+    border: 1px solid rgb(226, 219, 219);
+    margin: 5px;
+}
+
+.containerNoticias{
+    width: 70%;
+}
+
+.containerPesquisa{
+    width: 30%;
+}
+
+.containerPesquisaCategoria{
+    padding: 10px;
+}
+
+.formulario input{
+    width: 100%;
+}
+
+.formulario button{
+    width: 50%;
+    float: right;
+    margin: 10px 0;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: #4A9076;
+    color: white;
+    font-weight: bold;
+    border: none;
+}
+
+.formulario button:hover{
+    background-color: #369d77;
+}
+
+.categorias ul {
+    width: 100%;
+    padding: 0;
+    clear: both;
+}
+
+.categorias ul li {
+    list-style-type: none;
+}
+
+.categorias ul a {
+    font-size: 0.9em;
+    padding: 3px;
+    display: block;
+    line-height: 30px;
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid #ccc;
+}
+
+.categorias ul a:hover {
+    color: #425f32;
+    padding-left: 20px;
+    background:  url(../imgs/recycle.png) no-repeat left center;
+}
+
+.linkNoticia{
+    text-decoration: none;
+}

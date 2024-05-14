@@ -14,7 +14,7 @@ function Navbar() {
         <Link to="/">
           Home
         </Link>
-        <Link to="">
+        <Link to="/Noticias">
           Notícias
         </Link>
         <Link to='/Agendamento'>
@@ -22,7 +22,7 @@ function Navbar() {
         </Link>
       </div>
       <div className="navbar_usuario">
-        <Link to='/Cadastro'>
+        <Link to='/Login'>
           <img src={ImagemUsuario} alt="imagem-usuario" id="imagem_usuario"/>
         </Link>
       </div>
