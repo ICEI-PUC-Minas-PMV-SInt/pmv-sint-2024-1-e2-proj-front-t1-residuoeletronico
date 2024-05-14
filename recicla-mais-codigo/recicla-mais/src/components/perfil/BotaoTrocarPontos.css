@@ -1,0 +1,21 @@
+.botaoTrocarPontos {
+    background-color: #4A9076;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    gap: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+.botaoTrocarPontos:hover {
+    cursor: pointer;
+    box-shadow: -1px 4px 5px 0px rgba(167, 167, 167, 0.75);
+}
+
+.botaoTrocarPontos img {
+    width: 25px;
+}
