@@ -29,9 +29,15 @@ main{
 
 .containerNoticiaPrincipal{
     width:60%;
+    margin: 5px;
 }
 
 .containerNoticiaSecundaria{
     width: 40%;
+    margin: 5px;
+
+}
+.noticiaSecundaria{
+    margin: 5px;
 }
 

@@ -18,6 +18,7 @@
 
 .borda{
     border: 1px solid rgb(226, 219, 219);
+    margin: 5px;
 }
 
 .containerNoticias{
@@ -76,4 +77,8 @@
     color: #425f32;
     padding-left: 20px;
     background:  url(../imgs/recycle.png) no-repeat left center;
+}
+
+.linkNoticia{
+    text-decoration: none;
 }
