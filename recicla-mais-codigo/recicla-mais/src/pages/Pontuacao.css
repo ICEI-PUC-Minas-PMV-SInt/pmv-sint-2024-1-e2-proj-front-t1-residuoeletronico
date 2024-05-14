@@ -1,0 +1,36 @@
+.mainPontuacao {
+    display: flex;
+    justify-content: center;
+}
+
+.boxPontuacao {
+    width: 50%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    gap: 20px;    
+}
+
+.cardsParceiros {
+    display: inline-flex;
+    align-self: center;
+    justify-items: center;
+    margin-bottom: 20px;
+}
+
+.iptu,
+.ifood,
+.dotz,
+.supbh {
+    display: inline-block;
+    align-self: center;
+    padding: 30px;
+    text-align: center;
+    background-color: #BFF090;
+    border-radius: 10px;
+    margin-right: 40px;
+    font-size: large;
+    margin-bottom: 30px;
+}
