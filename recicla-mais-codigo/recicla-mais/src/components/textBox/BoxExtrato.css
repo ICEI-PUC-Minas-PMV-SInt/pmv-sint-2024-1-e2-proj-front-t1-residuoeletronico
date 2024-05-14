@@ -1,0 +1,14 @@
+.boxExtrato {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #686DA1;
+    border-radius: 16px;
+    padding: 15px 40px;
+    width: 115%;
+}
+
+.boxExtrato h1 {
+    font-size: 25px;
+    color: white;
+}
