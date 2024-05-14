@@ -12,6 +12,7 @@ import Noticias from "./pages/Noticias";
 import Perfil from "./pages/Perfil";
 import NoticiaPage from "./pages/NoticiaPage";
 import Pontuacao from "./pages/Pontuacao";
+import ConfirmaTrocaPontos from "./pages/ConfirmaTrocaPontos";
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           <Route path="/Perfil" element={<Perfil />} />
           <Route path="/NoticiaPage" element={<NoticiaPage />} />
           <Route path="/Pontuacao" element={<Pontuacao />} />
+          <Route path="/ConfirmaTrocaPontos" element={<ConfirmaTrocaPontos />} />
         </Routes>
       </Container>
       <Footer />
