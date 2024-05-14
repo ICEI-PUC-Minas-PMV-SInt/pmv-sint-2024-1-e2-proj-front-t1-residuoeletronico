@@ -9,6 +9,7 @@ import TrocarSenha from "./pages/TrocarSenha";
 import HomePage from "./pages/HomePage";
 import ConfirmaAgendamento from './pages/ConfirmaAgendamento';
 import Noticias from "./pages/Noticias";
+import Perfil from "./pages/Perfil";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/TrocarSenha" element={<TrocarSenha/>} />
           <Route path="/ConfirmaAgendamento" element={<ConfirmaAgendamento />} />
           <Route path="/Noticias" element={<Noticias />} />
+          <Route path="/Perfil" element={<Perfil />} />
         </Routes>
       </Container>
       <Footer />
