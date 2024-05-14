@@ -25,3 +25,8 @@
   justify-content: flex-end;
 }
 
+.divBotaoCancelarAgendamento {
+  display: flex;
+  justify-content: flex-end;
+}
+

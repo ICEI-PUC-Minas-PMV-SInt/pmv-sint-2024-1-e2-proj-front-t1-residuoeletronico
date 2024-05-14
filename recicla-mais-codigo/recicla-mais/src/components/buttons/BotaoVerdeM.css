@@ -1,4 +1,4 @@
-.botaoVerdeP {
+.botaoVerdeM {
   background-color: #4a9076;
   border: none;
   border-radius: 10px;
@@ -10,7 +10,7 @@
   font-weight: bold;
 }
 
-.botaoVerdeP:hover {
+.botaoVerdeM:hover {
   cursor: pointer;
   box-shadow: -1px 4px 5px 0px rgba(167, 167, 167, 0.75);
 }
