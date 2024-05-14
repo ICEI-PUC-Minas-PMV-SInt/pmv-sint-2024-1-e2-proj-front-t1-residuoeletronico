@@ -8,13 +8,11 @@ import Footer from "./components/layout/Footer";
 import TrocarSenha from "./pages/TrocarSenha";
 import HomePage from "./pages/HomePage";
 import ConfirmaAgendamento from './pages/ConfirmaAgendamento';
-<<<<<<< HEAD
-import Pontuacao from "./pages/Pontuacao";
-=======
 import Noticias from "./pages/Noticias";
 import Perfil from "./pages/Perfil";
 import NoticiaPage from "./pages/NoticiaPage";
->>>>>>> a02675e22b5370ecd272ab5cafb2a6a82ff44aa5
+import Pontuacao from "./pages/Pontuacao";
+
 
 function App() {
   return (
@@ -28,13 +26,10 @@ function App() {
           <Route path="/Login" element={<Login/>} />
           <Route path="/TrocarSenha" element={<TrocarSenha/>} />
           <Route path="/ConfirmaAgendamento" element={<ConfirmaAgendamento />} />
-<<<<<<< HEAD
-          <Route path="/Pontuacao" element={<Pontuacao />} />
-=======
           <Route path="/Noticias" element={<Noticias />} />
           <Route path="/Perfil" element={<Perfil />} />
           <Route path="/NoticiaPage" element={<NoticiaPage />} />
->>>>>>> a02675e22b5370ecd272ab5cafb2a6a82ff44aa5
+          <Route path="/Pontuacao" element={<Pontuacao />} />
         </Routes>
       </Container>
       <Footer />
