@@ -1,11 +1,12 @@
 import './CelulaConfirmacao.css'
 
 function CelulaConfirmacao(){
-const data = localStorage.getItem('selectedDate')
-const horario = localStorage.getItem('selectedHour')
+const dadosAgendamento = JSON.parse(localStorage.getItem('infoAgendamento'))
+const ultimoAgendamento = dadosAgendamento[dadosAgendamento.length - 1]
+
     return (<tr>
-<td>{data}</td>
-<td>{horario}</td>
+<td>{ultimoAgendamento.selectedDate}</td>
+<td>{ultimoAgendamento.selectedHour}</td>
 <td>R.Exemplo de Endereço, XXXX - Bairro, Belo Horizonte - MG, XXXXX-XXX</td>
     </tr>)
 }

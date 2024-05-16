@@ -24,12 +24,12 @@ function Agendamento() {
   const [selectedDate, setSelectedDate] = useState("");
 
   // Função chamada quando a data é selecionada
-const handleDateChange = (e) => {
-  const selectedDate = e.target.value; // Obtém a data selecionada
-  const [year, month, day] = selectedDate.split("-"); // Divide a data nos componentes year, month e day
-  const formattedDate = `${day}/${month}/${year}`; // Formata a data no formato dd/mm/yyyy
-  setSelectedDate(formattedDate); // Atualiza o estado com a data formatada
-};
+  const handleDateChange = (e) => {
+    const selectedDate = e.target.value; // Obtém a data selecionada
+    const [year, month, day] = selectedDate.split("-"); // Divide a data nos componentes year, month e day
+    const formattedDate = `${day}/${month}/${year}`; // Formata a data no formato dd/mm/yyyy
+    setSelectedDate(formattedDate); // Atualiza o estado com a data formatada
+  };
 
   // Estado para armazenar a seleção de horário
   const [selectedHour, setSelectedHour] = useState("");
@@ -66,12 +66,24 @@ const handleDateChange = (e) => {
     ) {
       alert("Por favor preencha todos os campos antes de adicionar");
       return;
-    } else {
       //Adiciona a nova opção apenas se todos os campos estiverem preenchidos
-      setSelectedItemOptions((prevOptions) => [
-        ...prevOptions,
-        currentItemSelection,
-      ]);
+    } else {
+      //Calcula os pontos para o novo item adicionado
+      const pontos = calculaPontos(
+        currentItemSelection.item,
+        parseInt(currentItemSelection.quantidade)
+      );
+
+      // Cria um novo objeto com todas as informações do item, incluindo os pontos
+      const newItem = {
+        item: currentItemSelection.item,
+        quantidade: currentItemSelection.quantidade,
+        qualidade: currentItemSelection.qualidade,
+        pontos: pontos,
+      };
+
+      // Adiciona o novo item às selectedItemOptions
+      setSelectedItemOptions((prevOptions) => [...prevOptions, newItem]);
     }
   };
 
@@ -125,13 +137,21 @@ const handleDateChange = (e) => {
       );
       return;
     } else {
-      // Salvar as informações no localStorage
-      localStorage.setItem("selectedDate", selectedDate);
-      localStorage.setItem("selectedHour", selectedHour);
-      localStorage.setItem(
-        "selectedItemOptions",
-        JSON.stringify(selectedItemOptions)
-      );
+      //Verifica se já existe um objeto salvo no localStorage
+      const existingInfo = JSON.parse(localStorage.getItem("infoAgendamento")) || [];
+
+      //Agrupa os dados em um único objeto
+      const infoAgendamento = {
+        selectedDate: selectedDate,
+        selectedHour: selectedHour,
+        selectedItemOptions: selectedItemOptions, 
+        pontuacaoTotal: calcularPontuacaoTotal()
+      }
+
+      const newInfo = [...existingInfo, infoAgendamento]
+
+      // Salvar o objeto contendo todas as informações no localStorage
+      localStorage.setItem('infoAgendamento', JSON.stringify(newInfo))
 
       // Navegar para a outra tela
       navigate("/ConfirmaAgendamento");
@@ -139,7 +159,7 @@ const handleDateChange = (e) => {
   };
 
   const handleCancelButtonClick = () => {
-    navigate("/HomePage")
+    navigate("/HomePage");
   };
 
   return (
