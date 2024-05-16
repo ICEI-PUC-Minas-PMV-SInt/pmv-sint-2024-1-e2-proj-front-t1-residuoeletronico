@@ -1,0 +1,21 @@
+.botaoCards {
+    width: 200px;
+    height: 350px;
+    display: flex;
+    background-color: #BFF090;
+    opacity: 80%;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+.botaoCards:hover {
+    cursor: pointer;
+}
+
+.botaoCards h1 {
+    color: black;
+    font-size: 24px;
+    margin-top: 180px;
+}

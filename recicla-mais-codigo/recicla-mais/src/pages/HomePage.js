@@ -31,14 +31,14 @@ function HomePage(){
             </div>
 
             <h2 className="titulo">Indicadores</h2>
-            <div className="borda containerCard">
+            <div className="containerCard">
                 <IndicadorCard imagem={Dado1} numero={"15386"} texto={"Itens Reciclados"} />
                 <IndicadorCard imagem={Dado2} numero={"2508"} texto={"Agendamentos Efetuados"} />
                 <IndicadorCard imagem={Dado3} numero={"1.542,742"} texto={"Pontos Trocados por Benefícios"} />
             </div>
 
             <h2 className="titulo">Veja onde fazer o descarte de pilhas e baterias em BH</h2>
-            <div className="borda containerEndereco">
+            <div className="containerEndereco">
                 <EnderecoParceiros titulo="Prodabel" contato1="Telefone: (31) 3277-4771" contato2="   Endereço: Rua José Clemente Pereira, 440, bairro Ipiranga – Belo Horizonte"/>
                 <EnderecoParceiros titulo="BH Recicla" contato1="https://bhrecicla.com.br/coleta-transporte-e-destinacao-de-residuos" contato2="Telefone: (31) 3063-0688"/>
                 <EnderecoParceiros titulo="MG Recicla" contato1="https://mgrecicla.com/" contato2="Telefone: (31) 97104-7254"/>

@@ -12,7 +12,7 @@
     justify-content: space-around;
 }
 
-section {
+.container_form section {
     display:block;
     margin: 0 40px;
     padding: 10px 20px;
