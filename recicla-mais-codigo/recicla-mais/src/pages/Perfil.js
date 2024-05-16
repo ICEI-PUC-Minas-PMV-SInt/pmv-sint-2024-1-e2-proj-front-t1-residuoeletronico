@@ -1,5 +1,6 @@
 import "./TemplateSPA.css";
 import "./Perfil.css";
+import { useState, useEffect } from "react";
 import CardNome from "../components/perfil/CardNome";
 import CardPontuacaoPerfil from "../components/perfil/CardPontuacaoPerfil";
 import BotaoTrocarPontos from "../components/perfil/BotaoTrocarPontos";
@@ -9,9 +10,18 @@ import BotaoVerdeM from "../components/buttons/BotaoVerdeM";
 import TabelaAzul from "../components/tabelas/TabelaAzul";
 
 import BotaoRedM from "../components/buttons/BotaoRedM";
+import CelulaPerfil from "../components/tabelas/CelulaPerfil";
 
 function Perfil() {
   const headersAgendamento = ["Data:", "Horário:", "Endereço:", "Itens:"];
+
+  const [agendamentos, setAgendamentos] = useState([]);
+
+  useEffect(() => {
+    const storedAgendamentos = JSON.parse(localStorage.getItem("infoAgendamento")) || [];
+    setAgendamentos(storedAgendamentos);
+  }, []);
+
   return (
     <main className="mainPerfil">
       <aside>
@@ -28,8 +38,8 @@ function Perfil() {
           </div>
         </div>
         <div className="divAgendamentoPerfil">
-          <TituloAzul titulo="Próximo agendamento:" />
-          <TabelaAzul headersTabela={headersAgendamento} />
+          <TituloAzul titulo="Próximos agendamentos:" />
+          <TabelaAzul headersTabela={headersAgendamento} corpoTabela={<CelulaPerfil agendamentos={agendamentos} />} />
           <div className="divBotaoCancelarAgendamento">
             <BotaoRedM texto='Cancelar agendamento' />
           </div>
