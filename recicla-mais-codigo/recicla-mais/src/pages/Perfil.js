@@ -18,13 +18,14 @@ function Perfil() {
   const [agendamentos, setAgendamentos] = useState([]);
 
   useEffect(() => {
-    const storedAgendamentos = JSON.parse(localStorage.getItem("infoAgendamento")) || [];
+    const storedAgendamentos =
+      JSON.parse(localStorage.getItem("infoAgendamento")) || [];
     setAgendamentos(storedAgendamentos);
   }, []);
 
-const navegarPontuacao = () => {
-  navigate("/Pontuacao")
-}
+  const navegarPontuacao = () => {
+    navigate("/Pontuacao");
+  };
 
   return (
     <main className="mainPerfil">
@@ -43,8 +44,10 @@ const navegarPontuacao = () => {
         </div>
         <div className="divAgendamentoPerfil">
           <TituloAzul titulo="Próximos agendamentos:" />
-          <TabelaAzul headersTabela={headersAgendamento} corpoTabela={<CelulaPerfil agendamentos={agendamentos} />} />
-          
+          <TabelaAzul
+            headersTabela={headersAgendamento}
+            corpoTabela={<CelulaPerfil agendamentos={agendamentos} />}
+          />
         </div>
       </section>
     </main>

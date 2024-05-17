@@ -13,29 +13,33 @@ function Login() {
   const navigate = useNavigate();
 
   const [loginData, setLoginData] = useState({ username: '', password: '' });
+  const [errorMessage, setErrorMessage] = useState('');
 
-    const change = e => {
-    setLoginData((prev) => {
-      let helper = {...prev};
-      
-      helper[`${e.target.id}`] = e.target.value;
-
-      return helper;
-
-    });
+  const dados = {
+    nome: 'Ana',
+    senha: '1234'
   }
+
+  localStorage.setItem('dados', JSON.stringify(dados));
+
+  const change = (e) => {
+    const { id, value } = e.target;
+    setLoginData((prev) => ({
+      ...prev,
+      [id]: value
+    }));
+  };
 
   const setEmailAndPassword = () => {
-    localStorage.setItem('username', loginData.username);
-    localStorage.setItem('password', loginData.password);
-    localStorage.setItem('isLoggedIn', 'true');
-    /*alert("Você ainda não é cadastrado.")*/
+    const storedData = JSON.parse(localStorage.getItem('dados'));
 
-    // Navegar para a outra tela
-    navigate("/");
-
-  }
-
+    if (loginData.username === storedData.nome && loginData.password === storedData.senha) {
+      localStorage.setItem('isLoggedIn', 'true');
+      navigate("/");
+    } else {
+      setErrorMessage('Você ainda não possui cadastro');
+    }
+  };
 
   return (
     <main className="mainLogin">
@@ -47,6 +51,8 @@ function Login() {
 
           <input onChange={change} id="password" className="inputSenha" type="text" placeholder="Senha" />
         </div>
+
+        {errorMessage && <p className="error">{errorMessage}</p>}
 
         <BotaoVerdeG texto='ENTRAR' eventoOnClick={setEmailAndPassword}/>
 
