@@ -1,4 +1,5 @@
 import "./CelulaPerfil.css";
+import BotaoRedP from "../buttons/BotaoRedP";
 
 function CelulaPerfil({ agendamentos }) {
   const renderItens = (itens) => {
@@ -16,6 +17,7 @@ function CelulaPerfil({ agendamentos }) {
             XXXXX-XXX
           </td>
           <td>{renderItens(agendamento.selectedItemOptions)}</td>
+          <td> <BotaoRedP texto='Cancelar agendamento' /> </td>
         </tr>
       ))}
     </>

@@ -1,6 +1,7 @@
 import "./TemplateSPA.css";
 import "./Perfil.css";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import CardNome from "../components/perfil/CardNome";
 import CardPontuacaoPerfil from "../components/perfil/CardPontuacaoPerfil";
 import BotaoTrocarPontos from "../components/perfil/BotaoTrocarPontos";
@@ -8,12 +9,11 @@ import TituloAzul from "../components/perfil/TituloAzul";
 import DivInfos from "../components/perfil/DivInfos";
 import BotaoVerdeM from "../components/buttons/BotaoVerdeM";
 import TabelaAzul from "../components/tabelas/TabelaAzul";
-
-import BotaoRedM from "../components/buttons/BotaoRedM";
 import CelulaPerfil from "../components/tabelas/CelulaPerfil";
 
 function Perfil() {
-  const headersAgendamento = ["Data:", "Horário:", "Endereço:", "Itens:"];
+  const navigate = useNavigate();
+  const headersAgendamento = ["Data:", "Horário:", "Endereço:", "Itens:", ""];
 
   const [agendamentos, setAgendamentos] = useState([]);
 
@@ -22,12 +22,16 @@ function Perfil() {
     setAgendamentos(storedAgendamentos);
   }, []);
 
+const navegarPontuacao = () => {
+  navigate("/Pontuacao")
+}
+
   return (
     <main className="mainPerfil">
       <aside>
         <CardNome />
         <CardPontuacaoPerfil />
-        <BotaoTrocarPontos />
+        <BotaoTrocarPontos evento={navegarPontuacao} />
       </aside>
       <section>
         <div className="divDadosPerfil">
@@ -40,9 +44,7 @@ function Perfil() {
         <div className="divAgendamentoPerfil">
           <TituloAzul titulo="Próximos agendamentos:" />
           <TabelaAzul headersTabela={headersAgendamento} corpoTabela={<CelulaPerfil agendamentos={agendamentos} />} />
-          <div className="divBotaoCancelarAgendamento">
-            <BotaoRedM texto='Cancelar agendamento' />
-          </div>
+          
         </div>
       </section>
     </main>
