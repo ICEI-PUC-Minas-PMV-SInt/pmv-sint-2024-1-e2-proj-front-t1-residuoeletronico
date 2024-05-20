@@ -1,114 +1,218 @@
-import Footer from '../components/layout/Footer'
-import Navbar from '../components/layout/Navbar'
 import './TemplateSPA.css'
 import './Cadastro.css'
 import BoxTitulo from '../components/textBox/BoxTitulo'
 import {IMaskInput} from 'react-imask'
 import BotaoVerdeG from '../components/buttons/BotaoVerdeG'
+import React, { useState } from 'react';
 
-localStorage.setItem("login1", "teste1")
+function Cadastro() {
+    const [formData, setFormData] = useState({
+        nome_completo: '',
+        data_nascimento: '',
+        numero_telefone: '',
+        numero_cpf: '',
+        endereco: '',
+        numero_cep: '',
+        login: '',
+        email: '',
+        password: '',
+        check_password: ''
+    });
 
-function Cadastro(){
+    const [errors, setErrors] = useState({});
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
+
+    const validate = () => {
+        const newErrors = {};
+        // validações de campo.
+        if (!formData.nome_completo) newErrors.nome_completo = 'Nome completo é obrigatório';
+        if (!formData.data_nascimento) newErrors.data_nascimento = 'Data de nascimento é obrigatória';
+        if (!formData.numero_telefone) newErrors.numero_telefone = 'Número de telefone é obrigatório';
+        if (!formData.numero_cpf) newErrors.numero_cpf = 'CPF é obrigatório';
+        if (!formData.endereco) newErrors.endereco = 'Endereço é obrigatório';
+        if (!formData.numero_cep) newErrors.numero_cep = 'CEP é obrigatório';
+        if (!formData.login) newErrors.login = 'Nome de usuário é obrigatório';
+        if (!formData.email) newErrors.email = 'Email é obrigatório';
+        if (!formData.password) newErrors.password = 'Senha é obrigatória';
+        if (formData.password !== formData.check_password) newErrors.check_password = 'As senhas não coincidem';
+        
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (validate()) {
+            let users = JSON.parse(localStorage.getItem('users')) || [];
+            users.push(formData);
+            localStorage.setItem('users', JSON.stringify(users));
+            alert('Usuário salvo com sucesso!');
+            setFormData({
+                nome_completo: '',
+                data_nascimento: '',
+                numero_telefone: '',
+                numero_cpf: '',
+                endereco: '',
+                numero_cep: '',
+                login: '',
+                email: '',
+                password: '',
+                check_password: ''
+            });
+        }
+    };
+
     return (
         <main>
             <div className='titulo'>
                 <BoxTitulo text='CADASTRO'/>
             </div>
-            <div className='container_form'>
-                <form>
+            <div className='containerFormulario'>
+                <form onSubmit={handleSubmit}>
                     <section className='col_1'>
                         <p className="campoFormulario">
-                            <label htmlFor='nomecompleto'>
+                            <label htmlFor='nome_completo'>
                                 <span>Nome completo:</span>
-                                <strong>*</strong>
-                                <br/>
-                                <input type='text' id='nome_completo' name='nomecompleto'/>
+                                <input
+                                    type='text'
+                                    id='nome_completo'
+                                    name='nome_completo'
+                                    value={formData.nome_completo}
+                                    onChange={handleChange}
+                                />
+                                {errors.nome_completo && <span className="error">{errors.nome_completo}</span>}
                             </label>
                         </p>
                         <p className="campoFormulario">
-                            <label htmlFor='dataNascimento'>
+                            <label htmlFor='data_nascimento'>
                                 <span>Data de Nascimento:</span>
-                                <strong>*</strong>
-                                <br/>
-                                <input type='date' id='data_nascimento' name='dataNascimento'/>
+                                <input
+                                    type='date'
+                                    id='data_nascimento'
+                                    name='data_nascimento'
+                                    maxLength={9}
+                                    value={formData.data_nascimento}
+                                    onChange={handleChange}
+                                />
+                                {errors.data_nascimento && <span className="error">{errors.data_nascimento}</span>}
                             </label>
                         </p>
                         <p className="campoFormulario">
-                            <label htmlFor='numeroTelefone'>
+                            <label htmlFor='numero_telefone'>
                                 <span>Número de telefone:</span>
-                                <strong>*</strong>
-                                <br/>
                                 <IMaskInput
                                     mask='(00) 00000-0000'
                                     placeholder='Informe o seu telefone'
-                                    name='numeroTelefone'
-                                    id='numero_telefone'/>
+                                    name='numero_telefone'
+                                    id='numero_telefone'
+                                    value={formData.numero_telefone}
+                                    onAccept={(value) => setFormData({ ...formData, numero_telefone: value })}
+                                />
+                                {errors.numero_telefone && <span className="error">{errors.numero_telefone}</span>}
                             </label>
                         </p>
                         <p className="campoFormulario">
-                            <label htmlFor='numeroCpf'>
+                            <label htmlFor='numero_cpf'>
                                 <span>CPF:</span>
-                                <strong>*</strong>
-                                <br/>
                                 <IMaskInput
                                     mask='000.000.000-00'
                                     placeholder='Informe o seu CPF'
-                                    name='numeroCpf'
-                                    id='numero_cpf'/>
+                                    name='numero_cpf'
+                                    id='numero_cpf'
+                                    value={formData.numero_cpf}
+                                    onAccept={(value) => setFormData({ ...formData, numero_cpf: value })}
+                                />
+                                {errors.numero_cpf && <span className="error">{errors.numero_cpf}</span>}
                             </label>
                         </p>
                         <p className="campoFormulario">
-                            <label htmlFor='endereco_usuario'>
+                            <label htmlFor='endereco'>
                                 <span>Endereço:</span>
-                                <strong>*</strong>
-                                <br/>
-                                <input type='text' id='endereco' name='endereco_usuario' maxLength={40}/>
+                                <input
+                                    type='text'
+                                    id='endereco'
+                                    name='endereco'
+                                    maxLength={40}
+                                    value={formData.endereco}
+                                    onChange={handleChange}
+                                />
+                                {errors.endereco && <span className="error">{errors.endereco}</span>}
                             </label>
                         </p>
                         <p className="campoFormulario">
-                            <label htmlFor='numeroCep'>
+                            <label htmlFor='numero_cep'>
                                 <span>CEP:</span>
-                                <strong>*</strong>
-                                <br/>
                                 <IMaskInput
                                     mask='00000-000'
                                     placeholder='Informe o seu CEP'
-                                    name='numeroCep'
-                                    id='numero_cep'/>
+                                    name='numero_cep'
+                                    id='numero_cep'
+                                    value={formData.numero_cep}
+                                    onAccept={(value) => setFormData({ ...formData, numero_cep: value })}
+                                />
+                                {errors.numero_cep && <span className="error">{errors.numero_cep}</span>}
                             </label>
                         </p>
                     </section>
                     <section className='col_2'>
                         <p className="campoFormulario">
-                            <label htmlFor='login_usuario'>
+                            <label htmlFor='login'>
                                 <span>Nome de usuário:</span>
-                                <strong>*</strong>
-                                <br/>
-                                <input type='text' id='login' name='login_usuario' maxLength={12}/>
+                                <input
+                                    type='text'
+                                    id='login'
+                                    name='login'
+                                    maxLength={12}
+                                    value={formData.login}
+                                    onChange={handleChange}
+                                />
+                                {errors.login && <span className="error">{errors.login}</span>}
                             </label>
                         </p>
                         <p className="campoFormulario">
-                            <label htmlFor='email_usuario'>
+                            <label htmlFor='email'>
                                 <span>Email:</span>
-                                <strong>*</strong>
-                                <br/>
-                                <input type='email' id='email' name='email_usuario' maxLength={25}/>
+                                <input
+                                    type='email'
+                                    id='email'
+                                    name='email'
+                                    maxLength={40}
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                />
+                                {errors.email && <span className="error">{errors.email}</span>}
                             </label>
                         </p>
                         <p className="campoFormulario">
-                            <label htmlFor='password_usuario'>
+                            <label htmlFor='password'>
                                 <span>Senha:</span>
-                                <strong>*</strong>
-                                <br/>
-                                <input type='password' id='password' name='password_usuario' maxLength={20}/>
+                                <input
+                                    type='password'
+                                    id='password'
+                                    name='password'
+                                    maxLength={20}
+                                    value={formData.password}
+                                    onChange={handleChange}
+                                />
+                                {errors.password && <span className="error">{errors.password}</span>}
                             </label>
                         </p>
                         <p className="campoFormulario">
-                            <label htmlFor='confirmar_password_usuario'>
+                            <label htmlFor='check_password'>
                                 <span>Confirmar senha:</span>
-                                <strong>*</strong>
-                                <br/>
-                                <input type='password' id='check_password' name='confirmar_password_usuario' maxLength={20}/>
+                                <input
+                                    type='password'
+                                    id='check_password'
+                                    name='check_password'
+                                    maxLength={20}
+                                    value={formData.check_password}
+                                    onChange={handleChange}
+                                />
+                                {errors.check_password && <span className="error">{errors.check_password}</span>}
                             </label>
                         </p>
                         <BotaoVerdeG texto='Salvar' />
@@ -116,8 +220,7 @@ function Cadastro(){
                 </form>
             </div>
         </main>
-    )
+    );
 }
 
-
-export default Cadastro
+export default Cadastro;

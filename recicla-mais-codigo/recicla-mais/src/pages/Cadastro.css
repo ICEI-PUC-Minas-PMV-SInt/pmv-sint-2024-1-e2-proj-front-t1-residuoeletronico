@@ -1,18 +1,15 @@
-.titulo {
-    display: flex;
-    justify-content: center;
-    height: 80px;
-    width: 50%;
-    margin: 0 auto;
-    padding: 15px;
-}
-
-.container_form {
+.containerFormulario {
     display: flex;
     justify-content: space-around;
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.container_form section {
+.containerFormulario section {
     display:block;
     margin: 0 40px;
     padding: 10px 20px;
@@ -31,10 +28,35 @@ section p {
     margin-bottom: 10px;
 }
 
+.campoFormulario {
+    margin-bottom: 20px;
+}
+
+.campoFormulario input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.campoFormulario input:focus {
+    border-color: #4a9076;
+    outline: none;
+    box-shadow: 0 0 8px rgba(74,144,118, 0.6);
+}
+
 .campoFormulario label input{
     width: 250px;
     border-radius: 6px;
     border: 0.5px solid #9d9d9d;
+}
+
+.campoFormulario label span {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
 .container_btn_submit{
@@ -52,7 +74,29 @@ section p {
     color: #FFF;
 }
 
+.container_btn_submit > button:hover {
+    background-color: #218838;
+}
+
 .container_btn_submit > button:hover{
     background-color: #699082;
     color: #FFF;
+}
+
+.error {
+    color: red;
+    font-size: 0.875em;
+    margin-top: 5px;
+}
+
+@media (min-width: 768px) {
+    .containerFormulario {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .col_1, .col_2 {
+        flex: 1;
+        min-width: 300px;
+        margin: 10px;
+    }
 }
