@@ -26,11 +26,40 @@
 .supbh {
     display: inline-block;
     align-self: center;
-    padding: 30px;
+    padding: 15px;
     text-align: center;
     background-color: #BFF090;
     border-radius: 10px;
-    margin-right: 40px;
-    font-size: large;
+    margin-right: 18px;
+    font-size: 15px;
     margin-bottom: 30px;
+}
+
+.iptu .card-img {
+    width: 140px;
+    height: 140px;
+}
+
+.ifood .card-img {
+    width: 140px;
+    height: 100px;
+    padding: 5px;
+    margin-bottom: 30px;
+    margin-top: 11px;
+}
+
+.dotz .card-img {
+    width: 140px;
+    height: 100px;
+    padding: 10px;
+    margin-bottom: 30px;
+    margin-top: 11px;
+} 
+
+.supbh .card-img {
+    width: 140px;
+    height: 100px;
+    padding: 15px;
+    margin-bottom: 30px;
+    margin-top: 11px;
 }

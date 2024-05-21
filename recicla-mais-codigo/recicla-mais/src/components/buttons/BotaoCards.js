@@ -1,9 +1,9 @@
 import './BotaoCards.css'
 
-function BotaoCards({texto, eventoOnClick, img}){
-    return (<button className='botaoCards' onClick={eventoOnClick}>
-        <img src={img} alt='exemplo' />
-        <h1>{texto}</h1>
+function BotaoCards({className, texto, eventoOnClick, img}){
+    return (<button className={`botao-card ${className}`} onClick={eventoOnClick}>
+        <img src={img} alt={texto} className="card-img" />
+        <p>{texto}</p>
         </button>)
 }
 
