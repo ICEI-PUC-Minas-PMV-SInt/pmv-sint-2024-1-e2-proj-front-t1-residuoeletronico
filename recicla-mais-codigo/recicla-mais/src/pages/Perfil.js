@@ -23,6 +23,16 @@ function Perfil() {
     setAgendamentos(storedAgendamentos);
   }, []);
 
+  const handleCancelarAgendamento = (index) => {
+    const updatedAgendamentos = agendamentos.filter((_, i) => i !== index);
+    setAgendamentos(updatedAgendamentos);
+    localStorage.setItem(
+      "infoAgendamento",
+      JSON.stringify(updatedAgendamentos)
+    );
+    alert("Agendamento cancelado!");
+  };
+
   const navegarPontuacao = () => {
     navigate("/Pontuacao");
   };
@@ -46,7 +56,12 @@ function Perfil() {
           <TituloAzul titulo="Próximos agendamentos:" />
           <TabelaAzul
             headersTabela={headersAgendamento}
-            corpoTabela={<CelulaPerfil agendamentos={agendamentos} />}
+            corpoTabela={
+              <CelulaPerfil
+                agendamentos={agendamentos}
+                onCancel={handleCancelarAgendamento}
+              />
+            }
           />
         </div>
       </section>
