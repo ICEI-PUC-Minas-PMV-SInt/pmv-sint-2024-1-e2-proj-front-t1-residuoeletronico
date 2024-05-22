@@ -2,7 +2,7 @@ import './CelulaExtrato.css';
 
 function CelulaExtrato({ agendamentos, calculaPontos }) {
     return (
-        <tbody>
+        <>
             {agendamentos.map((agendamento, index) => (
                 agendamento.selectedItemOptions.map((option, idx) => (
                     <tr key={`${index}-${idx}`}>
@@ -13,7 +13,7 @@ function CelulaExtrato({ agendamentos, calculaPontos }) {
                     </tr>
                 ))
             ))}
-        </tbody>
+        </>
     );
 }
 
