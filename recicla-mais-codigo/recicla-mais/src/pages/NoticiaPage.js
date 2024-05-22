@@ -1,15 +1,13 @@
 import React from "react";
 import "./NoticiaPage.css"
+import NoticiaDetalhada from "../components/noticias/NoticiaDetalhada";
 
 function NoticiaPage(){
+    const titulo = "Lorem"
     return(
-        <main className="mainNoticias">
-            <div className="containerNoticias">
-                <h2 className="tituloNoticia">Título da noticia</h2>
-                <span>Data hora</span>
-                <p>Texto</p>
-                <img src="" alt="Imagem da notícia"></img>
-                <p>Texto da notícia</p>
+        <main className="mainNoticia">
+            <div className="containerNoticias borda">
+                <NoticiaDetalhada titulo={titulo}/>
             </div>
             <div className="containerPesquisa">
                 <h2 className="tituloNoticia">Pesquisar</h2>
