@@ -4,8 +4,10 @@ import BoxTitulo from '../components/textBox/BoxTitulo'
 import {IMaskInput} from 'react-imask'
 import BotaoVerdeG from '../components/buttons/BotaoVerdeG'
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 
 function Cadastro() {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         nome_completo: '',
         data_nascimento: '',
@@ -51,6 +53,9 @@ function Cadastro() {
             users.push(formData);
             localStorage.setItem('users', JSON.stringify(users));
             alert('Usuário salvo com sucesso!');
+            setTimeout(() => {
+                navigate("/");
+            }, 3000);
             setFormData({
                 nome_completo: '',
                 data_nascimento: '',
