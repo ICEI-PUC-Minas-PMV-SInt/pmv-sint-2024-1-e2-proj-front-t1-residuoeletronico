@@ -1,6 +1,5 @@
 import './TemplateSPA.css';
 import './Pontuacao.css';
-import { Link, Navigate } from "react-router-dom";
 import TabelaAzul from "../components/tabelas/TabelaAzul";
 import BoxExtrato from '../components/textBox/BoxExtrato';
 import CelulaExtrato from '../components/tabelas/CelulaExtrato';
@@ -11,13 +10,24 @@ import IPTU from '../imgs/iptu.png';
 import ifood from '../imgs/ifood.png';
 import dotz from '../imgs/dotz.png';
 import supbh from '../imgs/supbh.png';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 
 function Pontuacao() {
 
-    const headersExtrato = ["Data", "Produto", "Pontos"];
-
     const navigate = useNavigate();
+
+    const headersExtrato = ["Data", "Quantidade", "Produto", "Pontos"];
+
+    const [agendamentos, setAgendamentos] = useState([]);
+
+    useEffect(() => {
+        const storedAgendamentos = localStorage.getItem('infoAgendamento');
+        if (storedAgendamentos) {
+            setAgendamentos(JSON.parse(storedAgendamentos));
+        }
+    }, []);
 
     const handleConfirmButtonClick = () => {
         navigate("/ConfirmaTrocaPontos")
@@ -31,7 +41,7 @@ function Pontuacao() {
                     <div className='divTabelaExtrato'>
                         <TabelaAzul 
                             headersTabela={headersExtrato}
-                            corpoTabela={<CelulaExtrato />}
+                            corpoTabela={<CelulaExtrato agendamentos={agendamentos} selectedOptions={agendamentos.selectedItemOptions} />}
                         />
                      </div>
                     <BotaoAzul texto='Você tem 5.000 Pontos' className='botaoAzul' />
