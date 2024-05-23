@@ -216,7 +216,6 @@ function Cadastro() {
                             <label htmlFor='email'>
                                 <span>Email:</span>
                                 <input
-                                    typt
                                     type='email'
                                     id='email'
                                     name='email'
