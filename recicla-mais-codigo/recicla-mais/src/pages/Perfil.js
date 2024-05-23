@@ -16,11 +16,18 @@ function Perfil() {
   const headersAgendamento = ["Data:", "Horário:", "Endereço:", "Itens:", ""];
 
   const [agendamentos, setAgendamentos] = useState([]);
+  const [dadosUsuario, setDadosUsuario] = useState({});
 
   useEffect(() => {
     const storedAgendamentos =
       JSON.parse(localStorage.getItem("infoAgendamento")) || [];
     setAgendamentos(storedAgendamentos);
+
+    const infoUsuario = JSON.parse(localStorage.getItem("users")) || [];
+    if (infoUsuario.length > 0) {
+      setDadosUsuario(infoUsuario[0]);
+    }
+    
   }, []);
 
   const handleCancelarAgendamento = (index) => {
@@ -47,7 +54,7 @@ function Perfil() {
       <section>
         <div className="divDadosPerfil">
           <TituloAzul titulo="Dados:" />
-          <DivInfos />
+          <DivInfos dados={dadosUsuario} />
           <div className="divBotaoAlterar">
             <BotaoVerdeM texto="Alterar dados" />
           </div>
@@ -60,6 +67,7 @@ function Perfil() {
               <CelulaPerfil
                 agendamentos={agendamentos}
                 onCancel={handleCancelarAgendamento}
+                endereco={dadosUsuario.endereco}
               />
             }
           />

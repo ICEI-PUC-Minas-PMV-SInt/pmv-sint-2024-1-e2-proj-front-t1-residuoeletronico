@@ -1,11 +1,11 @@
 import './DivInfos.css';
 
-function DivInfos(){
+function DivInfos({dados}){
     return (<div className='divInfos'>
-        <p>Nome:</p>
-        <p>CPF:</p>
-        <p>Data de Nascimento:</p>
-        <p>Endereço:</p>
+        <p>Nome: {dados.nome_completo}</p>
+        <p>CPF: {dados.numero_cpf}</p>
+        <p>Data de Nascimento: {dados.data_nascimento}</p>
+        <p>Endereço: {dados.endereco}</p>
     </div>)
 }
 

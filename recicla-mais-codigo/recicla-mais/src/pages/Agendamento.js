@@ -1,6 +1,6 @@
 import "./TemplateSPA.css";
 import "./Agendamento.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import BoxEndereco from "../components/textBox/BoxEndereco";
 import BoxTitulo from "../components/textBox/BoxTitulo";
@@ -19,6 +19,16 @@ import Seletor from "../components/seletores/Seletor";
 
 function Agendamento() {
   const navigate = useNavigate();
+
+  //Estado para armazenar dados do usuário recuperados do localStorage
+  const [dadosUsuario, setDadosUsuario] = useState({});
+
+  useEffect(() => {
+    const infoUsuario = JSON.parse(localStorage.getItem("users")) || [];
+    if (infoUsuario.length > 0) {
+      setDadosUsuario(infoUsuario[0]);
+    }
+  }, [])
 
   // Estado para armazenar a seleção de data
   const [selectedDate, setSelectedDate] = useState("");
@@ -238,7 +248,7 @@ function Agendamento() {
         <div className="divTabelaDados">
           <TabelaAzul
             headersTabela={headersDados}
-            corpoTabela={<CelulaDados />}
+            corpoTabela={<CelulaDados dados={dadosUsuario}/>}
           />
         </div>
       </div>

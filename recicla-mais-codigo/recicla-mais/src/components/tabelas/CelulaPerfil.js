@@ -1,7 +1,7 @@
 import "./CelulaPerfil.css";
 import BotaoRedP from "../buttons/BotaoRedP";
 
-function CelulaPerfil({ agendamentos, onCancel }) {
+function CelulaPerfil({ agendamentos, onCancel, endereco }) {
   const renderItens = (itens) => {
     return itens.map((item) => `${item.quantidade}x ${item.item}`).join(",");
   };
@@ -13,8 +13,7 @@ function CelulaPerfil({ agendamentos, onCancel }) {
           <td>{agendamento.selectedDate}</td>
           <td>{agendamento.selectedHour}</td>
           <td>
-            R. Exemplo de Endereço, XXXX - Bairro, Belo Horizonte - MG,
-            XXXXX-XXX
+            {endereco}
           </td>
           <td>{renderItens(agendamento.selectedItemOptions)}</td>
           <td> <BotaoRedP texto='Cancelar agendamento' eventoOnClick={() => onCancel(index)} /> </td>
