@@ -1,7 +1,7 @@
 import './TemplateSPA.css'
 import './Cadastro.css'
 import BoxTitulo from '../components/textBox/BoxTitulo'
-import {IMaskInput} from 'react-imask'
+import { IMaskInput } from 'react-imask'
 import BotaoVerdeG from '../components/buttons/BotaoVerdeG'
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
@@ -45,7 +45,7 @@ function Cadastro() {
         if (!formData.email) newErrors.email = 'Email é obrigatório';
         if (!formData.password) newErrors.password = 'Senha é obrigatória';
         if (formData.password !== formData.check_password) newErrors.check_password = 'As senhas não coincidem';
-        
+
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
     };
@@ -80,7 +80,7 @@ function Cadastro() {
     return (
         <main>
             <div className='titulo'>
-                <BoxTitulo text='CADASTRO'/>
+                <BoxTitulo text='CADASTRO' />
             </div>
             <div className='containerFormulario'>
                 <form onSubmit={handleSubmit}>
