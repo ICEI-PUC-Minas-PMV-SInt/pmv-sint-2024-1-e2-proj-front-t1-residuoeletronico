@@ -12,32 +12,32 @@ function Login() {
 
   const navigate = useNavigate();
 
-  const [loginData, setLoginData] = useState({ username: '', password: '' });
-  const [errorMessage, setErrorMessage] = useState('');
+  const [formData, setFormData] = useState({
+    login: '',
+    password: ''
+  });
 
-  const dados = {
-    nome: 'Ana',
-    senha: '1234'
-  }
+  const [error, setError] = useState('');
 
-  localStorage.setItem('dados', JSON.stringify(dados));
-
-  const change = (e) => {
-    const { id, value } = e.target;
-    setLoginData((prev) => ({
-      ...prev,
-      [id]: value
-    }));
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   };
 
-  const setEmailAndPassword = () => {
-    const storedData = JSON.parse(localStorage.getItem('dados'));
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const users = JSON.parse(localStorage.getItem('users')) || [];
 
-    if (loginData.username === storedData.nome && loginData.password === storedData.senha) {
-      localStorage.setItem('isLoggedIn', 'true');
-      navigate("/");
+    const { username, password } = formData;
+    const user = users.find(user => user.username == username && user.password == password);
+    console.log(user)
+
+    if (user) {
+      localStorage.setItem('loggedIn', '1'); // Define a chave 'loggedIn' como '1' para indicar que o usuário está logado
+      localStorage.setItem('currentUser', JSON.stringify(user)); // Armazena os dados do usuário atual para uso posterior
+      navigate('/'); // Redireciona para a página de home
     } else {
-      setErrorMessage('Você ainda não possui cadastro');
+      setError('Usuário ou senha inválidos');
     }
   };
 
@@ -46,15 +46,14 @@ function Login() {
       <div className="boxLogin">
         <BoxTitulo text="LOGIN" />
 
+
         <div className="divInputs">
-          <input onChange={change} id="username" className="inputEmail" type="text" placeholder="Email" />
+          <input onChange={handleChange} id="login" value={formData.username} name="username" className="inputEmail" type="text" placeholder="Email" />
 
-          <input onChange={change} id="password" className="inputSenha" type="text" placeholder="Senha" />
+          <input onChange={handleChange} id="password" value={formData.password} name="password" className="inputSenha" type="password" placeholder="Senha" />
         </div>
-
-        {errorMessage && <p className="error">{errorMessage}</p>}
-
-        <BotaoVerdeG texto='ENTRAR' eventoOnClick={setEmailAndPassword}/>
+        {error && <div>{error}</div>}
+        <BotaoVerdeG texto='ENTRAR' eventoOnClick={handleLogin} />
 
         <div className="link">
           <Link to="/Cadastro">
