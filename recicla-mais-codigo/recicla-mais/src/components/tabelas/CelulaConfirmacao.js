@@ -4,7 +4,7 @@ function CelulaConfirmacao({dados}){
 const dadosAgendamento = JSON.parse(localStorage.getItem('infoAgendamento'))
 const ultimoAgendamento = dadosAgendamento[dadosAgendamento.length - 1]
 
-    return (<tr>
+    return (<tr className='celulaConfirmacao'>
 <td>{ultimoAgendamento.selectedDate}</td>
 <td>{ultimoAgendamento.selectedHour}</td>
 <td>{dados.endereco}</td>
