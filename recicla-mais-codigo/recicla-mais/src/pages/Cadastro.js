@@ -13,9 +13,11 @@ function Cadastro() {
         data_nascimento: '',
         numero_telefone: '',
         numero_cpf: '',
-        endereco: '',
+        rua: '',
+        numero_casa: '',
+        bairro: '',
         numero_cep: '',
-        login: '',
+        username: '',
         email: '',
         password: '',
         check_password: ''
@@ -35,9 +37,11 @@ function Cadastro() {
         if (!formData.data_nascimento) newErrors.data_nascimento = 'Data de nascimento é obrigatória';
         if (!formData.numero_telefone) newErrors.numero_telefone = 'Número de telefone é obrigatório';
         if (!formData.numero_cpf) newErrors.numero_cpf = 'CPF é obrigatório';
-        if (!formData.endereco) newErrors.endereco = 'Endereço é obrigatório';
+        if (!formData.rua) newErrors.rua = 'Nome da rua é obrigatório';
+        if (!formData.numero_casa) newErrors.numero_casa = 'Número da residência é obrigatório';
+        if (!formData.bairro) newErrors.bairro = 'Nome do bairro é obrigatório';
         if (!formData.numero_cep) newErrors.numero_cep = 'CEP é obrigatório';
-        if (!formData.login) newErrors.login = 'Nome de usuário é obrigatório';
+        if (!formData.username) newErrors.username = 'Nome de usuário é obrigatório';
         if (!formData.email) newErrors.email = 'Email é obrigatório';
         if (!formData.password) newErrors.password = 'Senha é obrigatória';
         if (formData.password !== formData.check_password) newErrors.check_password = 'As senhas não coincidem';
@@ -61,9 +65,11 @@ function Cadastro() {
                 data_nascimento: '',
                 numero_telefone: '',
                 numero_cpf: '',
-                endereco: '',
+                rua: '',
+                numero_casa: '',
+                bairro: '',
                 numero_cep: '',
-                login: '',
+                username: '',
                 email: '',
                 password: '',
                 check_password: ''
@@ -135,17 +141,45 @@ function Cadastro() {
                             </label>
                         </p>
                         <p className="campoFormulario">
-                            <label htmlFor='endereco'>
-                                <span>Endereço:</span>
+                            <label htmlFor='rua'>
+                                <span>Rua:</span>
                                 <input
                                     type='text'
-                                    id='endereco'
-                                    name='endereco'
+                                    id='rua'
+                                    name='rua'
                                     maxLength={40}
-                                    value={formData.endereco}
+                                    value={formData.rua}
                                     onChange={handleChange}
                                 />
-                                {errors.endereco && <span className="error">{errors.endereco}</span>}
+                                {errors.rua && <span className="error">{errors.rua}</span>}
+                            </label>
+                        </p>
+                        <p className="campoFormulario">
+                            <label htmlFor='numero'>
+                                <span>Número:</span>
+                                <input
+                                    type='text'
+                                    id='numero'
+                                    name='numero'
+                                    maxLength={10}
+                                    value={formData.numero}
+                                    onChange={handleChange}
+                                />
+                                {errors.numero_casa && <span className="error">{errors.numero_casa}</span>}
+                            </label>
+                        </p>
+                        <p className="campoFormulario">
+                            <label htmlFor='bairro'>
+                                <span>Bairro:</span>
+                                <input
+                                    type='text'
+                                    id='bairro'
+                                    name='bairro'
+                                    maxLength={40}
+                                    value={formData.bairro}
+                                    onChange={handleChange}
+                                />
+                                {errors.bairro && <span className="error">{errors.bairro}</span>}
                             </label>
                         </p>
                         <p className="campoFormulario">
@@ -165,23 +199,24 @@ function Cadastro() {
                     </section>
                     <section className='col_2'>
                         <p className="campoFormulario">
-                            <label htmlFor='login'>
+                            <label htmlFor='username'>
                                 <span>Nome de usuário:</span>
                                 <input
                                     type='text'
-                                    id='login'
-                                    name='login'
+                                    id='username'
+                                    name='username'
                                     maxLength={12}
                                     value={formData.login}
                                     onChange={handleChange}
                                 />
-                                {errors.login && <span className="error">{errors.login}</span>}
+                                {errors.username && <span className="error">{errors.username}</span>}
                             </label>
                         </p>
                         <p className="campoFormulario">
                             <label htmlFor='email'>
                                 <span>Email:</span>
                                 <input
+                                    typt
                                     type='email'
                                     id='email'
                                     name='email'
