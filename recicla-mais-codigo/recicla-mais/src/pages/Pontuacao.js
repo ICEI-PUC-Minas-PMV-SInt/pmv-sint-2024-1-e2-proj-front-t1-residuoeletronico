@@ -11,6 +11,8 @@ import ifood from '../imgs/ifood.png';
 import dotz from '../imgs/dotz.png';
 import supbh from '../imgs/supbh.png';
 import { useEffect, useState } from 'react';
+import CardPontuacaoPerfil from "../components/perfil/CardPontuacaoPerfil";
+
 
 function Pontuacao() {
     const navigate = useNavigate();
@@ -62,7 +64,7 @@ function Pontuacao() {
                                     />}
                     />
                 </div>
-                <BotaoAzul texto='Você tem 5.000 Pontos' className='botaoAzul' />
+                <CardPontuacaoPerfil />
                 <br />
                 <br />
                 <BoxExtrato text='Trocar os Pontos' />
