@@ -155,13 +155,13 @@ function Cadastro() {
                             </label>
                         </p>
                         <p className="campoFormulario">
-                            <label htmlFor='numero'>
+                            <label htmlFor='numero_casa'>
                                 <span>Número:</span>
                                 <input
-                                    type='text'
-                                    id='numero'
-                                    name='numero'
-                                    maxLength={10}
+                                    type='number'
+                                    id='numero_casa'
+                                    name='numero_casa'
+                                    maxLength={6}
                                     value={formData.numero}
                                     onChange={handleChange}
                                 />
