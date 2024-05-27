@@ -8,6 +8,7 @@ import BotaoTrocarPontos from "../components/perfil/BotaoTrocarPontos";
 import TituloAzul from "../components/perfil/TituloAzul";
 import DivInfos from "../components/perfil/DivInfos";
 import BotaoVerdeM from "../components/buttons/BotaoVerdeM";
+import BotaoRedM from "../components/buttons/BotaoRedM";
 import TabelaAzul from "../components/tabelas/TabelaAzul";
 import CelulaPerfil from "../components/tabelas/CelulaPerfil";
 
@@ -44,10 +45,18 @@ function Perfil() {
     navigate("/Pontuacao");
   };
 
+  const handleLogout = () => {
+    localStorage.setItem('loggedIn', '0'); // Define a chave 'loggedIn' como '0' para indicar que o usuário está deslogado
+    navigate('/'); // Redireciona para a página inicial
+  };
+
   return (
     <main className="mainPerfil">
       <aside>
         <CardNome />
+        <div className="divBotaoLogout">
+            <BotaoRedM texto="Logout" evento={handleLogout} />
+        </div>
         <CardPontuacaoPerfil />
         <BotaoTrocarPontos evento={navegarPontuacao} />
       </aside>
