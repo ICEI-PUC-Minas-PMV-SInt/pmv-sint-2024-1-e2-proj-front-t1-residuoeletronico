@@ -68,7 +68,7 @@ function Pontuacao() {
                 <BoxExtrato text='Trocar os Pontos' />
                 <div className='cardsParceiros'>
                     <BotaoCards className='iptu' texto='R$200,00 a cada 1.000 pontos'
-                        eventoOnClick={() => handleConfirmButtonClick('R$100,00 de desconto no IPTU')} img={IPTU} />
+                        eventoOnClick={() => handleConfirmButtonClick('R$200,00 de desconto no IPTU')} img={IPTU} />
                     <BotaoCards className='ifood' texto='R$80,00 a cada 400 pontos' 
                         eventoOnClick={() => handleConfirmButtonClick('R$80,00 de crédito com o iFood')} img={ifood} />
                     <BotaoCards className='dotz' texto='R$60,00 a cada 300 pontos'
