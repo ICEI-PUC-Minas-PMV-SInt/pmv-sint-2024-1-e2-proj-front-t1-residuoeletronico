@@ -24,11 +24,10 @@ function Perfil() {
       JSON.parse(localStorage.getItem("infoAgendamento")) || [];
     setAgendamentos(storedAgendamentos);
 
-    const infoUsuario = JSON.parse(localStorage.getItem("users")) || [];
-    if (infoUsuario.length > 0) {
-      setDadosUsuario(infoUsuario[0]);
+    const infoUsuarioAtual = JSON.parse(localStorage.getItem("currentUser")) || {};
+    if (Object.keys(infoUsuarioAtual).length > 0) {
+      setDadosUsuario(infoUsuarioAtual);
     }
-    
   }, []);
 
   const handleCancelarAgendamento = (index) => {
@@ -46,19 +45,20 @@ function Perfil() {
   };
 
   const handleLogout = () => {
-    localStorage.setItem('loggedIn', '0'); // Define a chave 'loggedIn' como '0' para indicar que o usuário está deslogado
-    navigate('/'); // Redireciona para a página inicial
+    localStorage.setItem("loggedIn", "0"); // Define a chave 'loggedIn' como '0' para indicar que o usuário está deslogado
+    navigate("/"); // Redireciona para a página inicial
   };
 
   return (
     <main className="mainPerfil">
       <aside>
         <CardNome />
-        <div className="divBotaoLogout">
-            <BotaoRedM texto="Logout" evento={handleLogout} />
-        </div>
+
         <CardPontuacaoPerfil />
         <BotaoTrocarPontos evento={navegarPontuacao} />
+        <div className="divBotaoLogout">
+          <BotaoRedM texto="Logout" evento={handleLogout} />
+        </div>
       </aside>
       <section>
         <div className="divDadosPerfil">
@@ -76,7 +76,7 @@ function Perfil() {
               <CelulaPerfil
                 agendamentos={agendamentos}
                 onCancel={handleCancelarAgendamento}
-                endereco={dadosUsuario.endereco}
+                endereco={dadosUsuario}
               />
             }
           />

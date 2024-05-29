@@ -17,6 +17,15 @@ function Navbar() {
     }
   };
 
+  const handleAgendamentoClick = () => {
+    const isLoggedIn = localStorage.getItem('loggedIn') === '1';
+    if (isLoggedIn) {
+      navigate('/Agendamento');
+    } else {
+      navigate('/Login');
+    }
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar_logo">
@@ -25,7 +34,7 @@ function Navbar() {
       <div className="navbar_links">
         <Link to="/">Home</Link>
         <Link to="/Noticias">Notícias</Link>
-        <Link to='/Agendamento'>Agendamento</Link>
+        <a href="#" onClick={handleAgendamentoClick}>Agendamento</a>
       </div>
       <div className="navbar_usuario">
         <img 

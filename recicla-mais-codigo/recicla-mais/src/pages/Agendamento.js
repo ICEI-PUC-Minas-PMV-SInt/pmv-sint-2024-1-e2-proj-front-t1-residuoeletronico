@@ -24,9 +24,9 @@ function Agendamento() {
   const [dadosUsuario, setDadosUsuario] = useState({});
 
   useEffect(() => {
-    const infoUsuario = JSON.parse(localStorage.getItem("users")) || [];
-    if (infoUsuario.length > 0) {
-      setDadosUsuario(infoUsuario[0]);
+    const infoUsuarioAtual = JSON.parse(localStorage.getItem("currentUser")) || {};
+    if (Object.keys(infoUsuarioAtual).length > 0) {
+      setDadosUsuario(infoUsuarioAtual);
     }
   }, [])
 

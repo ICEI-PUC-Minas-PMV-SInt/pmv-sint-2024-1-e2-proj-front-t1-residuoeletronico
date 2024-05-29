@@ -27,7 +27,14 @@ function Cadastro() {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
+
+        if (name === 'data_nascimento') {
+            const [year, month, day] = value.split("-");
+            const formattedDate = `${day}/${month}/${year}`;
+            setFormData({ ...formData, [name]: formattedDate });
+        } else {
+            setFormData({ ...formData, [name]: value });
+        }
     };
 
     const validate = () => {
