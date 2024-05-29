@@ -18,6 +18,8 @@ function Perfil() {
 
   const [agendamentos, setAgendamentos] = useState([]);
   const [dadosUsuario, setDadosUsuario] = useState({});
+  const [isEditing, setIsEditing] = useState(false);
+  const [editData, setEditData] = useState({});
 
   useEffect(() => {
     const storedAgendamentos =
@@ -27,6 +29,7 @@ function Perfil() {
     const infoUsuarioAtual = JSON.parse(localStorage.getItem("currentUser")) || {};
     if (Object.keys(infoUsuarioAtual).length > 0) {
       setDadosUsuario(infoUsuarioAtual);
+      setEditData(infoUsuarioAtual);
     }
   }, []);
 
@@ -45,8 +48,31 @@ function Perfil() {
   };
 
   const handleLogout = () => {
-    localStorage.setItem("loggedIn", "0"); // Define a chave 'loggedIn' como '0' para indicar que o usuário está deslogado
-    navigate("/"); // Redireciona para a página inicial
+    localStorage.setItem("loggedIn", "0");
+    navigate("/");
+  };
+
+  const handleEditButtonClick = () => {
+    setIsEditing(true);
+  };
+
+  const handleSaveButtonClick = () => {
+    setIsEditing(false);
+    setDadosUsuario(editData);
+
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    const updatedUsers = users.map(user =>
+      user.username === dadosUsuario.username ? editData : user
+    );
+    localStorage.setItem("users", JSON.stringify(updatedUsers));
+    localStorage.setItem("currentUser", JSON.stringify(editData));
+
+    alert("Dados atualizados com sucesso!");
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setEditData({ ...editData, [name]: value });
   };
 
   return (
@@ -63,9 +89,13 @@ function Perfil() {
       <section>
         <div className="divDadosPerfil">
           <TituloAzul titulo="Dados:" />
-          <DivInfos dados={dadosUsuario} />
+          <DivInfos dados={dadosUsuario} isEditing={isEditing} handleChange={handleChange} editData={editData} />
           <div className="divBotaoAlterar">
-            <BotaoVerdeM texto="Alterar dados" />
+            {isEditing ? (
+              <BotaoVerdeM texto="Salvar" evento={handleSaveButtonClick} />
+            ) : (
+              <BotaoVerdeM texto="Alterar dados" evento={handleEditButtonClick} />
+            )}
           </div>
         </div>
         <div className="divAgendamentoPerfil">
