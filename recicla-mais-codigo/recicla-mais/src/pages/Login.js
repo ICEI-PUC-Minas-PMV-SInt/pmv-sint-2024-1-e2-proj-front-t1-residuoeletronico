@@ -48,7 +48,7 @@ function Login() {
 
 
         <div className="divInputs">
-          <input onChange={handleChange} id="login" value={formData.username} name="username" className="inputEmail" type="text" placeholder="Email" />
+          <input onChange={handleChange} id="login" value={formData.username} name="username" className="inputEmail" type="text" placeholder="Nome de Usuário" />
 
           <input onChange={handleChange} id="password" value={formData.password} name="password" className="inputSenha" type="password" placeholder="Senha" />
         </div>
