@@ -142,7 +142,7 @@ function FaleConosco() {
             />
           </div>
           <div className="botao">
-            <BotaoVerdeG texto="Enviar" eventoOnClick={handleSubmit} />
+            <BotaoVerdeG texto="ENVIAR" eventoOnClick={handleSubmit} />
           </div>
         </div>
         <div className="QuemSomos">
