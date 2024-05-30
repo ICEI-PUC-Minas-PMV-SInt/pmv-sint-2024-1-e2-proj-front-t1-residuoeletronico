@@ -85,7 +85,7 @@ function ConfirmacaoEmail() {
 
       <div className="QuemSomos">
         <h1>Quem somos nós?</h1>
-        <h2>
+        <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis
           auctor tellus ut pretium. Phasellus lacus enim, volutpat eget
           efficitur quis, accumsan eget lorem. Etiam orci leo, bibendum eget
@@ -100,7 +100,7 @@ function ConfirmacaoEmail() {
           fermentum odio. Praesent congue vitae enim id eleifend. Etiam odio
           justo, commodo quis congue sit amet, porta sed mi. Proin gravida
           luctus sem in laoreet.
-        </h2>
+        </p>
       </div>
       </div>
       </main>
