@@ -26,7 +26,7 @@ function Footer() {
           <p id='copyright'>Copyright &copy;2023 ReciclaMais</p>
         </span>
       </div>
-      <Link to=''><img src={FaleConosco} alt='fale-conosco' id='fale_conosco'/></Link>
+      <Link to='/FaleConosco'><img src={FaleConosco} alt='fale-conosco' id='fale_conosco'/></Link>
     </footer>
   );
 }

@@ -9,6 +9,11 @@ import TrocarSenha from "./pages/TrocarSenha";
 import HomePage from "./pages/HomePage";
 import ConfirmaAgendamento from './pages/ConfirmaAgendamento';
 import Noticias from "./pages/Noticias";
+import FaleConosco from "./pages/FaleConosco";
+import ConfirmacaoEmail from "./pages/ConfirmacaoEmail";
+
+//import react boostrap
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
@@ -23,6 +28,8 @@ function App() {
           <Route path="/TrocarSenha" element={<TrocarSenha/>} />
           <Route path="/ConfirmaAgendamento" element={<ConfirmaAgendamento />} />
           <Route path="/Noticias" element={<Noticias />} />
+          <Route path="/FaleConosco" element={<FaleConosco />} />
+          <Route path="/ConfirmacaoEmail" element={<ConfirmacaoEmail/>} />
         </Routes>
       </Container>
       <Footer />

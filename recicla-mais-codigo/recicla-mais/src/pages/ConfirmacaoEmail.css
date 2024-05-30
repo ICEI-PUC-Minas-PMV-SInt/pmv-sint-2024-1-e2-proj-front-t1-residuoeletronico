@@ -1,0 +1,85 @@
+.mainFaleConosco {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;   
+}
+
+
+.Perguntas{
+    width: 60%;
+   display: block;
+   padding: 10px;
+   background-color: #f0f0f0;
+}
+
+.EmailEnviado{
+    width: 40%;
+    flex-direction: column;
+   
+}
+.BoxEmailEnviado{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    border-radius: 10px;
+    background-color: #C0D4AC;
+    padding: 10px;
+    margin-top: 5rem;
+    margin-bottom: 25rem;
+    
+   
+}
+.BoxEmailEnviado h1 {
+    font-size: 28px;
+}
+.QuemSomos{
+    background-color: #D3D3D3;
+    width: 98.3%;
+    display: flex;
+    flex-flow: column;
+    align-items: baseline;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 60px 80px;
+  
+}
+.QuemSomos h1{
+    align-items: center;
+     font-weight: bolder;
+}
+.QuemSomos h2{
+    align-items: center;
+    padding: 1px;
+    
+}
+
+.accordion-button{
+    background-color:#686DA1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 2px;
+    font-size: 1rem;
+    color: #ffffff;
+    text-align: left;
+    border: 0;
+    border-radius: 0;
+    overflow-anchor: none;
+    transition: #ffffff;
+}
+.accordion {
+    border: #D3D3D3;
+ 
+}
+.Frequentes h2{
+color: #686DA1;
+}
+.Frequentes hr{
+    
+    border: none; /* Remove qualquer borda padrão */
+    height: 3px; /* Define a espessura da linha */
+    background-color:  #686DA1; /* Define a cor da linha */
+    margin: 20px 0;
+}

@@ -1,0 +1,89 @@
+.mainFaleConosco {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;   
+}
+
+.Perguntas{
+    width: 60%;
+   display: block;
+   padding: 10px;
+   background-color: #f0f0f0;
+}
+
+.FaleConosco{
+    width: 40%;
+}
+
+.botao{
+    display:flex;
+    width: 100%;
+    justify-content: end;
+}
+
+.boxFaleConosco {
+    background-color: #D3D3D3;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 1px;
+    padding: 30px 80px;
+    gap: 50px; 
+    border-radius: 10px;
+    margin-bottom: 5rem ;
+}
+
+.divInputs{
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    gap: 25px;
+}
+
+.QuemSomos{
+    background-color: #D3D3D3;
+    width: 80%;
+    display: flex;
+    flex-flow: column;
+    align-items: baseline;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 60px 80px;
+    gap: 40px;
+}
+.QuemSomos h1{
+    align-items: center;
+    
+
+}
+.accordion-button{
+    background-color:#686DA1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 95%;
+    padding: 2px;
+    font-size: 1rem;
+    color: #ffffff;
+    text-align: left;
+    border: 0;
+    border-radius: 0;
+    overflow-anchor: none;
+    transition: #ffffff;
+}
+.accordion {
+    border: #D3D3D3;
+ 
+}
+.Frequentes h2{
+    color: #686DA1;
+    }
+
+.Frequentes hr{
+        
+    border: none; /* Remove qualquer borda padrão */
+    height: 3px; /* Define a espessura da linha */
+    background-color:  #686DA1; /* Define a cor da linha */
+    margin: 20px 0;
+    }
