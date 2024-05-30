@@ -4,8 +4,8 @@ import NoticiaResumida from "../components/noticias/NoticiaResumida";
 import Coleta1 from "../imgs/coleta1.png";
 import Coleta2 from "../imgs/coleta2.png";
 import Coleta3 from "../imgs/coleta3.png";
-import Recycle from "../imgs/recycle.png"
-
+import { Link } from "react-router-dom";
+import NoticiaPage from "./NoticiaPage";
 
 function Noticias(){
     const titulo = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
@@ -18,12 +18,24 @@ function Noticias(){
         <main className="mainNoticias">
             <div className="containerNoticias">
                 <h2 className="tituloNoticia">Notícias</h2>
-                <NoticiaResumida imagem={Coleta1} titulo={titulo} descricao={descricao} dataHora={dataHora} hashtag={hastag1}/>
-                <NoticiaResumida imagem={Coleta2} titulo={titulo} descricao={descricao} dataHora={dataHora} hashtag={hastag2}/>
-                <NoticiaResumida imagem={Coleta3} titulo={titulo} descricao={descricao} dataHora={dataHora} hashtag={hastag3}/>
-                <NoticiaResumida imagem={Coleta1} titulo={titulo} descricao={descricao} dataHora={dataHora} hashtag={hastag1}/>
-                <NoticiaResumida imagem={Coleta2} titulo={titulo} descricao={descricao} dataHora={dataHora} hashtag={hastag3}/>
-                <NoticiaResumida imagem={Coleta3} titulo={titulo} descricao={descricao} dataHora={dataHora} hashtag={hastag2}/>
+                <Link className="linkNoticia" to='/NoticiaPage'>
+                    <NoticiaResumida imagem={Coleta1} titulo={titulo} descricao={descricao} dataHora={dataHora} hashtag={hastag1}/>
+                </Link>
+                <Link className="linkNoticia" to='/NoticiaPage'>
+                    <NoticiaResumida imagem={Coleta2} titulo={titulo} descricao={descricao} dataHora={dataHora} hashtag={hastag2}/>
+                </Link>
+                <Link className="linkNoticia" to='/NoticiaPage'>
+                    <NoticiaResumida imagem={Coleta3} titulo={titulo} descricao={descricao} dataHora={dataHora} hashtag={hastag3}/>
+                </Link>
+                <Link className="linkNoticia" to='/NoticiaPage'>
+                    <NoticiaResumida imagem={Coleta1} titulo={titulo} descricao={descricao} dataHora={dataHora} hashtag={hastag1}/>
+                </Link>
+                <Link className="linkNoticia" to='/NoticiaPage'>
+                    <NoticiaResumida imagem={Coleta2} titulo={titulo} descricao={descricao} dataHora={dataHora} hashtag={hastag3}/>
+                </Link>
+                <Link className="linkNoticia" to='/NoticiaPage'>
+                    <NoticiaResumida imagem={Coleta3} titulo={titulo} descricao={descricao} dataHora={dataHora} hashtag={hastag2}/>
+                </Link>
             </div>
             <div className="containerPesquisa">
                 <h2 className="tituloNoticia">Pesquisar</h2>

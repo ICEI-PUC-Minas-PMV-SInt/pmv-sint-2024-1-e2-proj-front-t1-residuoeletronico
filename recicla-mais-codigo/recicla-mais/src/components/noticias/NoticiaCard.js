@@ -3,7 +3,7 @@ import "./NoticiaCard.css"
 
 function NoticiaCard(props){
     return(
-        <div>
+        <div className="divNoticia">
             <img src={props.imagem} className="imgCard"/>
             <p className="pCard">
                 {props.texto}

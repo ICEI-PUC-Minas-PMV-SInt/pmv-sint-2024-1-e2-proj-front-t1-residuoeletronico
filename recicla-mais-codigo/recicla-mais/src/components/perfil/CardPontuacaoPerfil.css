@@ -1,0 +1,17 @@
+.cardPontuacaoPerfil {
+    background-color: #686DA1;
+    border-radius: 16px;
+    padding: 15px 50px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.cardPontuacaoPerfil h1{
+    color: white;
+    font-size: 28px;
+}
+
+.cardPontuacaoPerfil p {
+    color: white;
+}

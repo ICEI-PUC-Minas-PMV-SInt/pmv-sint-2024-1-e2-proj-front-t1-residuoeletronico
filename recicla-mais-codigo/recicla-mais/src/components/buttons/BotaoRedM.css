@@ -1,0 +1,17 @@
+.botaoRedM {
+    background-color: #CDABAB;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .botaoRedM:hover {
+    cursor: pointer;
+    box-shadow: -1px 4px 5px 0px rgba(167, 167, 167, 0.75);
+    background-color: rgb(254, 110, 110);
+  }

@@ -1,10 +1,10 @@
 import './CelulaDados.css'
 
-function CelulaDados() {
-    return (<tr>
-        <td>Fulano da Silva Alves</td>
-        <td>R.Exemplo de Endereço, XXXX - Bairro, Belo Horizonte - MG, XXXXX-XXX</td>
-        <td>(XX)XXXXX-XXXX</td>
+function CelulaDados({dados}) {
+    return (<tr className='celulaDados'>
+        <td>{dados.nome_completo}</td>
+        <td>{dados.rua}, {dados.numero_casa}, Bairro {dados.bairro} - {dados.numero_cep}</td>
+        <td>{dados.numero_telefone}</td>
     </tr>)
 }
 

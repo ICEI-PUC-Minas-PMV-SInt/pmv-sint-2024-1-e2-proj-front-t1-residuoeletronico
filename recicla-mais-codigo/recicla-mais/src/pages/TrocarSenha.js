@@ -17,7 +17,7 @@ function TrocarSenha() {
             </div>
 
             <div className="link">
-                <Link to="/">
+                <Link to="/Login">
                 <BotaoVerdeG texto='ENVIAR'/>
                 </Link>
             </div>

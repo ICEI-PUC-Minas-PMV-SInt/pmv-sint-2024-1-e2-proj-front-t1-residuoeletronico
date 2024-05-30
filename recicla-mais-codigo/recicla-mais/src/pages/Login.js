@@ -3,21 +3,57 @@ import "./Login.css";
 import { Link } from "react-router-dom";
 import BoxTitulo from "../components/textBox/BoxTitulo";
 import BotaoVerdeG from "../components/buttons/BotaoVerdeG";
+import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
+
+
 
 function Login() {
+
+  const navigate = useNavigate();
+
+  const [formData, setFormData] = useState({
+    login: '',
+    password: ''
+  });
+
+  const [error, setError] = useState('');
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+
+    const { username, password } = formData;
+    const user = users.find(user => user.username == username && user.password == password);
+    console.log(user)
+
+    if (user) {
+      localStorage.setItem('loggedIn', '1'); // Define a chave 'loggedIn' como '1' para indicar que o usuário está logado
+      localStorage.setItem('currentUser', JSON.stringify(user)); // Armazena os dados do usuário atual para uso posterior
+      navigate('/'); // Redireciona para a página de home
+    } else {
+      setError('Usuário ou senha inválidos');
+    }
+  };
 
   return (
     <main className="mainLogin">
       <div className="boxLogin">
         <BoxTitulo text="LOGIN" />
 
+
         <div className="divInputs">
-          <input className="inputEmail" type="text" placeholder="Email" />
+          <input onChange={handleChange} id="login" value={formData.username} name="username" className="inputEmail" type="text" placeholder="Nome de Usuário" />
 
-          <input className="inputSenha" type="text" placeholder="Senha" />
+          <input onChange={handleChange} id="password" value={formData.password} name="password" className="inputSenha" type="password" placeholder="Senha" />
         </div>
-
-        <BotaoVerdeG texto='ENTRAR'/>
+        {error && <div>{error}</div>}
+        <BotaoVerdeG texto='ENTRAR' eventoOnClick={handleLogin} />
 
         <div className="link">
           <Link to="/Cadastro">
@@ -31,6 +67,7 @@ function Login() {
       </div>
     </main>
   );
-}
+};
+
 
 export default Login;

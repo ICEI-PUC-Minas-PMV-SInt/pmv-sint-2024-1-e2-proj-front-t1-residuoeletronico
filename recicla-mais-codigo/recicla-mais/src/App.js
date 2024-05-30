@@ -14,6 +14,11 @@ import ConfirmacaoEmail from "./pages/ConfirmacaoEmail";
 
 //import react boostrap
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Perfil from "./pages/Perfil";
+import NoticiaPage from "./pages/NoticiaPage";
+import Pontuacao from "./pages/Pontuacao";
+import ConfirmaTrocaPontos from "./pages/ConfirmaTrocaPontos";
+
 
 function App() {
   return (
@@ -30,6 +35,10 @@ function App() {
           <Route path="/Noticias" element={<Noticias />} />
           <Route path="/FaleConosco" element={<FaleConosco />} />
           <Route path="/ConfirmacaoEmail" element={<ConfirmacaoEmail/>} />
+          <Route path="/Perfil" element={<Perfil />} />
+          <Route path="/NoticiaPage" element={<NoticiaPage />} />
+          <Route path="/Pontuacao" element={<Pontuacao />} />
+          <Route path="/ConfirmaTrocaPontos" element={<ConfirmaTrocaPontos />} />
         </Routes>
       </Container>
       <Footer />

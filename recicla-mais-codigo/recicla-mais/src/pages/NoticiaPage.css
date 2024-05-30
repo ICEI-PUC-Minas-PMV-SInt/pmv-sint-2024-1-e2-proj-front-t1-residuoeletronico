@@ -1,0 +1,21 @@
+.mainNoticia{
+    padding: 40px 0;
+    display: flex;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.tituloNoticia{
+    font-size: 26px;
+    display: flex;
+    margin: 0 5px;
+    width: 100%;
+    padding: 0;
+    justify-content: start;
+    align-items: center;
+    height: 80px;
+}
+
+.borda{
+    border: 1px solid rgb(226, 219, 219);
+}

@@ -1,0 +1,19 @@
+.cardNome {
+    background-color: #90CFB9;
+    border-radius: 16px;
+    width: 100%;
+    padding: 30px 50px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.cardNome img {
+    width: 80px;
+}
+
+.cardNome h1{
+    font-weight: 500;
+}

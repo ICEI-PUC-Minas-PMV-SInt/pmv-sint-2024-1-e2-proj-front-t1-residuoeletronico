@@ -1,0 +1,32 @@
+.mainPerfil {
+  margin-top: 150px;
+  padding: 80px;
+  width: 100%;
+  display: flex;
+  gap: 160px;
+}
+
+.mainPerfil aside {
+  display: flex;
+  flex-flow: column;
+  gap: 25px;
+}
+
+.mainPerfil section {
+  display: flex;
+  flex-flow: column;
+  padding: 0;
+  margin: 0;
+  width: 60%;
+}
+
+.divBotaoAlterar {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.divBotaoCancelarAgendamento {
+  display: flex;
+  justify-content: flex-end;
+}
+

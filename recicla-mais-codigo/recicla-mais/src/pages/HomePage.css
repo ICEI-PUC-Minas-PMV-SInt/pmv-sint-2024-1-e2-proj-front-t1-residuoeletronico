@@ -21,17 +21,20 @@ main{
 .containerEndereco{
     margin: 0 auto;
     width: 90%;
-}
-
-.borda{
     border: 1px solid rgb(226, 219, 219);
 }
 
 .containerNoticiaPrincipal{
     width:60%;
+    margin: 5px;
 }
 
 .containerNoticiaSecundaria{
     width: 40%;
+    margin: 5px;
+
+}
+.noticiaSecundaria{
+    margin: 5px;
 }
 
