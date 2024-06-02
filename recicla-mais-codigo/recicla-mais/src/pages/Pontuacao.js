@@ -11,6 +11,8 @@ import supbh from '../imgs/supbh.png';
 import { useEffect, useState } from 'react';
 import CardPontuacaoPerfil from "../components/perfil/CardPontuacaoPerfil";
 import BotaoCards from '../components/buttons/BotaoCards';
+import DivPontuacaoTotal from "../components/agendamento/DivPontuaçãoTotal";
+
 
 
 function Pontuacao() {
@@ -35,7 +37,7 @@ function Pontuacao() {
 
     const handleConfirmButtonClick = (valor) => {
         // Verifica se a pontuação total do usuário é suficiente para a troca
-        if (pontuacaoTotalUsuario < 1000) { // Defina o valor mínimo necessário para troca
+        if (pontuacaoTotalUsuario < 400) { // Defina o valor mínimo necessário para troca
             alert('Você não tem pontuação suficiente!');
             return;
         }
