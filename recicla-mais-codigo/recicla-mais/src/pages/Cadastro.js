@@ -1,10 +1,11 @@
-import './TemplateSPA.css'
-import './Cadastro.css'
-import BoxTitulo from '../components/textBox/BoxTitulo'
-import { IMaskInput } from 'react-imask'
-import BotaoVerdeG from '../components/buttons/BotaoVerdeG'
+import './TemplateSPA.css';
+import './Cadastro.css';
+import BoxTitulo from '../components/textBox/BoxTitulo';
+import { IMaskInput } from 'react-imask';
+import BotaoVerdeG from '../components/buttons/BotaoVerdeG';
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
+import InputMask from 'react-input-mask';
 
 function Cadastro() {
     const navigate = useNavigate();
@@ -27,14 +28,23 @@ function Cadastro() {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-
+        let newValue = value;
+    
+        // Validação para o campo de data de nascimento.
         if (name === 'data_nascimento') {
-            const [year, month, day] = value.split("-");
-            const formattedDate = `${day}/${month}/${year}`;
-            setFormData({ ...formData, [name]: formattedDate });
-        } else {
-            setFormData({ ...formData, [name]: value });
+            const [day, month, year] = value.split('/');
+    
+            // Verifica se o dia está entre 1 e 31, o mês entre 1 e 12, e o ano entre 1900 e 215
+            if (Number(day) > 31 || Number(month) > 12 || Number(year) < 1900 || Number(year) > 2015) {
+                // Data inválida, não atualiza o estado
+                newValue = formData.data_nascimento; // Mantém o valor atual
+                setErrors({ ...errors, data_nascimento: 'Data de nascimento inválida' }); // Exibe mensagem de erro
+            } else {
+                setErrors({ ...errors, data_nascimento: null }); // Remove mensagem de erro
+            }
         }
+    
+        setFormData({ ...formData, [name]: newValue });
     };
 
     const validate = () => {
@@ -65,7 +75,7 @@ function Cadastro() {
             localStorage.setItem('users', JSON.stringify(users));
             alert('Usuário salvo com sucesso!');
             setTimeout(() => {
-                navigate("/");
+                navigate("/Login");
             }, 3000);
             setFormData({
                 nome_completo: '',
@@ -108,11 +118,11 @@ function Cadastro() {
                         <p className="campoFormulario">
                             <label htmlFor='data_nascimento'>
                                 <span>Data de Nascimento:</span>
-                                <input
-                                    type='date'
+                                <InputMask
+                                    mask="99/99/9999"
+                                    placeholder="DD/MM/AAAA"
                                     id='data_nascimento'
                                     name='data_nascimento'
-                                    maxLength={9}
                                     value={formData.data_nascimento}
                                     onChange={handleChange}
                                 />
@@ -169,7 +179,7 @@ function Cadastro() {
                                     id='numero_casa'
                                     name='numero_casa'
                                     maxLength={6}
-                                    value={formData.numero}
+                                    value={formData.numero_casa}
                                     onChange={handleChange}
                                 />
                                 {errors.numero_casa && <span className="error">{errors.numero_casa}</span>}
@@ -213,7 +223,7 @@ function Cadastro() {
                                     id='username'
                                     name='username'
                                     maxLength={12}
-                                    value={formData.login}
+                                    value={formData.username}
                                     onChange={handleChange}
                                 />
                                 {errors.username && <span className="error">{errors.username}</span>}
