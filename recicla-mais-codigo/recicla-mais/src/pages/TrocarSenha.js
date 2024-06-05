@@ -16,7 +16,7 @@ function TrocarSenha() {
                 <input className="inputEmail" type="text" placeholder="Email"/>
             </div>
 
-            <div className="link">
+            <div className="linkEnviarEmail">
                 <Link to="/Login">
                 <BotaoVerdeG texto='ENVIAR'/>
                 </Link>
