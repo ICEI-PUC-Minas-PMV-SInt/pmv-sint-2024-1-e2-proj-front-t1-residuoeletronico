@@ -21,7 +21,9 @@ function Cadastro() {
         username: '',
         email: '',
         password: '',
-        check_password: ''
+        check_password: '',
+        agendamentos: [], // Lista de agendamentos.
+        pontuacao: 0 // Adiciona a propriedade 'pontuacao' com valor inicial 0.
     });
 
     const [errors, setErrors] = useState({});
@@ -29,11 +31,11 @@ function Cadastro() {
     const handleChange = (e) => {
         const { name, value } = e.target;
         let newValue = value;
-    
+
         // Validação para o campo de data de nascimento.
         if (name === 'data_nascimento') {
             const [day, month, year] = value.split('/');
-    
+
             // Verifica se o dia está entre 1 e 31, o mês entre 1 e 12, e o ano entre 1900 e 215
             if (Number(day) > 31 || Number(month) > 12 || Number(year) < 1900 || Number(year) > 2015) {
                 // Data inválida, não atualiza o estado
@@ -43,7 +45,7 @@ function Cadastro() {
                 setErrors({ ...errors, data_nascimento: null }); // Remove mensagem de erro
             }
         }
-    
+
         setFormData({ ...formData, [name]: newValue });
     };
 

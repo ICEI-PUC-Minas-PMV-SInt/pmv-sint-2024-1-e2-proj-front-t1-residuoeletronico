@@ -1,6 +1,8 @@
 import './TabelaAzul.css'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-function TabelaAzul({headersTabela, corpoTabela}) {
+function TabelaAzul({ headersTabela, corpoTabela = [] }) {
     return (
         <table className='tabelaAzul'>
             <thead>
@@ -14,7 +16,12 @@ function TabelaAzul({headersTabela, corpoTabela}) {
                 {corpoTabela}
             </tbody>
         </table>
-    )
+    );
 }
 
-export default TabelaAzul
+TabelaAzul.propTypes = {
+    headersTabela: PropTypes.arrayOf(PropTypes.string).isRequired,
+    corpoTabela: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.node)).isRequired
+};
+
+export default TabelaAzul;

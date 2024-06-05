@@ -22,34 +22,11 @@ function Agendamento() {
 
   //Estado para armazenar dados do usuário recuperados do localStorage
   const [dadosUsuario, setDadosUsuario] = useState({});
-
-  useEffect(() => {
-    const infoUsuarioAtual = JSON.parse(localStorage.getItem("currentUser")) || {};
-    if (Object.keys(infoUsuarioAtual).length > 0) {
-      setDadosUsuario(infoUsuarioAtual);
-    }
-  }, [])
-
   // Estado para armazenar a seleção de data
   const [selectedDate, setSelectedDate] = useState("");
-
-  // Função chamada quando a data é selecionada
-  const handleDateChange = (e) => {
-    const selectedDate = e.target.value; // Obtém a data selecionada
-    const [year, month, day] = selectedDate.split("-"); // Divide a data nos componentes year, month e day
-    const formattedDate = `${day}/${month}/${year}`; // Formata a data no formato dd/mm/yyyy
-    setSelectedDate(formattedDate); // Atualiza o estado com a data formatada
-  };
-
   // Estado para armazenar a seleção de horário
   const [selectedHour, setSelectedHour] = useState("");
-
   const opcoesHorario = ["", "09:00 - 11:00", "13:00 - 15:00", "15:30 - 17:30"];
-
-  const handleHourOptionChange = (e) => {
-    setSelectedHour(e.target.value);
-  };
-
   // Estado para armazenar as seleções de itens feitas pelo usuário
   const [selectedItemOptions, setSelectedItemOptions] = useState([]);
   //Estado para armazenar a seleção atual de itens
@@ -59,7 +36,26 @@ function Agendamento() {
     qualidade: "",
   });
 
-  // Função chamada quando uma opção de item é alterada
+  useEffect(() => {
+    const infoUsuarioAtual = JSON.parse(localStorage.getItem("currentUser")) || {};
+    if (Object.keys(infoUsuarioAtual).length > 0) {
+      setDadosUsuario(infoUsuarioAtual);
+    }
+  }, [])
+
+  // Função chamada quando a data é selecionada
+  const handleDateChange = (e) => {
+    const selectedDate = e.target.value; // Obtém a data selecionada
+    const [year, month, day] = selectedDate.split("-"); // Divide a data nos componentes year, month e day
+    const formattedDate = `${day}/${month}/${year}`; // Formata a data no formato dd/mm/yyyy
+    setSelectedDate(formattedDate); // Atualiza o estado com a data formatada
+  };
+
+  const handleHourOptionChange = (e) => {
+    setSelectedHour(e.target.value);
+  };
+
+    // Função chamada quando uma opção de item é alterada
   const handleItemOptionChange = (option, selecaoDe) => {
     setCurrentItemSelection((prevSelection) => ({
       ...prevSelection, // Aqui prevSelection representa o valor atual do estado currentSelection
@@ -83,7 +79,6 @@ function Agendamento() {
         currentItemSelection.item,
         parseInt(currentItemSelection.quantidade)
       );
-
       // Cria um novo objeto com todas as informações do item, incluindo os pontos
       const newItem = {
         item: currentItemSelection.item,
@@ -122,7 +117,6 @@ function Agendamento() {
       case "Tablet":
         pontuacao = 900;
         break;
-
       default:
         break;
     }
@@ -147,23 +141,24 @@ function Agendamento() {
       );
       return;
     } else {
-      //Verifica se já existe um objeto salvo no localStorage
-      const existingInfo = JSON.parse(localStorage.getItem("infoAgendamento")) || [];
-
-      //Agrupa os dados em um único objeto
-      const infoAgendamento = {
+      const novoAgendamento = {
         selectedDate: selectedDate,
         selectedHour: selectedHour,
-        selectedItemOptions: selectedItemOptions, 
+        selectedItemOptions: selectedItemOptions,
         pontuacaoTotal: calcularPontuacaoTotal()
-      }
+      };
 
-      const newInfo = [...existingInfo, infoAgendamento]
+      const currentUser = JSON.parse(localStorage.getItem('currentUser')) || {};
+      const users = JSON.parse(localStorage.getItem('users')) || [];
+      const currentUserIndex = users.findIndex(user => user.username === currentUser.username);
 
-      // Salvar o objeto contendo todas as informações no localStorage
-      localStorage.setItem('infoAgendamento', JSON.stringify(newInfo))
+      const novoUsuario = { ...currentUser, agendamentos: [...currentUser.agendamentos, novoAgendamento], pontuacao: currentUser.pontuacao + calcularPontuacaoTotal() }; // Adiciona a pontuação do novo agendamento à pontuação total do usuário
 
-      // Navegar para a outra tela
+      users[currentUserIndex] = novoUsuario;
+
+      localStorage.setItem('users', JSON.stringify(users));
+      localStorage.setItem('currentUser', JSON.stringify(novoUsuario));
+
       navigate("/ConfirmaAgendamento");
     }
   };
@@ -248,7 +243,7 @@ function Agendamento() {
         <div className="divTabelaDados">
           <TabelaAzul
             headersTabela={headersDados}
-            corpoTabela={<CelulaDados dados={dadosUsuario}/>}
+            corpoTabela={<CelulaDados dados={dadosUsuario} />}
           />
         </div>
       </div>
