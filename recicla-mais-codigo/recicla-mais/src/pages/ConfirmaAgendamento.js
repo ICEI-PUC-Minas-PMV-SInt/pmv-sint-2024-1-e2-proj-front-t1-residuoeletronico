@@ -19,23 +19,24 @@ function ConfirmaAgendamento() {
         setUltimoAgendamento(agendamentos[agendamentos.length - 1]);
       }
     }
+    window.scrollTo(0, 0); // Move o scroll para o topo do viewport quando a tela é montada
   }, [])
 
   return (
     <main className="mainConfirmacao">
       <div className="containerConfirmacao">
 
-          <h1>Agendamento Confirmado</h1>
-          <p>
-            Obrigado por utilizar nosso serviço! <br/>Seu agendamento foi confirmado com sucesso.
-            <br/><br/>O caminhão fará a coleta dos itens na data, faixa de horário e local
-            informados no agendamento.Esteja disponível para recebê-lo.
-          </p>
-          <TabelaAzul
-            headersTabela={headersConfirmacao}
-            corpoTabela={<CelulaConfirmacao agendamento={ultimoAgendamento} dadosUsuario={dadosUsuario} />}
-          />
-        </div>
+        <h1>Agendamento Confirmado</h1>
+        <p>
+          Obrigado por utilizar nosso serviço! <br />Seu agendamento foi confirmado com sucesso.
+          <br /><br />O caminhão fará a coleta dos itens na data, faixa de horário e local
+          informados no agendamento.Esteja disponível para recebê-lo.
+        </p>
+        <TabelaAzul
+          headersTabela={headersConfirmacao}
+          corpoTabela={<CelulaConfirmacao agendamento={ultimoAgendamento} dadosUsuario={dadosUsuario} />}
+        />
+      </div>
     </main>
   );
 }

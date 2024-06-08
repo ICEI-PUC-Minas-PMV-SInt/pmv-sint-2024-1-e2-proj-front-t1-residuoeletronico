@@ -104,6 +104,7 @@ function preencherLocalStorage() {
 function HomePage() {
     useEffect(() => {
         preencherLocalStorage();
+        window.scrollTo(0, 0); // Move o scroll para o topo do viewport quando a tela é montada
     }, []);
 
     const textoNoticias = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam egestas placerat tristique. ";

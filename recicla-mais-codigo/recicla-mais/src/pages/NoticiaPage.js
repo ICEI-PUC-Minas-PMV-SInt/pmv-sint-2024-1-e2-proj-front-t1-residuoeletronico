@@ -10,6 +10,7 @@ function NoticiaPage() {
     useEffect(() => {
         const storedNoticias = JSON.parse(localStorage.getItem("noticias")) || [];
         setNoticia(storedNoticias[id]);
+        window.scrollTo(0, 0); // Move o scroll para o topo do viewport quando a tela é montada
     }, [id]);
 
     if (!noticia) {

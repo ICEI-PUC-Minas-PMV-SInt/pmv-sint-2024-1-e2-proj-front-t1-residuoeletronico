@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Noticias.css";
 import NoticiaResumida from "../components/noticias/NoticiaResumida";
 import { Link } from "react-router-dom";
 
 function Noticias() {
+
+    useEffect(() => {
+        window.scrollTo(0, 0); // Move o scroll para o topo do viewport quando a tela é montada
+    }, []);
     const noticias = JSON.parse(localStorage.getItem("noticias")) || [];
 
     return (

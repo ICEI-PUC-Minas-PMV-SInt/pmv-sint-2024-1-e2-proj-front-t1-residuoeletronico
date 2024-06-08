@@ -31,6 +31,7 @@ function Perfil() {
       setDadosUsuario(infoUsuarioAtual);
       setEditData(infoUsuarioAtual);
     }
+    window.scrollTo(0, 0); // Move o scroll para o topo do viewport quando a tela é montada
   }, []);
 
   const handleCancelarAgendamento = (index) => {

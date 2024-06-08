@@ -3,12 +3,16 @@ import "./Login.css";
 import { Link } from "react-router-dom";
 import BoxTitulo from "../components/textBox/BoxTitulo";
 import BotaoVerdeG from "../components/buttons/BotaoVerdeG";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 
 
 
 function Login() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Move o scroll para o topo do viewport quando a tela é montada
+  }, []);
 
   const navigate = useNavigate();
 

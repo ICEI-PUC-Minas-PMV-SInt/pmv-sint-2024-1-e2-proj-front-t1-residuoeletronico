@@ -33,6 +33,7 @@ function Pontuacao() {
             total += agendamento.pontuacaoTotal;
         });
         setPontuacaoTotalUsuario(total);
+        window.scrollTo(0, 0); // Move o scroll para o topo do viewport quando a tela é montada
     }, [agendamentos]);
 
     const handleConfirmButtonClick = (valor) => {
