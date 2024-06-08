@@ -1,57 +1,43 @@
 import React from "react";
-import "./Noticias.css"
+import "./Noticias.css";
 import NoticiaResumida from "../components/noticias/NoticiaResumida";
-import Coleta1 from "../imgs/coleta1.png";
-import Coleta2 from "../imgs/coleta2.png";
-import Coleta3 from "../imgs/coleta3.png";
 import { Link } from "react-router-dom";
-import NoticiaPage from "./NoticiaPage";
 
-function Noticias(){
-    const titulo = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-    const descricao = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sodales mollis mi vel accumsan."
-    const dataHora = "01/01/2024 | 12:00"
-    const hastag1 = "#Coletas"
-    const hastag2 = "#Meio-Ambiente"
-    const hastag3 = "#Reciclagem"
-    return(
+function Noticias() {
+    const noticias = JSON.parse(localStorage.getItem("noticias")) || [];
+
+    return (
         <main className="mainNoticias">
             <div className="containerNoticias">
                 <h2 className="tituloNoticia">Notícias</h2>
-                <Link className="linkNoticia" to='/NoticiaPage'>
-                    <NoticiaResumida imagem={Coleta1} titulo={titulo} descricao={descricao} dataHora={dataHora} hashtag={hastag1}/>
-                </Link>
-                <Link className="linkNoticia" to='/NoticiaPage'>
-                    <NoticiaResumida imagem={Coleta2} titulo={titulo} descricao={descricao} dataHora={dataHora} hashtag={hastag2}/>
-                </Link>
-                <Link className="linkNoticia" to='/NoticiaPage'>
-                    <NoticiaResumida imagem={Coleta3} titulo={titulo} descricao={descricao} dataHora={dataHora} hashtag={hastag3}/>
-                </Link>
-                <Link className="linkNoticia" to='/NoticiaPage'>
-                    <NoticiaResumida imagem={Coleta1} titulo={titulo} descricao={descricao} dataHora={dataHora} hashtag={hastag1}/>
-                </Link>
-                <Link className="linkNoticia" to='/NoticiaPage'>
-                    <NoticiaResumida imagem={Coleta2} titulo={titulo} descricao={descricao} dataHora={dataHora} hashtag={hastag3}/>
-                </Link>
-                <Link className="linkNoticia" to='/NoticiaPage'>
-                    <NoticiaResumida imagem={Coleta3} titulo={titulo} descricao={descricao} dataHora={dataHora} hashtag={hastag2}/>
-                </Link>
+                {/* Cria uma lista de noticias buscadas do localstorage. */}
+                {noticias.map((noticia, index) => (
+                    <Link key={index} className="linkNoticia" to={`/noticia/${index}`}>
+                        <NoticiaResumida
+                            imagem={noticia.imagem}
+                            titulo={noticia.titulo}
+                            descricao={noticia.descricao}
+                            dataHora={noticia.dataHora}
+                            hashtag={noticia.hashtags.join(" ")}
+                        />
+                    </Link>
+                ))}
             </div>
             <div className="containerPesquisa">
                 <h2 className="tituloNoticia">Pesquisar</h2>
                 <div className="containerPesquisaCategoria borda">
                     <form className="formulario">
-                        <input type="text" placeholder="Palavra chave" /> <br/>
+                        <input type="text" placeholder="Palavra chave" /> <br />
                         <button type="submit">OK</button>
                     </form>
-                    <div class="categorias">
+                    <div className="categorias">
                         <ul>
                             <li><a href="">Coletas</a></li>
                             <li><a href="">Meio Ambiente</a></li>
                             <li><a href="">Reciclagem</a></li>
                             <li><a href="">Ciência e Tecnologia</a></li>
                             <li><a href="">Urbanismo</a></li>
-                        </ul>  
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -59,4 +45,4 @@ function Noticias(){
     );
 }
 
-export default Noticias
+export default Noticias;

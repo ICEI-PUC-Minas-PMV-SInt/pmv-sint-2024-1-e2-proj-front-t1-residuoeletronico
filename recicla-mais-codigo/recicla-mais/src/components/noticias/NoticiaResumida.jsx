@@ -1,11 +1,11 @@
-import React from 'react'
-import './NoticiaResumida.css'
+import React from 'react';
+import './NoticiaResumida.css';
 
-function NoticiaResumida(props){
-    return(
+function NoticiaResumida(props) {
+    return (
         <div className='containerNoticia borda'>
             <div className='containerImagem borda'>
-                <img src={props.imagem} className='imagemNoticia'/>
+                <img src={props.imagem} className='imagemNoticia' alt={props.titulo} />
             </div>
             <div className='containerInformacoes borda'>
                 <h2>{props.titulo}</h2>
@@ -18,4 +18,4 @@ function NoticiaResumida(props){
     );
 }
 
-export default NoticiaResumida
+export default NoticiaResumida;
