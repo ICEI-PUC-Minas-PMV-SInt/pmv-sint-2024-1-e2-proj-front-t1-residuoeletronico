@@ -25,11 +25,11 @@ function ConfirmaAgendamento() {
     <main className="mainConfirmacao">
       <div className="containerConfirmacao">
 
-          <h1>Agendamento Confirmado</h1>
+          <h1>Agendamento confirmado!</h1>
           <p>
             Obrigado por utilizar nosso serviço! <br/>Seu agendamento foi confirmado com sucesso.
             <br/><br/>O caminhão fará a coleta dos itens na data, faixa de horário e local
-            informados no agendamento.Esteja disponível para recebê-lo.
+            informados no agendamento. Esteja disponível para recebê-lo.
           </p>
           <TabelaAzul
             headersTabela={headersConfirmacao}

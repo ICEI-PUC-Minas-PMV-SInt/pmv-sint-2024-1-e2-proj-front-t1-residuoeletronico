@@ -22,24 +22,32 @@ function Perfil() {
   const [editData, setEditData] = useState({});
 
   useEffect(() => {
-    const storedAgendamentos =
-      JSON.parse(localStorage.getItem("infoAgendamento")) || [];
-    setAgendamentos(storedAgendamentos);
-
     const infoUsuarioAtual = JSON.parse(localStorage.getItem("currentUser")) || {};
     if (Object.keys(infoUsuarioAtual).length > 0) {
       setDadosUsuario(infoUsuarioAtual);
       setEditData(infoUsuarioAtual);
+      setAgendamentos(infoUsuarioAtual.agendamentos || []);
     }
   }, []);
 
   const handleCancelarAgendamento = (index) => {
     const updatedAgendamentos = agendamentos.filter((_, i) => i !== index);
+    const pontosRemovidos = agendamentos[index].pontuacaoTotal;
+    
+    const updatedPontuacao = dadosUsuario.pontuacao - pontosRemovidos;
+    const updatedUser = { ...dadosUsuario, agendamentos: updatedAgendamentos, pontuacao: updatedPontuacao };
+
     setAgendamentos(updatedAgendamentos);
-    localStorage.setItem(
-      "infoAgendamento",
-      JSON.stringify(updatedAgendamentos)
-    );
+    setDadosUsuario(updatedUser);
+    setEditData(updatedUser);
+    localStorage.setItem("currentUser", JSON.stringify(updatedUser));
+    
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    const currentUserIndex = users.findIndex(user => user.username === updatedUser.username);
+    if (currentUserIndex !== -1) {
+      users[currentUserIndex] = updatedUser;
+      localStorage.setItem("users", JSON.stringify(users));
+    }
     alert("Agendamento cancelado!");
   };
 

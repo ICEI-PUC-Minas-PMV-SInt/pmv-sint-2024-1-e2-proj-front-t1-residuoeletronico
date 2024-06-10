@@ -11,9 +11,6 @@ import supbh from '../imgs/supbh.png';
 import { useEffect, useState } from 'react';
 import CardPontuacaoPerfil from "../components/perfil/CardPontuacaoPerfil";
 import BotaoCards from '../components/buttons/BotaoCards';
-import DivPontuacaoTotal from "../components/agendamento/DivPontuaçãoTotal";
-
-
 
 function Pontuacao() {
     const navigate = useNavigate();
@@ -22,37 +19,46 @@ function Pontuacao() {
     const [pontuacaoTotalUsuario, setPontuacaoTotalUsuario] = useState(0);
 
     useEffect(() => {
-        const storedAgendamentos = localStorage.getItem('infoAgendamento');
-        if (storedAgendamentos) {
-            setAgendamentos(JSON.parse(storedAgendamentos));
+        const currentUser = JSON.parse(localStorage.getItem('currentUser')) || {};
+        if (currentUser.agendamentos) {
+            setAgendamentos(currentUser.agendamentos);
         }
-
-        // Calcular a pontuação total do usuário a partir dos agendamentos
-        let total = 0;
-        agendamentos.forEach((agendamento) => {
-            total += agendamento.pontuacaoTotal;
-        });
-        setPontuacaoTotalUsuario(total);
-    }, [agendamentos]);
+        if (currentUser.pontuacao) {
+            setPontuacaoTotalUsuario(currentUser.pontuacao);
+        }
+    }, []);
 
     const handleConfirmButtonClick = (valor) => {
-        // Verifica se a pontuação total do usuário é suficiente para a troca
-        if (pontuacaoTotalUsuario < 400) { // Defina o valor mínimo necessário para troca
+        const pontosNecessarios = 400;
+        if (pontuacaoTotalUsuario < pontosNecessarios) {
             alert('Você não tem pontuação suficiente!');
             return;
         }
 
-        // Subtrai os pontos do total dos agendamentos
-        const novoAgendamentos = agendamentos.map((agendamento) => ({
+        const novoPontuacaoTotal = pontuacaoTotalUsuario - pontosNecessarios;
+        const novoAgendamentos = agendamentos.map(agendamento => ({
             ...agendamento,
-            pontuacaoTotal: agendamento.pontuacaoTotal - 400, // Defina a quantidade de pontos a serem subtraídos
+            pontuacaoTotal: agendamento.pontuacaoTotal > pontosNecessarios ? agendamento.pontuacaoTotal - pontosNecessarios : 0
         }));
 
-        // Atualiza o estado dos agendamentos e o localStorage
-        setAgendamentos(novoAgendamentos);
-        localStorage.setItem('infoAgendamento', JSON.stringify(novoAgendamentos));
+        const currentUser = JSON.parse(localStorage.getItem('currentUser')) || {};
+        const updatedUser = {
+            ...currentUser,
+            agendamentos: novoAgendamentos,
+            pontuacao: novoPontuacaoTotal
+        };
 
-        // Navega para a tela de confirmação de troca de pontos
+        localStorage.setItem('currentUser', JSON.stringify(updatedUser));
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        const userIndex = users.findIndex(user => user.username === currentUser.username);
+        if (userIndex !== -1) {
+            users[userIndex] = updatedUser;
+            localStorage.setItem('users', JSON.stringify(users));
+        }
+
+        setAgendamentos(novoAgendamentos);
+        setPontuacaoTotalUsuario(novoPontuacaoTotal);
+
         navigate('/ConfirmaTrocaPontos', { state: { valor } });
     };
 
@@ -123,4 +129,3 @@ function Pontuacao() {
 }
 
 export default Pontuacao;
-

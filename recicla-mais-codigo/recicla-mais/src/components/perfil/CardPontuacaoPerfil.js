@@ -2,14 +2,14 @@ import "./CardPontuacaoPerfil.css";
 import { useEffect, useState } from "react";
 
 function CardPontuacaoPerfil() {
-  const [pontuacaoTotalAgendamentos, setPontuacaoTotalAgendamentos] = useState(0)
-  
-  useEffect(() => {const agendamentos = JSON.parse(localStorage.getItem('infoAgendamento')) || []
+  const [pontuacaoTotalAgendamentos, setPontuacaoTotalAgendamentos] = useState(0);
 
-  let total = 0;
-  agendamentos.forEach((agendamento) => {total += agendamento.pontuacaoTotal;})
-
-  setPontuacaoTotalAgendamentos(total);}, [])
+  useEffect(() => {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser')) || {};
+    if (currentUser.pontuacao) {
+      setPontuacaoTotalAgendamentos(currentUser.pontuacao);
+    }
+  }, []);
 
   return (
     <div className="cardPontuacaoPerfil">
