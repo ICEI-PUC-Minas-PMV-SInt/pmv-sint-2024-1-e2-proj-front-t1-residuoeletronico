@@ -1,8 +1,10 @@
+// Pontuacao.js
 import './TemplateSPA.css';
 import './Pontuacao.css';
 import TabelaAzul from "../components/tabelas/TabelaAzul";
 import BoxExtrato from '../components/textBox/BoxExtrato';
 import CelulaExtrato from '../components/tabelas/CelulaExtrato';
+import CelulaTroca from '../components/tabelas/CelulaTroca';
 import { useNavigate } from "react-router-dom";
 import IPTU from '../imgs/iptu.png';
 import ifood from '../imgs/ifood.png';
@@ -15,8 +17,10 @@ import BotaoCards from '../components/buttons/BotaoCards';
 function Pontuacao() {
     const navigate = useNavigate();
     const headersExtrato = ['Data', 'Quantidade', 'Produto', 'Pontos'];
+    const headersTroca = ['Data', 'Valor / Parceiro', 'Resgatados'];
     const [agendamentos, setAgendamentos] = useState([]);
     const [pontuacaoTotalUsuario, setPontuacaoTotalUsuario] = useState(0);
+    const [trocas, setTrocas] = useState([]);
 
     useEffect(() => {
         const currentUser = JSON.parse(localStorage.getItem('currentUser')) || {};
@@ -25,6 +29,9 @@ function Pontuacao() {
         }
         if (currentUser.pontuacao) {
             setPontuacaoTotalUsuario(currentUser.pontuacao);
+        }
+        if (currentUser.trocas) {
+            setTrocas(currentUser.trocas);
         }
     }, []);
 
@@ -36,6 +43,13 @@ function Pontuacao() {
         }
 
         const novoPontuacaoTotal = pontuacaoTotalUsuario - pontosNecessarios;
+        const novoTroca = {
+            data: new Date().toLocaleDateString(),
+            //parceiro: valor.split(' ')[3],
+            valor: valor,
+            pontosResgatados: pontosNecessarios
+        };
+        const novoTrocas = [...trocas, novoTroca];
         const novoAgendamentos = agendamentos.map(agendamento => ({
             ...agendamento,
             pontuacaoTotal: agendamento.pontuacaoTotal > pontosNecessarios ? agendamento.pontuacaoTotal - pontosNecessarios : 0
@@ -45,7 +59,8 @@ function Pontuacao() {
         const updatedUser = {
             ...currentUser,
             agendamentos: novoAgendamentos,
-            pontuacao: novoPontuacaoTotal
+            pontuacao: novoPontuacaoTotal,
+            trocas: novoTrocas
         };
 
         localStorage.setItem('currentUser', JSON.stringify(updatedUser));
@@ -58,6 +73,7 @@ function Pontuacao() {
 
         setAgendamentos(novoAgendamentos);
         setPontuacaoTotalUsuario(novoPontuacaoTotal);
+        setTrocas(novoTrocas);
 
         navigate('/ConfirmaTrocaPontos', { state: { valor } });
     };
@@ -93,6 +109,12 @@ function Pontuacao() {
                         corpoTabela={<CelulaExtrato agendamentos={agendamentos} calculaPontos={calculaPontos} />}
                     />
                 </div>
+                <div className='divTabelaExtrato'>
+                    <TabelaAzul 
+                        headersTabela={headersTroca}
+                        corpoTabela={<CelulaTroca trocas={trocas} />}
+                    />
+                </div>
                 <CardPontuacaoPerfil />
                 <br />
                 <br />
@@ -107,19 +129,19 @@ function Pontuacao() {
                     <BotaoCards
                         className='ifood'
                         texto='R$80,00 a cada 400 pontos'
-                        eventoOnClick={() => handleConfirmButtonClick('R$80,00 de crédito com o iFood')}
+                        eventoOnClick={() => handleConfirmButtonClick('R$80,00 de crédito no iFood')}
                         img={ifood}
                     />
                     <BotaoCards
                         className='dotz'
                         texto='R$60,00 a cada 400 pontos'
-                        eventoOnClick={() => handleConfirmButtonClick('R$60,00 de crédito com o DOTZ')}
+                        eventoOnClick={() => handleConfirmButtonClick('R$60,00 de crédito no DOTZ')}
                         img={dotz}
                     />
                     <BotaoCards
                         className='supbh'
                         texto='R$100,00 a cada 400 pontos'
-                        eventoOnClick={() => handleConfirmButtonClick('R$100,00 de crédito com o Supermercado BH')}
+                        eventoOnClick={() => handleConfirmButtonClick('R$100,00 de crédito no Supermercado BH')}
                         img={supbh}
                     />
                 </div>
