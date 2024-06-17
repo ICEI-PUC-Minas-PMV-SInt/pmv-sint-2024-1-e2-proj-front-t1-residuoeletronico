@@ -28,6 +28,13 @@ function FaleConosco() {
 
   const handleSubmit = () => {
     const { nome, email, telefone } = formData;
+
+    // Verificar se nome, email e telefone estão preenchidos
+    if (!nome || !email || !telefone) {
+      alert("Por favor, preencha os campos Nome, Email e Telefone.");
+      return;
+    }
+
     localStorage.setItem("nome", nome);
     localStorage.setItem("email", email);
     localStorage.setItem("telefone", telefone);
