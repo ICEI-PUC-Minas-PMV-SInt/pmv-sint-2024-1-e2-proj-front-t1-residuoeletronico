@@ -11,14 +11,11 @@ import ConfirmaAgendamento from './pages/ConfirmaAgendamento';
 import Noticias from "./pages/Noticias";
 import FaleConosco from "./pages/FaleConosco";
 import ConfirmacaoEmail from "./pages/ConfirmacaoEmail";
-
-//import react boostrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Perfil from "./pages/Perfil";
 import NoticiaPage from "./pages/NoticiaPage";
 import Pontuacao from "./pages/Pontuacao";
 import ConfirmaTrocaPontos from "./pages/ConfirmaTrocaPontos";
-
 
 function App() {
   return (
@@ -29,20 +26,21 @@ function App() {
           <Route exact path="/" element={<HomePage />} />
           <Route path="/Cadastro" element={<Cadastro />} />
           <Route path="/Agendamento" element={<Agendamento />} />
-          <Route path="/Login" element={<Login/>} />
-          <Route path="/TrocarSenha" element={<TrocarSenha/>} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/TrocarSenha" element={<TrocarSenha />} />
           <Route path="/ConfirmaAgendamento" element={<ConfirmaAgendamento />} />
           <Route path="/Noticias" element={<Noticias />} />
           <Route path="/FaleConosco" element={<FaleConosco />} />
-          <Route path="/ConfirmacaoEmail" element={<ConfirmacaoEmail/>} />
+          <Route path="/ConfirmacaoEmail" element={<ConfirmacaoEmail />} />
           <Route path="/Perfil" element={<Perfil />} />
-          <Route path="/NoticiaPage" element={<NoticiaPage />} />
           <Route path="/Pontuacao" element={<Pontuacao />} />
           <Route path="/ConfirmaTrocaPontos" element={<ConfirmaTrocaPontos />} />
+          <Route path="/noticia/:id" element={<NoticiaPage />} />
         </Routes>
       </Container>
       <Footer />
     </Router>
-  )}
+  );
+}
 
-  export default App
+export default App;

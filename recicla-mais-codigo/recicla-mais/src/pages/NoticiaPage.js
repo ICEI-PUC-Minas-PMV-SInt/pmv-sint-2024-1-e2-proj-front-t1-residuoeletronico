@@ -1,29 +1,49 @@
-import React from "react";
-import "./NoticiaPage.css"
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import "./NoticiaPage.css";
 import NoticiaDetalhada from "../components/noticias/NoticiaDetalhada";
 
-function NoticiaPage(){
-    const titulo = "Lorem"
-    return(
+function NoticiaPage() {
+    const { id } = useParams();
+    const [noticia, setNoticia] = useState(null);
+
+    useEffect(() => {
+        const storedNoticias = JSON.parse(localStorage.getItem("noticias")) || [];
+        setNoticia(storedNoticias[id]);
+        window.scrollTo(0, 0); // Move o scroll para o topo do viewport quando a tela é montada
+    }, [id]);
+
+    if (!noticia) {
+        return <div>Loading...</div>;
+    }
+
+    return (
         <main className="mainNoticia">
             <div className="containerNoticias borda">
-                <NoticiaDetalhada titulo={titulo}/>
+                <NoticiaDetalhada
+                    titulo={noticia.titulo}
+                    imagem={noticia.imagem}
+                    descricao={noticia.descricao}
+                    dataHora={noticia.dataHora}
+                    conteudo={noticia.conteudo}
+                    hashtags={noticia.hashtags}
+                />
             </div>
             <div className="containerPesquisa">
                 <h2 className="tituloNoticia">Pesquisar</h2>
                 <div className="containerPesquisaCategoria borda">
                     <form className="formulario">
-                        <input type="text" placeholder="Palavra chave" /> <br/>
+                        <input type="text" placeholder="Palavra chave" /> <br />
                         <button type="submit">OK</button>
                     </form>
-                    <div class="categorias">
+                    <div className="categorias">
                         <ul>
                             <li><a href="">Coletas</a></li>
                             <li><a href="">Meio Ambiente</a></li>
                             <li><a href="">Reciclagem</a></li>
                             <li><a href="">Ciência e Tecnologia</a></li>
                             <li><a href="">Urbanismo</a></li>
-                        </ul>  
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -31,4 +51,4 @@ function NoticiaPage(){
     );
 }
 
-export default NoticiaPage
+export default NoticiaPage;

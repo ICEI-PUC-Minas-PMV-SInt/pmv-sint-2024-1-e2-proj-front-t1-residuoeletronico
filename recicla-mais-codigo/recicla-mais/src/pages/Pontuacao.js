@@ -30,9 +30,6 @@ function Pontuacao() {
         if (currentUser.pontuacao) {
             setPontuacaoTotalUsuario(currentUser.pontuacao);
         }
-        if (currentUser.trocas) {
-            setTrocas(currentUser.trocas);
-        }
     }, []);
 
     const handleConfirmButtonClick = (valor) => {

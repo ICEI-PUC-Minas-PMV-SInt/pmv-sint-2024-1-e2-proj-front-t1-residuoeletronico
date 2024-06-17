@@ -14,12 +14,12 @@ main{
 
 .containerCard{
     display: flex;
-    margin: 0 auto;
+    margin: 20px auto;
     width: 90%;
 }
 
 .containerEndereco{
-    margin: 0 auto;
+    margin: 20px auto;
     width: 90%;
     border: 1px solid rgb(226, 219, 219);
 }

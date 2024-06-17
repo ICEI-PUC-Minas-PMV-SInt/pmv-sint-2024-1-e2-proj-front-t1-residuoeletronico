@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./FaleConosco.css";
 import "./TemplateSPA.css";
 import BotaoVerdeG from "../components/buttons/BotaoVerdeG";
@@ -6,7 +6,11 @@ import Accordion from "react-bootstrap/Accordion";
 import { useNavigate } from "react-router-dom";
 
 function FaleConosco() {
-  
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Move o scroll para o topo do viewport quando a tela é montada
+  }, []);
+
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     nome: "",
@@ -40,7 +44,7 @@ function FaleConosco() {
   return (
     <main className="mainFaleConosco">
       <div className="Perguntas">
-      <div className="Frequentes">
+        <div className="Frequentes">
           <h2>Dúvidas Frequentes</h2>
           <hr></hr>
         </div>

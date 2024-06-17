@@ -3,11 +3,16 @@ import './Cadastro.css';
 import BoxTitulo from '../components/textBox/BoxTitulo';
 import { IMaskInput } from 'react-imask';
 import BotaoVerdeG from '../components/buttons/BotaoVerdeG';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import InputMask from 'react-input-mask';
 
 function Cadastro() {
+
+    useEffect(() => {
+        window.scrollTo(0, 0); // Move o scroll para o topo do viewport quando a tela é montada
+    }, []);
+
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
         nome_completo: '',

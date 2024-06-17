@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Accordion from "react-bootstrap/Accordion";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./TemplateSPA.css";
 import "./ConfirmacaoEmail.css";
 
 function ConfirmacaoEmail() {
+  useEffect(() => {
+    window.scrollTo(0, 0); // Move o scroll para o topo do viewport quando a tela é montada
+  }, []);
   return (
     <main className="mainFaleConosco">
       <div className="Perguntas">
@@ -78,32 +81,32 @@ function ConfirmacaoEmail() {
         </div>
       </div>
       <div className="EmailEnviado">
-      <div className="BoxEmailEnviado">
+        <div className="BoxEmailEnviado">
 
-         <h1>Email enviado com sucesso!</h1>
-      </div>
+          <h1>Email enviado com sucesso!</h1>
+        </div>
 
-      <div className="QuemSomos">
-        <h1>Quem somos nós?</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis
-          auctor tellus ut pretium. Phasellus lacus enim, volutpat eget
-          efficitur quis, accumsan eget lorem. Etiam orci leo, bibendum eget
-          orci ut, commodo luctus diam. In at nibh purus. In hendrerit justo
-          elit, ac venenatis nunc hendrerit cursus. Maecenas sit amet aliquet
-          purus, in luctus risus. Nunc cursus metus nunc, ut scelerisque enim
-          congue facilisis. Sed ornare, dui ac vestibulum pulvinar, nulla quam
-          pharetra urna, vitae convallis nisl urna ac odio. Cras feugiat vel
-          metus ut eleifend. Nullam a fermentum odio. Praesent congue vitae
-          enim id eleifend. Etiam odio justo, commodo quis congue sit amet,
-          porta sed mi. Proin gravida luctus sem in laoreet. Nullam a
-          fermentum odio. Praesent congue vitae enim id eleifend. Etiam odio
-          justo, commodo quis congue sit amet, porta sed mi. Proin gravida
-          luctus sem in laoreet.
-        </p>
+        <div className="QuemSomos">
+          <h1>Quem somos nós?</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lobortis
+            auctor tellus ut pretium. Phasellus lacus enim, volutpat eget
+            efficitur quis, accumsan eget lorem. Etiam orci leo, bibendum eget
+            orci ut, commodo luctus diam. In at nibh purus. In hendrerit justo
+            elit, ac venenatis nunc hendrerit cursus. Maecenas sit amet aliquet
+            purus, in luctus risus. Nunc cursus metus nunc, ut scelerisque enim
+            congue facilisis. Sed ornare, dui ac vestibulum pulvinar, nulla quam
+            pharetra urna, vitae convallis nisl urna ac odio. Cras feugiat vel
+            metus ut eleifend. Nullam a fermentum odio. Praesent congue vitae
+            enim id eleifend. Etiam odio justo, commodo quis congue sit amet,
+            porta sed mi. Proin gravida luctus sem in laoreet. Nullam a
+            fermentum odio. Praesent congue vitae enim id eleifend. Etiam odio
+            justo, commodo quis congue sit amet, porta sed mi. Proin gravida
+            luctus sem in laoreet.
+          </p>
+        </div>
       </div>
-      </div>
-      </main>
+    </main>
   );
 }
 export default ConfirmacaoEmail;

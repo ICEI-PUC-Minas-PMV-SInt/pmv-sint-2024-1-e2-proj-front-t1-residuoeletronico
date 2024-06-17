@@ -1,16 +1,18 @@
 import React from "react";
+import "./NoticiaDetalhada.css"
 
 function NoticiaDetalhada(props){
-    return(
+    return (
         <article>
             <h2 className="tituloNoticia">{props.titulo}</h2>
-                 <span>Data hora</span>
-                 <p>Texto</p>
-                 <img src="" alt="Imagem da notícia"></img>
-                <p>Texto da notícia</p>
+            <span className="dataNoticia">{props.dataHora}</span>
+            <span className="hashNoticia">{props.hashtags}</span>
+            <p className="descricaoNoticia">{props.descricao}</p>
+            <img src={props.imagem} alt="Imagem da notícia" className="imgNoticia"/>
+            <p className="conteudoNoticia">{props.conteudo}</p>
         </article>
     );
 }
 
-export default NoticiaDetalhada
+export default NoticiaDetalhada;
 

@@ -1,0 +1,14 @@
+.dataNoticia, .hashNoticia{
+    font-size: medium;
+    margin: 5px;
+}
+
+.descricaoNoticia, .conteudoNoticia{
+    margin: 10px 5px;
+}
+
+.imgNoticia{
+    width: 90%;
+    margin: 10px;
+
+}

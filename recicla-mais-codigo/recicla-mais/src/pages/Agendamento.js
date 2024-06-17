@@ -41,6 +41,7 @@ function Agendamento() {
     if (Object.keys(infoUsuarioAtual).length > 0) {
       setDadosUsuario(infoUsuarioAtual);
     }
+    window.scrollTo(0, 0); // Move o scroll para o topo do viewport quando a tela é montada
   }, [])
 
   // Função chamada quando a data é selecionada
@@ -55,7 +56,7 @@ function Agendamento() {
     setSelectedHour(e.target.value);
   };
 
-    // Função chamada quando uma opção de item é alterada
+  // Função chamada quando uma opção de item é alterada
   const handleItemOptionChange = (option, selecaoDe) => {
     setCurrentItemSelection((prevSelection) => ({
       ...prevSelection, // Aqui prevSelection representa o valor atual do estado currentSelection
