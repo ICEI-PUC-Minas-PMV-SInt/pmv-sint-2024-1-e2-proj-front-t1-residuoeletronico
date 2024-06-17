@@ -1,0 +1,22 @@
+/* <h2 className="tituloNoticia">{props.titulo}</h2>
+<span className="dataNoticia">{props.dataHora}</span>
+<span className="hashNoticia">{props.hashtags}</span>
+<p className="descricaoNoticia">{props.descricao}</p>
+<img src={props.imagem} alt="Imagem da notícia" className="imagemNoticia"/>
+<p className="conteudoNoticia">{props.conteudo}</p>
+</article> */
+
+.dataNoticia, .hashNoticia{
+    font-size: medium;
+    margin: 5px;
+}
+
+.descricaoNoticia, .conteudoNoticia{
+    margin: 10px 5px;
+}
+
+.imgNoticia{
+    width: 90%;
+    margin: 10px;
+
+}
