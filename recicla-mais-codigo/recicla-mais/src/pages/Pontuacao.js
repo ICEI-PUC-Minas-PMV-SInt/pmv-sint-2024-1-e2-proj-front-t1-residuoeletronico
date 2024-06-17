@@ -1,18 +1,18 @@
 // Pontuacao.js
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './TemplateSPA.css';
 import './Pontuacao.css';
-import TabelaAzul from "../components/tabelas/TabelaAzul";
+import TabelaAzul from '../components/tabelas/TabelaAzul';
 import BoxExtrato from '../components/textBox/BoxExtrato';
 import CelulaExtrato from '../components/tabelas/CelulaExtrato';
 import CelulaTroca from '../components/tabelas/CelulaTroca';
-import { useNavigate } from "react-router-dom";
+import CardPontuacaoPerfil from '../components/perfil/CardPontuacaoPerfil';
+import BotaoCards from '../components/buttons/BotaoCards';
 import IPTU from '../imgs/iptu.png';
 import ifood from '../imgs/ifood.png';
 import dotz from '../imgs/dotz.png';
 import supbh from '../imgs/supbh.png';
-import { useEffect, useState } from 'react';
-import CardPontuacaoPerfil from "../components/perfil/CardPontuacaoPerfil";
-import BotaoCards from '../components/buttons/BotaoCards';
 
 function Pontuacao() {
     const navigate = useNavigate();
@@ -30,6 +30,9 @@ function Pontuacao() {
         if (currentUser.pontuacao) {
             setPontuacaoTotalUsuario(currentUser.pontuacao);
         }
+        if (currentUser.trocas) {
+            setTrocas(currentUser.trocas);
+        }
     }, []);
 
     const handleConfirmButtonClick = (valor) => {
@@ -42,7 +45,6 @@ function Pontuacao() {
         const novoPontuacaoTotal = pontuacaoTotalUsuario - pontosNecessarios;
         const novoTroca = {
             data: new Date().toLocaleDateString(),
-            //parceiro: valor.split(' ')[3],
             valor: valor,
             pontosResgatados: pontosNecessarios
         };
