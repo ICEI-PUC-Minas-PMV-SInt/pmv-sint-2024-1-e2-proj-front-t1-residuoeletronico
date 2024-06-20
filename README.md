@@ -21,7 +21,7 @@ O projeto a ser desenvolvido é uma plataforma digital com a missão de intermed
 
 ## Instruções de utilização
 
-Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
+O deploy do projeto foi realizado através do Vercel e pode ser acessado pelo seguinte link: [https://recicla-mais-eta.vercel.app/](https://recicla-mais-eta.vercel.app/ "https://recicla-mais-eta.vercel.app/").
 
 # Documentação
 
