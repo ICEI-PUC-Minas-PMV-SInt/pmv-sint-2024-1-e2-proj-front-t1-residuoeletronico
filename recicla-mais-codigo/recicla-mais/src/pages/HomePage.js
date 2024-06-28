@@ -114,14 +114,14 @@ function HomePage() {
             <h2 className="titulo">Últimas Notícias</h2>
             <div className="containerCard">
                 <div className="borda containerNoticiaPrincipal">
-                    <NoticiaCard imagem={Coleta2} texto={textoNoticias + textoNoticias + textoNoticias} />
+                    <NoticiaCard imagem={Coleta2} titulo={"Repensando a Gestão de Resíduos nas Cidades"} texto={"A reciclagem de resíduos urbanos é uma prática fundamental para reduzir a quantidade de lixo enviada para aterros sanitários, contribuindo assim para a preservação do meio ambiente e a promoção da sustentabilidade. Com o crescimento das cidades, o volume de resíduos produzidos aumentou significativamente, tornando a reciclagem urbana uma questão cada vez mais importante. A gestão eficiente dos resíduos urbanos envolve a coleta seletiva, a separação adequada dos materiais recicláveis, o incentivo à reciclagem e a conscientização da população sobre a importância desse processo."}/>
                 </div>
                 <div className="borda containerNoticiaSecundaria">
                     <div className="borda noticiaSecundaria">
-                        <NoticiaCard imagem={Coleta1} texto={textoNoticias} />
+                        <NoticiaCard imagem={Coleta1} titulo={"O Segredo da Reciclagem de Lixo Eletrônico"} texto={"A eficiência das coletas é fundamental para o sucesso da reciclagem de lixo eletrônico."} />
                     </div>
                     <div className="borda noticiaSecundaria">
-                        <NoticiaCard imagem={Coleta3} texto={textoNoticias} />
+                    <NoticiaCard imagem={Coleta3} titulo={"Novas Tecnologias para um Futuro Sustentável"} texto={"As inovações em reciclagem estão transformando a maneira como lidamos com o lixo."} />
                     </div>
                 </div>
             </div>

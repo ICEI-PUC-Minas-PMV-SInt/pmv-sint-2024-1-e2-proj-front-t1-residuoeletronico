@@ -6,8 +6,13 @@
     width: 100%;
 }
 
-.pCard {
+.pCard{
     font-size: 18px;
+    margin: 10px;
+    text-align: justify;
+}
+
+.tCard{
     margin: 10px;
     text-align: justify;
 }
