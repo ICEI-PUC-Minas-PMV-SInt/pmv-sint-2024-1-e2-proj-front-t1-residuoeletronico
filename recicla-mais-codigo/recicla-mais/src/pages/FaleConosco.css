@@ -1,18 +1,18 @@
 .mainFaleConosco {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;   
+    /* display: flex;  */
+    flex-direction: row; 
+    justify-content: space-between;    
 }
 
 .Perguntas{
-    width: 60%;
-   display: block;
-   padding: 10px;
-   background-color: #f0f0f0;
+    width: 50%;
+    display: block;
+    padding: 10px;
+    background-color: #f0f0f0;
 }
 
 .FaleConosco{
-    width: 40%;
+    width: 50%;
 }
 
 .botao{
@@ -41,7 +41,7 @@
     gap: 25px;
 }
 
-.QuemSomos{
+.QuemSomosNos{
     background-color: #D3D3D3;
     width: 80%;
     display: flex;
@@ -52,7 +52,7 @@
     padding: 60px 80px;
     gap: 40px;
 }
-.QuemSomos h1{
+.QuemSomosNos h1{
     align-items: center;
     
 
